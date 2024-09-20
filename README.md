@@ -36,8 +36,13 @@ Here are the steps ...
 Here are some known bugs:
 
 - 🐛
-- ...
-- ...
+- 🐜
+- 🪲
+- 🐞
+- 🦗
+- 🪳
+- 🦟
+- 🪰
 
 ## 6. Features for Future
 
