@@ -11,7 +11,7 @@ List team members and/or short bio's here...
 
 - I'm Chara! :3
 - I'm Leo! :)
-- ...
+- Hey! My name is Kiara <3
 
 ## 3. Technologies and Resources Used
 
