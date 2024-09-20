@@ -9,7 +9,7 @@ This browser based web application to ...
 
 List team members and/or short bio's here...
 
-- I'm Chara! :3
+- Hallo! I'm Chara! :3
 - I'm Leo! :)
 - Hey! My name is Kiara <3
 
