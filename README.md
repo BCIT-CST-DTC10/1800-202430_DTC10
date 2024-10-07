@@ -8,8 +8,8 @@ Our team, DTC 10, is developing a web application to help students find and acce
 
 List team members and/or short bio's here...
 
-- I'm Chara! :3
-- I'm Leo! :)
+- Hallo! I'm Chara! :3
+- Hi! I'm Leo! :)
 - Hey! My name is Kiara <3
 
 ## 3. Technologies and Resources Used
@@ -34,9 +34,14 @@ Here are the steps ...
 
 Here are some known bugs:
 
-- ...
-- ...
-- ...
+- 🐛
+- 🐜
+- 🪲
+- 🐞
+- 🦗
+- 🪳
+- 🦟
+- 🪰
 
 ## 6. Features for Future
 
