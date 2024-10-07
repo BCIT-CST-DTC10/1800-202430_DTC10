@@ -1,108 +1,75 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>DTC 10 Web App</title>
-        <meta
-            name="description"
-            content="A web application to help students find and access study spots easily with user reviews and ratings from fellow students."
-        />
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <title>DTC 10 Web App</title>
+    <meta name="description"
+        content="A web application to help students find and access study spots easily with user reviews and ratings from fellow students." />
 
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"
-        ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap"
-            rel="stylesheet"
-        />
-    </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
-    <body>
-        <nav class="navbar navbar-expand-lg bg-successs-subtle">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.jpg" width="36" class="inline"> Study App
-                </a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link active"
-                                aria-current="page"
-                                href="#"
-                                >Home</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Maps</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Account</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true"
-                                >Other</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="px-4 py-5 my-5 text-center">
-            <img
-                class="d-block mx-auto mb-4"
-                src="images/logo.jpg"
-                alt=""
-                width="72"
-                height="57"
-            />
-            <h1 class="display-5 fw-bold text-body-emphasis">DTC 10 Web App</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">
-                    Our team, DTC 10, is developing a web application to help
-                    students find and access study spots easily with user
-                    reviews and ratings from fellow students.
-                </p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button
-                        type="button"
-                        class="btn btn-primary btn-lg px-4 gap-3"
-                    >
-                        Find a Spot
-                    </button>
-                    <button
-                        type="button"
-                        class="btn btn-outline-secondary btn-lg px-4"
-                    >
-                        Contact Us
-                    </button>
-                </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" width="36" class="inline"> Study App
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Maps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Other</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </body>
+    </nav>
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/logo.jpg" alt="" width="72" height="57" />
+        <h1 class="display-5 fw-bold text-body-emphasis">DTC 10 Web App</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+                Our team, DTC 10, is developing a web application to help
+                students find and access study spots easily with user
+                reviews and ratings from fellow students.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+                    Find a Spot
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
