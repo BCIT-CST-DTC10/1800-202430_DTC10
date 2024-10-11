@@ -3,7 +3,7 @@
 
 ## 1. Project Description
 
-Our team, DTC 10, is developing a web application to help students find and access study spots easily with user reviews and ratings from fellow students.
+Our team, DTC 10, is developing GoStudy, a web application to help students find and access study spots easily with user reviews and ratings from fellow students.
 
 ## 2. Names of Contributors
 
