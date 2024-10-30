@@ -10,8 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
-        #title,
-        #subtitle {
+        * {
             text-align: center;
             margin: auto;
         }
@@ -19,8 +18,19 @@
 </head>
 
 <body>
-    <h1 id="title">404</h1>
-    <h2 id="subtitle">That page doesn't exist!</h2>
+    <nav class="placeholder"></nav>
+    <main>
+        <h1 id="title">404</h1>
+        <h2 id="subtitle">That page doesn't exist!</h2>
+        <p>
+            Are You Lost?
+            <br />
+            click <a href="javascript:history.back()">here</a> to go back.
+            <br />
+            click <a href="/">here</a> to go home.
+        </p>
+    </main>
+    <footer class="placeholder"></footer>
 </body>
 
 </html>
