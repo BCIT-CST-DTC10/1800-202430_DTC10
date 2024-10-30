@@ -12,9 +12,43 @@
         position: absolute;
         left: 0px;
         bottom: 0px;
+        overflow-y: hidden;
+    }
+
+    #navIcons {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+
+    .navIcon {
+        width: 7rem;
+        height: 7rem;
+        margin: 1rem;
+    }
+
+    #navHomeButton {
+        cursor: pointer;
+        margin-left: 6rem;
+    }
+
+    #navMapButton {
+        cursor: pointer;
+        margin-right: 6rem;
     }
 </style>
 
 <nav id="navNav">
-
+    <div id="navIcons">
+        <a href="#" id="navHomeButton">
+            <img src="images/home.svg" alt="Home" id="navHomeIcon" class="navIcon">
+        </a>
+        <a href="#" id="navMapButton">
+            <img src="images/map.svg" alt="Map" id="navMapIcon" class="navIcon">
+        </a>
+    </div>
 </nav>
