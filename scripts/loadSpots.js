@@ -17,7 +17,7 @@ function makeid(length) {
         list.push({
             id: makeid(32),
             name: 'Lorem ipsum dolor sit',
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nobis odit dolorem accusantium amet praesentium eos perspiciatis necessitatibus quam deserunt? Voluptates placeat nobis eveniet in dolores aspernatur error officiis delectus.',
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nobis odit dolorem accusantium amet praesentium eos perspiciatis necessitatibus quam deserunt?',
             type: ['Cafe', 'School', 'Library'][Math.ceil(Math.random() * 3) % 3],
             rate: Math.round(Math.random() * 50) / 10,
         });
@@ -27,6 +27,7 @@ function makeid(length) {
     list.forEach((v, i) => {
         console.log({ i, v });
         document.querySelector('div.toBeReplaced#spotList').innerHTML += spotCard.
+            replaceAll('{{image}}', `https://picsum.photos/1024?random=${i + 1}`).
             replaceAll('{{name}}', v.name).
             replaceAll('{{desc}}', v.desc).
             replaceAll('{{type}}', v.type).
