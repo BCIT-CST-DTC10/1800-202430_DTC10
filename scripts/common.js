@@ -14,6 +14,6 @@ const fetchComponent = async (fileName) => {
     }
 }
 
-window.onload = async () => {
+(async () => {
     document.querySelector('footer.placeholder').innerHTML = await fetchComponent('bottomNav');
-}
+})();
