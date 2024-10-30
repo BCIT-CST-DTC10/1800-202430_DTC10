@@ -10,7 +10,6 @@ function makeid(length) {
     return result;
 }
 
-
 (async () => {
     const list = [];
     for (let i = 0; i < 100; i++) {
@@ -24,13 +23,30 @@ function makeid(length) {
     }
 
     const spotCard = await fetchComponent('cards/spot');
-    list.forEach((v, i) => {
+    const star = await fetchIcon('star');
+    const starHalf = await fetchIcon('starHalf');
+    const starOutline = await fetchIcon('starOutline');
+    list.forEach(async (v, i) => {
         console.log({ i, v });
         document.querySelector('div.toBeReplaced#spotList').innerHTML += spotCard.
             replaceAll('{{image}}', `https://picsum.photos/1024?random=${i + 1}`).
             replaceAll('{{name}}', v.name).
             replaceAll('{{desc}}', v.desc).
             replaceAll('{{type}}', v.type).
+            replaceAll('{{star}}', generateRateStar(v.rate).reduce((pre, cur, i) => {
+                switch (i) {
+                    case 0:
+                        return pre + star.repeat(cur);
+                    case 1:
+                        return pre + starHalf.repeat(cur);
+                    case 2:
+                        return pre + starOutline.repeat(cur);
+                }
+            }, '')).
             replaceAll('{{rate}}', v.rate);
+
+        document.querySelectorAll('div.toBeReplaced#spotList svg').forEach((v) => {
+            v.style = 'display: inline-block; margin: auto 0; fill: #000;'
+        })
     })
 })();
