@@ -16,17 +16,19 @@ function makeid(length) {
     for (let i = 0; i < 100; i++) {
         list.push({
             id: makeid(32),
-            name: `${makeid(6)} ${makeid(6)} ${makeid(6)} ${makeid(6)}`,
+            name: 'Lorem ipsum dolor sit',
+            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nobis odit dolorem accusantium amet praesentium eos perspiciatis necessitatibus quam deserunt? Voluptates placeat nobis eveniet in dolores aspernatur error officiis delectus.',
             type: ['Cafe', 'School', 'Library'][Math.ceil(Math.random() * 3) % 3],
             rate: Math.round(Math.random() * 50) / 10,
         });
     }
+
     const spotCard = await fetchComponent('cards/spot');
     list.forEach((v, i) => {
         console.log({ i, v });
         document.querySelector('div.toBeReplaced#spotList').innerHTML += spotCard.
             replaceAll('{{name}}', v.name).
-            replaceAll('{{desc}}', v.id).
+            replaceAll('{{desc}}', v.desc).
             replaceAll('{{type}}', v.type).
             replaceAll('{{rate}}', v.rate);
     })

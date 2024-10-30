@@ -1,0 +1,23 @@
+#spotList {
+    margin-bottom: 6em;
+}
+
+#spotList > div {
+    margin: 1em 2em;
+    padding: .25em .5em;
+    border-style: solid;
+    border-color: #aaa;
+    border-radius: 1em;
+}
+
+#spotList > div > div {
+    margin: 0em 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#spotList > div > div > * {
+    display: inline-block;
+}
