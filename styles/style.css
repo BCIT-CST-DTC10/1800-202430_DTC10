@@ -21,3 +21,8 @@
 #spotList > div > div > * {
     display: inline-block;
 }
+
+#submitReview {
+    flex: none;
+    margin-left: 8px;
+}
