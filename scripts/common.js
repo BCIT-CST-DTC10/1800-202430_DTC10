@@ -15,5 +15,5 @@ const fetchComponent = async (fileName) => {
 }
 
 (async () => {
-    document.querySelector('footer.placeholder').innerHTML = await fetchComponent('bottomNav');
+    document.querySelector('footer.toBeReplaced').innerHTML = await fetchComponent('bottomNav');
 })();
