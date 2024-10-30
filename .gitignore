@@ -172,4 +172,4 @@ dist
 .passwords/super-secret/extra-secret/password.txt
 
 # Firebase API file
-firebaseAPI_DTC10.js
+./script/firebase.js
