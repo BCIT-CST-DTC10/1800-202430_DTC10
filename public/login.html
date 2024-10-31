@@ -27,12 +27,26 @@
     <script defer src="/__/firebase/init.js"></script>
 
     <!-- Homemade JS -->
-    <script src="./scripts/common.js" defer></script>
+    <script defer src="./scripts/common.js"></script>
+
+    <script>
+        (new firebaseui.auth.AuthUI(firebase.auth())).start('#firebaseui-auth-container', {
+            signInFlow: 'popup',
+            signInSuccessUrl: "/",
+            signInOptions: [
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            ],
+            tosUrl: '<your-tos-url>',
+            privacyPolicyUrl: '<your-privacy-policy-url>'
+        });
+    </script>
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
-    <main></main>
+    <main>
+        <div id="firebaseui-auth-container"></div>
+    </main>
     <footer class="toBeReplaced"></footer>
 </body>
 
