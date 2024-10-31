@@ -29,7 +29,7 @@
     <!-- Homemade JS -->
     <script defer src="./scripts/common.js"></script>
 
-    <script>
+    <script defer>
         (new firebaseui.auth.AuthUI(firebase.auth())).start('#firebaseui-auth-container', {
             signInFlow: 'popup',
             signInSuccessUrl: "/",
