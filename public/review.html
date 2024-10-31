@@ -26,6 +26,7 @@
     <!-- Homemade JS -->
     <script defer src="./scripts/common.js"></script>
     <script defer src="./scripts/loadReviews.js"></script>
+
 </head>
 
 <body>
@@ -51,17 +52,36 @@
                     </div>
                 </div>
                 <div class="col" id="submitReview" style="flex: none; margin-left: 8px;">
-                    <button type="submit" class="btn btn-primary px-5">Post</button>
+                    <button type="submit" class="btn btn-secondary px-5">Post</button>
                 </div>
                 </div>
             </form>
         </section>
-        <article>
-            <nav class="toBeReplaced"></nav>
-            <main>
-                <div id="spotList" class="toBeReplaced"></div>
-            </main>
-            <footer class="toBeReplaced"></footer>
+        <article class="pt-4 px-5">
+            <h3 class="">Reviews</h3>
+            <!-- Here is the container for cards  -->
+            <div class="container">
+                <div id="reviews-go-here" class="row row-cols-auto">
+                </div>
+            </div>
+            <div id="spotList" class="toBeReplaced"></div>
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <span>Profile/user account</span>
+                    <h5 class="card-title">Card title</h5>
+                    <div class="card-subtitle mb-2 text-body-secondary">
+                        <img src="./icons/star.svg">
+                        <img src="./icons/star.svg">
+                        <img src="./icons/star.svg">
+                        <img src="./icons/star.svg">
+                        <img src="./icons/starOutline.svg">
+                    </div>
+                    <p class="card-text">placeholder text that will contain reviews written about certain study spots
+                    </p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
         </article>
     </main>
     <footer class="toBeReplaced"></footer>
