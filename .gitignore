@@ -168,8 +168,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Super Secret Key
-.passwords/super-secret/extra-secret/password.txt
+# Firebase logs
+firebase-debug.log*
+firebase-debug.*.log*
 
-# Firebase API file
-scripts/firebase.js
+# Firebase cache
+.firebase/
