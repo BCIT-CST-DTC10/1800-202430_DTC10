@@ -1,7 +1,9 @@
 .image {
-    width: 10rem;
-    height: 10rem;
+    width: 8.5rem;
+    height: 8.5rem;
     border-radius: 25%;
     float: left;
     background-color: gray;
+    margin-top: 3rem;
+    margin-left: 2rem;
 }
