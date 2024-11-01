@@ -11,19 +11,35 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [{
-      "source": "/review",
-      "destination": "/review.html",
-      "type": 301
-    }, {
-      "source": "/login",
-      "destination": "/login.html",
-      "type": 302
-    }],
-    "rewrites": [{
-        "source": "/404",
-        "destination": "/404.html"
-    }]
+    "redirects": [
+      {
+        "source": "/index",
+        "destination": "/",
+        "type": 301
+      }, {
+        "source": "/index.html",
+        "destination": "/",
+        "type": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/login",
+        "destination": "/login.html"
+      }, {
+        "source": "/profile",
+        "destination": "/profile.html"
+      }, {
+        "source": "/detail",
+        "destination": "/detail.html"
+      }, {
+        "source": "/review",
+        "destination": "/review.html"
+      }, {
+        "source": "/map",
+        "destination": "/map.html"
+      }
+    ]
   },
   "storage": {
     "rules": "storage.rules"

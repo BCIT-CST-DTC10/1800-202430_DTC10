@@ -1,5 +1,6 @@
 {
     "liveServer.settings.root": "/public",
+    "liveServer.settings.file": "/404.html",
     "editor.defaultFormatter": "vscode.html-language-features",
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
