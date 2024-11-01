@@ -29,6 +29,7 @@ function makeid(length) {
     list.forEach(async (v, i) => {
         console.log({ i, v });
         document.querySelector('div.toBeReplaced#spotList').innerHTML += spotCard.
+            replaceAll('{{id}}', v.id).
             replaceAll('{{image}}', `https://picsum.photos/1024?random=${i + 1}`).
             replaceAll('{{name}}', v.name).
             replaceAll('{{desc}}', v.desc).
