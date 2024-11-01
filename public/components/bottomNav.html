@@ -1,5 +1,5 @@
 <style>
-    #navNav {
+    nav.footer {
         background-color: #cccccc;
         color: white;
         border-radius: 25px 25px 0px 0px;
@@ -17,37 +17,28 @@
         z-index: 999;
 
         border: 1px solid #333333;
-    }
 
-    #navIcons {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 100%;
     }
 
-    .navIcon {
+    nav.footer img.icon {
         width: 4em;
         height: 4em;
     }
 
-    #navHomeButton {
-        cursor: pointer;
-    }
-
-    #navMapButton {
+    nav.footer>a {
         cursor: pointer;
     }
 </style>
 
-<nav id="navNav">
-    <div id="navIcons">
-        <a href="/" id="navHomeButton">
-            <img src="icons/home.svg" alt="Home" id="navHomeIcon" class="navIcon">
-        </a>
-        <a href="#" id="navMapButton">
-            <img src="icons/map.svg" alt="Map" id="navMapIcon" class="navIcon">
-        </a>
-    </div>
+<nav class="footer">
+    <a href="/">
+        <img src="/icons/home.svg" alt="Home" class="icon">
+    </a>
+    <a href="/map">
+        <img src="/icons/map.svg" alt="Map" class="icon">
+    </a>
 </nav>
