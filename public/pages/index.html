@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Profile - GoStudy</title>
+    <title>GoStudy</title>
     <meta name="hidden-name" content="studious domain expansion" />
     <meta name="description"
         content="A web application to help students find and access study spots easily with user reviews and ratings from fellow students." />
@@ -17,13 +17,14 @@
         crossorigin="anonymous"></script>
 
     <!-- Homemade JS -->
-    <script defer src="./scripts/common.js"></script>
+    <script defer src="/scripts/common.js"></script>
+    <script src="/scripts/loadSpots.js" defer></script>
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
     <main>
-        <div class="image"></div>
+        <div id="spotList" class="toBeReplaced" style="margin-bottom: 6em;"></div>
     </main>
     <footer class="toBeReplaced"></footer>
 </body>

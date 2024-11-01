@@ -20,24 +20,75 @@
         "source": "/index.html",
         "destination": "/",
         "type": 301
+      }, {
+        "source": "/pages/index",
+        "destination": "/",
+        "type": 301
+      }, {
+        "source": "/pages/index.html",
+        "destination": "/",
+        "type": 301
+      }, {
+        "source": "/pages/login",
+        "destination": "/login",
+        "type": 301
+      }, {
+        "source": "/pages/login.html",
+        "destination": "/login",
+        "type": 301
+      }, {
+        "source": "/pages/profile",
+        "destination": "/profile",
+        "type": 301
+      }, {
+        "source": "/pages/profile.html",
+        "destination": "/profile",
+        "type": 301
+      }, {
+        "source": "/pages/detail",
+        "destination": "/detail",
+        "type": 301
+      }, {
+        "source": "/pages/detail.html",
+        "destination": "/detail",
+        "type": 301
+      }, {
+        "source": "/pages/review",
+        "destination": "/review",
+        "type": 301
+      }, {
+        "source": "/pages/review.html",
+        "destination": "/review",
+        "type": 301
+      }, {
+        "source": "/pages/map",
+        "destination": "/map",
+        "type": 301
+      }, {
+        "source": "/pages/map.html",
+        "destination": "/map",
+        "type": 301
       }
     ],
     "rewrites": [
       {
+        "source": "/",
+        "destination": "/pages/index.html"
+      }, {
         "source": "/login",
-        "destination": "/login.html"
+        "destination": "/pages/login.html"
       }, {
         "source": "/profile",
-        "destination": "/profile.html"
+        "destination": "/pages/profile.html"
       }, {
         "source": "/detail",
-        "destination": "/detail.html"
+        "destination": "/pages/detail.html"
       }, {
         "source": "/review",
-        "destination": "/review.html"
+        "destination": "/pages/review.html"
       }, {
         "source": "/map",
-        "destination": "/map.html"
+        "destination": "/pages/map.html"
       }
     ]
   },
