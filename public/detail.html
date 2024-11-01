@@ -19,14 +19,59 @@
     <!-- Homemade JS -->
     <script defer src="./scripts/common.js"></script>
     <!-- Homemade CSS -->
-    <link rel="stylesheet" href="./styles/detail.css" />
+    <style>
+        .title {
+            text-align: center;
+            font-weight: bold;
+            width: 60%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mainImage {
+            width: 20rem;
+            height: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: gray;
+            border-radius: 25px;
+        }
+
+        .reviewStars {
+            margin-top: 2rem;
+            margin-left: 3rem;
+        }
+
+        .description {
+            text-align: left;
+            margin-top: 1rem;
+
+            width: 80%;
+            float: left;
+            margin-left: 3rem;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
     <main>
-        <h1 id="detailTitle">Placeholder Title</h1>
-        <img class="toBeReplaced">
+        <h1 class="title">Placeholder Title</h1>
+        <div class="mainImage"></div>
+        <div class="toBeReplaced reviewStars">
+            <a href="review.html">
+                <img src="/icons/star.svg" alt="star" />
+                <img src="/icons/star.svg" alt="star" />
+                <img src="/icons/star.svg" alt="star" />
+                <img src="/icons/star.svg" alt="star" />
+                <img src="/icons/star.svg" alt="star" />
+            </a>
+        </div>
+        <div class="toBeReplaced description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum omnis labore mollitia recusandae quam officia cupiditate doloremque, quisquam velit deserunt consequatur minima aut odio.
+        </div>
     </main>
     <footer class="toBeReplaced"></footer>
 </body>
