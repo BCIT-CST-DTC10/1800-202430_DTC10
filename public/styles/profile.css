@@ -1,9 +1,22 @@
+.mainProfile {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    align-content: center;
+    margin-top: 3rem;
+    margin-left: 2rem;
+}
 .image {
     width: 8.5rem;
     height: 8.5rem;
     border-radius: 25%;
-    float: left;
+    /* float: left; */
     background-color: gray;
-    margin-top: 3rem;
-    margin-left: 2rem;
+}
+.username {
+    background-color: gray;
+    height: 2.5rem;
+    width: 12rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
