@@ -1,5 +1,5 @@
 <style>
-    nav.header {
+    nav.top-nav {
         background-color: #cccccc;
         color: white;
 
@@ -8,40 +8,39 @@
         height: 5em;
         margin: 0px;
         padding: 0em 1em;
-        
-        left: 0px;
+
+        left: 10px;
         bottom: 0vh;
         overflow-y: hidden;
         z-index: 999;
 
-        border: 1px solid #333333;
+        border: 1px solid #cccccc;
 
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    nav.header-search-bar {
-        width: 50%;
+    nav.top-nav .search-container {
+        max-width: 100%;
     }
 
-    nav.header img.icon {
-        width: 4em;
-        height: 4em;
+    nav.top-nav .search-container input {
+        width: 100%;
     }
 
-    nav.header>a {
+    nav.top-nav>a {
         cursor: pointer;
     }
 </style>
 
 
 
-<nav class="header">
+<nav class="top-nav">
+    <form class="search-container" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
     <a href="/">
-        <img src="/icons/home.svg" alt="Home" class="icon">
+        <img src="/icons/home.svg" alt="profile" class="icon">
     </a>
-    <input id="input" class="search-bar" type="search" autocomplete="off" spellcheck="false" role="combobox"
-        aria-controls="matches" aria-expanded="false" aria-live="polite" placeholder="Search
-        ">
 </nav>
