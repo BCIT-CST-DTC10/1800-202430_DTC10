@@ -16,7 +16,18 @@
 .username {
     background-color: gray;
     height: 2.5rem;
-    width: 12rem;
+    width: 15rem;
     margin-left: 1rem;
+    padding-top: 2.5%;
+    padding-left: 0rem;
     margin-top: 1rem;
+}
+.bio {
+    background-color: gray;
+    height: 2.5rem;
+    width: 15rem;
+    margin-left: 1rem;
+    padding-top: 2.5%;
+    padding-left: 0rem;
+    margin-top: 1.5rem;
 }
