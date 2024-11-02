@@ -5,28 +5,37 @@
 
         width: 100%;
         max-width: 100%;
-        height: 5em;
-        margin: 0px;
-        padding: 0em 1em;
 
-        left: 10px;
-        bottom: 0vh;
+
         overflow-y: hidden;
-        z-index: 999;
-
-        border: 1px solid #cccccc;
 
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    nav.top-nav .search-container {
+    nav.top-nav a {
+
+        width: 100%;
         max-width: 100%;
+
+        overflow-y: hidden;
+
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav.top-nav .search-container {
+        max-width: 75%;
+        max-height: 100%;
     }
 
     nav.top-nav .search-container input {
         width: 100%;
+        border-radius: 10px;
+        height: 100%;
+
     }
 
     nav.top-nav>a {
@@ -37,10 +46,18 @@
 
 
 <nav class="top-nav">
-    <form class="search-container" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    </form>
-    <a href="/">
+    <a href="" class="w-25">
+        <div class="back-button">
+
+        </div>
+    </a>
+
+    <a href="" class="w-75">
+        <form class="search-container" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+    </a>
+    <a href="/" class="w-25">
         <img src="/icons/home.svg" alt="profile" class="icon">
     </a>
 </nav>
