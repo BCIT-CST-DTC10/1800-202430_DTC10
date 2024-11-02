@@ -14,20 +14,23 @@
     background-color: gray;
 }
 .username {
-    background-color: gray;
+    background-color: lightgray;
+    border-radius: 25px;
     height: 2.5rem;
     width: 15rem;
     margin-left: 1rem;
     padding-top: 2.5%;
-    padding-left: 0rem;
+    padding-left: 1rem;
     margin-top: 1rem;
 }
 .bio {
-    background-color: gray;
+    background-color: lightgray;
+    border-radius: 25px;
     height: 2.5rem;
     width: 15rem;
     margin-left: 1rem;
     padding-top: 2.5%;
-    padding-left: 0rem;
-    margin-top: 1.5rem;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    height: 4.5rem;
 }
