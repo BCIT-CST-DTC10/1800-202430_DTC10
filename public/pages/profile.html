@@ -18,12 +18,40 @@
 
     <!-- Homemade JS -->
     <script defer src="/scripts/common.js"></script>
+    <!-- Homemade CSS -->
+    <link rel="stylesheet" href="/styles/profile.css" />
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
     <main>
-        <div class="image"></div>
+        <div class="mainProfile">
+            <div class="image"></div>
+            <div class="userDetails">
+                <div class="username"></div>
+                <div class="bio"></div>
+            </div>
+        </div>
+        <div class="reviewContainer">
+            <div class="reviewContainerTitle">My Reviews</div>
+            <div class="review toBeReplaced"></div>
+            <div class="review toBeReplaced"></div>
+            <div class="review toBeReplaced"></div>
+        </div>
+        <div class="settingsContainer">
+            <div class="account settings">
+                <img src="/icons/home.svg" class="icons"/>
+                <span class="text">Profile Settings</span>
+            </div>
+            <div class="notifications settings">
+                <img src="/icons/home.svg" class="icons"/>
+                <span class="text">Notification Settings</span>
+            </div>
+            <div class="app settings">
+                <img src="/icons/home.svg" class="icons"/>
+                <span class="text">App Settings</span>
+            </div>
+        </div>
     </main>
     <footer class="toBeReplaced"></footer>
 </body>
