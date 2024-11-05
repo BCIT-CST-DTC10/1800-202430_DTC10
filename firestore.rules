@@ -8,5 +8,11 @@ service cloud.firestore {
     match /tags/{document=**} {
       allow read, write: if true;
     }
+    match /studySpots/{document=**} {
+      allow read, write: if true;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
   }
 }
