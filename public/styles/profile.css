@@ -55,11 +55,20 @@ main {
 
 .settings {
     background-color: lightgray;
-    position: inherit;
     border-radius: 25px;
     height: 4rem;
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.icons {
+    margin-left: 2rem;
+}
+.text {
+    text-align: right;
+    margin-left: 6rem;
 }
