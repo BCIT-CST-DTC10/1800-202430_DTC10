@@ -1,3 +1,6 @@
+main {
+    padding-bottom: 5rem;
+}
 .mainProfile {
     display: flex;
     flex-direction: row;
@@ -46,5 +49,17 @@
     text-align: center;
     font-weight: bold;
     margin-top: 1rem;
+    position: relative;
     font-size:  1.2rem;
+}
+
+.settings {
+    background-color: lightgray;
+    position: inherit;
+    border-radius: 25px;
+    height: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
 }
