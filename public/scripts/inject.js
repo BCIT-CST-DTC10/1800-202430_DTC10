@@ -215,7 +215,7 @@ const db = firebase.firestore();
                 "Beaches!!!!!"
             ]
         ].forEach(async ([studySpotId, userId, rating, comment]) => {
-            await reviews.doc(id).set({
+            await reviews.add({
                 studySpotId,
                 userId,
                 rating,
