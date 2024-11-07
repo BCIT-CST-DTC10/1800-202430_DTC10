@@ -11,6 +11,12 @@ service cloud.firestore {
     match /studySpots/{document=**} {
       allow write: if true;
     }
+    match /users/{document=**} {
+      allow write: if true;
+    }
+    match /reviews/{document=**} {
+      allow write: if true;
+    }
     match /{document=**} {
       allow read: if true;
     }

@@ -181,4 +181,48 @@ const db = firebase.firestore();
             })
         })
     }
+
+    const reviews = db.collection("reviews");
+    try {
+        const reviewsData = await reviews.get();
+        if (reviewsData.empty) {
+            throw new Error("Empty reviews");
+        }
+    } catch (error) {
+        [
+            [
+                'bcit',
+                'uODQK7ziLBNZlpptGOQcdD0RpCW2',
+                5,
+                'A great place!'
+            ],
+            [
+                'bcit',
+                'echtgbx7ZuTlXlSWT0HwYMIQ9Dj1',
+                4,
+                'The place are nice, but there are too many events on 2nd floor.'
+            ],
+            [
+                'ubc',
+                'echtgbx7ZuTlXlSWT0HwYMIQ9Dj1',
+                3,
+                'Just a town. Yup, a town.'
+            ],
+            [
+                'ubc',
+                'X0HK803N6LgzddlDqdhrSd7AOR12',
+                4,
+                "Beaches!!!!!"
+            ]
+        ].forEach(async ([studySpotId, userId, rating, comment]) => {
+            await reviews.doc(id).set({
+                studySpotId,
+                userId,
+                rating,
+                comment,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            })
+        })
+    }
 })();
