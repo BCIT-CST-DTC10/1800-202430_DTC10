@@ -10,7 +10,6 @@ const fetchComponent = async (fileName) => {
         return await response.text();
     } catch (error) {
         console.error(error.message);
-        alert("Failed to fetch component");
     }
 }
 
@@ -26,7 +25,6 @@ const fetchIcon = async (fileName) => {
         return await response.text();
     } catch (error) {
         console.error(error.message);
-        alert("Failed to fetch icon");
     }
 }
 
