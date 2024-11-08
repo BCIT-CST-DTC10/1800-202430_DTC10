@@ -61,11 +61,11 @@
         reduce((p, c, i) => {
             switch (i) {
                 case 0:
-                    return p + star.repeat(c);
+                    return p + star.trim().repeat(c);
                 case 1:
-                    return p + starHalf.repeat(c);
+                    return p + starHalf.trim().repeat(c);
                 case 2:
-                    return p + starOutline.repeat(c);
+                    return p + starOutline.trim().repeat(c);
             }
-        }, "")
+        }, "");
 })();
