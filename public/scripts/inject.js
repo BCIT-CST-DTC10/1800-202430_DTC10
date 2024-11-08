@@ -29,7 +29,7 @@ const db = firebase.firestore();
                 ],
             ],
             [
-                'wifi',
+                "wifi",
                 "Wi-Fi",
                 "feature",
                 [
@@ -39,7 +39,7 @@ const db = firebase.firestore();
                 ],
             ],
             [
-                'charger',
+                "charger",
                 "Charger",
                 "feature",
                 [
@@ -67,7 +67,7 @@ const db = firebase.firestore();
     } catch (error) {
         [
             [
-                'bcit',
+                "bcit",
                 "BCIT Downtown Campus",
                 {
                     cafe: {
@@ -111,7 +111,7 @@ const db = firebase.firestore();
                 ["30a64443-2257-408b-9217-4249242911f6.jpg"]
             ],
             [
-                'ubc',
+                "ubc",
                 "UBC",
                 {
                     cafe: {
@@ -142,7 +142,7 @@ const db = firebase.firestore();
                 ["5e235690-1933-467d-a301-91a734f557a1.jpg"]
             ],
             [
-                'sfu',
+                "sfu",
                 "SFU",
                 {
                     cafe: {
@@ -232,15 +232,15 @@ const db = firebase.firestore();
     } catch (error) {
         [
             [
-                'uODQK7ziLBNZlpptGOQcdD0RpCW2',
-                "I'm the very first user!!"
+                "uODQK7ziLBNZlpptGOQcdD0RpCW2",
+                "I"m the very first user!!"
             ],
             [
-                'X0HK803N6LgzddlDqdhrSd7AOR12',
+                "X0HK803N6LgzddlDqdhrSd7AOR12",
                 "Just an user..."
             ],
             [
-                'echtgbx7ZuTlXlSWT0HwYMIQ9Dj1',
+                "echtgbx7ZuTlXlSWT0HwYMIQ9Dj1",
                 ""
             ],
         ].forEach(async ([id, description]) => {
@@ -261,26 +261,26 @@ const db = firebase.firestore();
     } catch (error) {
         [
             [
-                'bcit',
-                'uODQK7ziLBNZlpptGOQcdD0RpCW2',
+                "bcit",
+                "uODQK7ziLBNZlpptGOQcdD0RpCW2",
                 5,
-                'A great place!'
+                "A great place!"
             ],
             [
-                'bcit',
-                'echtgbx7ZuTlXlSWT0HwYMIQ9Dj1',
+                "bcit",
+                "echtgbx7ZuTlXlSWT0HwYMIQ9Dj1",
                 4,
-                'The place are nice, but there are too many events on 2nd floor.'
+                "The place are nice, but there are too many events on 2nd floor."
             ],
             [
-                'ubc',
-                'echtgbx7ZuTlXlSWT0HwYMIQ9Dj1',
+                "ubc",
+                "echtgbx7ZuTlXlSWT0HwYMIQ9Dj1",
                 3,
-                'Just a town. Yup, a town.'
+                "Just a town. Yup, a town."
             ],
             [
-                'ubc',
-                'X0HK803N6LgzddlDqdhrSd7AOR12',
+                "ubc",
+                "X0HK803N6LgzddlDqdhrSd7AOR12",
                 4,
                 "Beaches!!!!!"
             ]

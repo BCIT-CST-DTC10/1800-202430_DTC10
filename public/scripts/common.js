@@ -10,7 +10,7 @@ const fetchComponent = async (fileName) => {
         return await response.text();
     } catch (error) {
         console.error(error.message);
-        alert('Failed to fetch component');
+        alert("Failed to fetch component");
     }
 }
 
@@ -26,7 +26,7 @@ const fetchIcon = async (fileName) => {
         return await response.text();
     } catch (error) {
         console.error(error.message);
-        alert('Failed to fetch icon');
+        alert("Failed to fetch icon");
     }
 }
 
@@ -36,9 +36,9 @@ const generateRateStar = (rate) => {
 
 const loadRateStar = async (rate) => {
     const stars = generateRateStar(rate);
-    const star = await fetchIcon('star');
-    const starHalf = await fetchIcon('starHalf');
-    const starOutline = await fetchIcon('starOutline');
+    const star = await fetchIcon("star");
+    const starHalf = await fetchIcon("starHalf");
+    const starOutline = await fetchIcon("starOutline");
     return stars.reduce((pre, cur, i) => {
         switch (i) {
             case 0:
@@ -48,9 +48,9 @@ const loadRateStar = async (rate) => {
             case 2:
                 return pre + starOutline.repeat(cur);
         }
-    }, '')
+    }, "")
 }
 
 (async () => {
-    document.querySelector('footer.toBeReplaced').innerHTML = await fetchComponent('bottomNav');
+    document.querySelector("footer.toBeReplaced").innerHTML = await fetchComponent("bottomNav");
 })();

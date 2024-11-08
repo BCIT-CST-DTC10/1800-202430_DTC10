@@ -30,14 +30,14 @@
     <script defer src="/scripts/common.js"></script>
 
     <script defer>
-        (new firebaseui.auth.AuthUI(firebase.auth())).start('#firebaseui-auth-container', {
-            signInFlow: 'popup',
+        (new firebaseui.auth.AuthUI(firebase.auth())).start("#firebaseui-auth-container", {
+            signInFlow: "popup",
             signInSuccessUrl: "/",
             signInOptions: [
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
             ],
-            tosUrl: '<your-tos-url>',
-            privacyPolicyUrl: '<your-privacy-policy-url>'
+            tosUrl: "<your-tos-url>",
+            privacyPolicyUrl: "<your-privacy-policy-url>"
         });
     </script>
 </head>
