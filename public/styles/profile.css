@@ -13,7 +13,7 @@ main {
 .image {
     width: 8.5em;
     height: 8.5em;
-    border-radius: 25%;
+    border-radius: 25px;
     background-color: lightgray;
 }
 
@@ -22,22 +22,22 @@ main {
     border-radius: 25px;
     height: 2.5em;
     width: 15em;
+    line-height: 2.5em;
     margin-left: 1em;
     margin-right: 2em;
-    padding-top: 2.5%;
-    padding-left: 1em;
+    padding: 0 1em;
 }
 
 .bio {
     background-color: lightgray;
     border-radius: 25px;
     height: 2.5em;
+    line-height: 2.5em;
     width: 15em;
     margin-left: 1em;
     margin-right: 2em;
-    padding-top: 2.5%;
-    padding-left: 1em;
     margin-top: 0.5em;
+    padding-left: 1em;
     height: 5.5em;
 }
 
