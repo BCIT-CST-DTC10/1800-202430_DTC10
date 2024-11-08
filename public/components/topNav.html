@@ -17,7 +17,7 @@
         align-items: center;
     }
 
-    nav.nav-bar-before a.logo {
+    nav.nav-bar-before a.logo-button {
         overflow: hidden;
     }
 
@@ -33,7 +33,7 @@
         margin-right: 1em;
     }
 
-    a.Logo>* {
+    a.logo-button>* {
         display: inline-block;
         vertical-align: middle;
         margin-left: 0.5em;
@@ -48,10 +48,31 @@
     }
 
     @media screen and (max-width: 720px) {
-        a.Logo>h3 {
+        a.logo-button>h3 {
             display: none;
         }
 
+    }
+
+    a.profile-button>button {
+        background-color: #D3D0CB;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        padding: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        margin: 0;
+    }
+
+    a.profile-button>button:hover {
+        background-color: gray;
+        color: cccccc;
+        border-radius: 10px;
+    }
+
+    a.profile-button>button {
+        display: none;
     }
 </style>
 
@@ -61,11 +82,12 @@
     <a href="/" class="search-button">
         <img src="/icons/search.svg" alt="search" class="icon">
     </a>
-    <a href="/" class="Logo">
+    <a href="/" class="logo-button">
         <img src="/icons/logoTemp.svg" height="60px"><h3>GoStudy</h3>
     </a>
     <a href="/" class="profile-button">
         <img src="/icons/profile.svg" alt="profile" class="icon">
+        <button class="signIn-button">Sign in</button>
     </a>
 </nav>
 </header>
