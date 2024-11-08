@@ -7,18 +7,15 @@
         firebase.firestore().collection("tags").where("type", "==", "location").get(),
         firebase.firestore().collection("reviews").get(),
         firebase.firestore().collection("studySpots").get(),
-        (async () => {
-            return Object.fromEntries(await Promise.all((await firebase.storage().ref().listAll()).items.map((v) => {
-                return new Promise((resolve, reject) => {
-                    v.getDownloadURL().then((w) => {
-                        resolve([v.fullPath, w]);
-                    }).catch((err) => {
-                        reject(err);
-                    });
-                })
-
-            })));
-        })(),
+        (async () => Object.fromEntries(await Promise.all((
+            await firebase.storage().ref().listAll()
+        ).items.map((v) => new Promise((resolve, reject) => {
+            v.getDownloadURL().then((w) => {
+                resolve([v.fullPath, w]);
+            }).catch((err) => {
+                reject(err);
+            });
+        })))))(),
     ])
 
     const locations = {};
@@ -51,17 +48,10 @@
             image: v.data().images[0],
             name: data.name,
             desc: data.description,
-            type: Object.entries(data.tags).filter(([k, v]) => {
-                return locations.hasOwnProperty(k) && v.status
-            }).map((v) => {
-                return locations[v[0]]
-            }).reduce((p, c) => {
-                if (c) {
-                    return `${p} ${c}`
-                } else {
-                    return p
-                }
-            }, ""),
+            type: Object.entries(data.tags).
+                filter(([k, v]) => locations.hasOwnProperty(k) && v.status).
+                map((v) => locations[v[0]]).
+                reduce((p, c) => c ? `${p} ${c}` : p, ""),
             rate: rates[v.id] ?? 0,
         });
     });
