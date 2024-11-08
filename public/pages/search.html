@@ -28,13 +28,23 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="/styles/search.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
-    <main>
-
+    <main class="pt-4 px-4">
+        <form class="example" action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div>
+            <button type="button" class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                Custom button
+            </button>
+        </div>
     </main>
     <footer class="toBeReplaced"></footer>
 </body>

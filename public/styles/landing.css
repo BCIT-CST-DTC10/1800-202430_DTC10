@@ -5,14 +5,14 @@ span.button {
 }
 
 header {
-    background-color: #e4e4e4;
+    /* background-color: #e4e4e4; */
+    background: linear-gradient(rgba(33, 84, 44, 0.8), rgba(15, 15, 15, 1) 90%), url(/images/lofiRainBackground.jpg) no-repeat center center/cover;
+    color: #D3D0CB;
     padding: 10em 0;
 
     display: flex;
     text-align: center;
     justify-content: center;
-    border-top: 1px solid #333333;
-    border-bottom: 1px solid #333333;
 }
 
 header h1 {
@@ -21,11 +21,12 @@ header h1 {
 
 header span {
     font-weight: 600;
+    color: white;
 }
 
 header a {
     text-decoration: none;
-    color: grey;
+    color: #D3D0CB;
     padding: 10px;
 
     font-size: larger;
@@ -39,12 +40,10 @@ header a:hover {
 }
 
 header span.button {
-    background-color: white;
+    background-color: #D3D0CB;
     color: black;
-    border: 4px;
-    border-color: black;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 header span.button a {
