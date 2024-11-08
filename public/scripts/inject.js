@@ -225,4 +225,11 @@ const db = firebase.firestore();
             })
         })
     }
+
+    await users.add({
+        username: "",
+        description: "Add a brief discription about yourself!",
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+    })
 })();
