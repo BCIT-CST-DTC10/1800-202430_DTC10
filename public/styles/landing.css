@@ -5,13 +5,15 @@ span.button {
 }
 
 header {
-    background-color: #e4e4e4;
+    /* background-color: #e4e4e4; */
+    background: linear-gradient(rgba(17, 99, 6, 0.2), rgba(0, 0, 0, 0.9)), url(/images/lofiRainBackground.jpg) no-repeat center center/cover;
+    color: #D3D0CB;
     padding: 10em 0;
 
     display: flex;
     text-align: center;
     justify-content: center;
-    border-top: 1px solid #333333;
+    /* border-top: 1px solid #333333; */
     border-bottom: 1px solid #333333;
 }
 
