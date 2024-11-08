@@ -1,40 +1,30 @@
-function makeid(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    let counter = 0;
-    while (counter < length) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        counter += 1;
-    }
-    return result;
-}
-
 (async () => {
-    const list = [];
-    for (let i = 0; i < 100; i++) {
-        list.push({
-            id: makeid(32),
-            name: 'Lorem ipsum dolor sit',
-            desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nobis odit dolorem accusantium amet praesentium eos perspiciatis necessitatibus quam deserunt?',
-            type: ['Cafe', 'School', 'Library'][Math.ceil(Math.random() * 3) % 3],
-            rate: Math.round(Math.random() * 50) / 10,
-        });
-    }
+    const firestore = firebase.firestore();
+    const storage = firebase.storage();
+
+    const studySpots = firestore.collection("studySpots");
 
     const spotCard = await fetchComponent('cards/spot');
     const star = await fetchIcon('star');
     const starHalf = await fetchIcon('starHalf');
     const starOutline = await fetchIcon('starOutline');
-    list.forEach(async (v, i) => {
-        console.log({ i, v });
+
+    const studySpotsData = await studySpots.get();
+    if (studySpotsData.empty) {
+        throw new Error("Empty studySpots");
+    }
+    studySpotsData.forEach(async (v) => {
+        const data = v.data()
+
+        const image = await storage.ref(v.data().images[0]).getDownloadURL()
+
         document.querySelector('div.toBeReplaced#spotList').innerHTML += spotCard.
             replaceAll('{{id}}', v.id).
-            replaceAll('{{image}}', `https://picsum.photos/1024?random=${i + 1}`).
-            replaceAll('{{name}}', v.name).
-            replaceAll('{{desc}}', v.desc).
-            replaceAll('{{type}}', v.type).
-            replaceAll('{{star}}', generateRateStar(v.rate).reduce((pre, cur, i) => {
+            replaceAll('{{image}}', image).
+            replaceAll('{{name}}', data.name).
+            replaceAll('{{desc}}', data.description).
+            replaceAll('{{type}}', data.type).
+            replaceAll('{{star}}', generateRateStar(data.rate).reduce((pre, cur, i) => {
                 switch (i) {
                     case 0:
                         return pre + star.repeat(cur);
