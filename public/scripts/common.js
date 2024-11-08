@@ -51,5 +51,4 @@ const loadRateStar = async (rate) => {
 
 (async () => {
     document.querySelector("nav.toBeReplaced").innerHTML = await fetchComponent("topNav");
-    document.querySelector("footer.toBeReplaced").innerHTML = await fetchComponent("bottomNav");
 })();
