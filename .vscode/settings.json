@@ -14,4 +14,7 @@
     },
     "liveServer.settings.root": "/public",
     "liveServer.settings.file": "/404.html",
+    "cSpell.words": [
+        "firestore"
+    ],
 }
