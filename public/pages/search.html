@@ -28,27 +28,23 @@
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="/styles/search.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
     <main class="pt-4 px-4">
-        <div>
-            <form class="form-inline my-2 my-lg-0 py-4">
-                <input class="form-control mr-sm-2" id="search-bar" type="search" placeholder="Search"
-                    aria-label="Search">
-                <img src="/icons/search.svg" id="search-button" class="btn btn-outline-success my-2 my-sm-0"
-                    type="submit"></button>
-            </form>
-        </div>
+        <form class="example" action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
         <div>
             <button type="button" class="btn btn-primary"
                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                 Custom button
             </button>
         </div>
-
     </main>
     <footer class="toBeReplaced"></footer>
 </body>
