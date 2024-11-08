@@ -1,23 +1,4 @@
 <style>
-    header.logo-nav {
-        color: #cccccc;
-        margin: 0;
-
-        text-align: center;
-        padding: 0 4;
-        height: 15%;
-        width: 100%;
-
-    }
-
-    header.nav-bar-before h3 {
-        height: auto;
-        text-align: left;
-        font-size: 50px;
-        padding: 4px;
-        margin-bottom: 0;
-    }
-
     nav.nav-bar-before {
         color: #cccccc;
         margin: 0;
@@ -25,9 +6,8 @@
         padding: 0;
         width: 100%;
 
-
         display: flex;
-        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
     }
 
@@ -37,60 +17,43 @@
         max-width: 100%;
 
         overflow-y: hidden;
-
-
-        flex-direction: column;
         align-items: center;
     }
 
-    nav.nav-bar-before a.search-container {
+    nav.nav-bar-before a.logo {
         max-width: 80%;
         margin-top: 20px;
-    }
-
-    nav.nav-bar-before form.search-bar {
-        align-items: center;
-        justify-content: center;
-    }
-
-    nav.nav-bar-before a.back-button {
-        max-width: 10%;
-        max-height: 100%;
-
-    }
-
-    nav.nav-bar-before a.profile-button {
-        max-width: 10%;
-        max-height: 100%;
         overflow: hidden;
     }
 
-    nav.nav-bar-before form.search-bar input.form-control.me-2 {
-        width: 100%;
-        border-radius: 4rem;
-        border-width: 4px;
-        border-color: #cccccc;
-        height: 5rem;
-        padding: 0px 20px;
-        font-size: larger;
-        text-align: left;
-        justify-content: center;
-
+    nav.nav-bar-before a.search-button {
+        overflow: hidden;
+        max-width: 10%;
     }
 
-    form.search-bar-control nav.top-nav>a {
-        cursor: pointer;
+    nav.nav-bar-before a.profile-button {
+        overflow: hidden;
+        max-width: 10%;
+    }
+
+    a.Logo>* {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        max-width: 30%;
+        font-size: 1.5em;
     }
 </style>
 
 
 
 <nav class="nav-bar-before">
-    <a href="/" class="profile-button">
-        <img src="/icons/back.svg" alt="profile" class="icon">
+    <a href="/" class="search-button">
+        <img src="/icons/search.svg" alt="search" class="icon">
     </a>
     <a href="/" class="Logo">
-        <img src="/images/logo.jpg" height="60px">
+        <img src="/icons/logoTemp.svg" height="60px">
         <h3>GoStudy</h3>
     </a>
     <a href="/" class="profile-button">
