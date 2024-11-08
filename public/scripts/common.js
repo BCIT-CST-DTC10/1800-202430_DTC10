@@ -8,8 +8,8 @@ const fetchComponent = async (fileName) => {
         }
 
         return await response.text();
-    } catch (error) {
-        console.error(error.message);
+    } catch (err) {
+        console.error(err.message);
     }
 }
 
@@ -23,8 +23,8 @@ const fetchIcon = async (fileName) => {
         }
 
         return await response.text();
-    } catch (error) {
-        console.error(error.message);
+    } catch (err) {
+        console.error(err.message);
     }
 }
 
