@@ -171,7 +171,7 @@ const db = firebase.firestore();
             ],
             [
                 "vpl",
-                "Vancouver Public Libary",
+                "Vancouver Public Library",
                 {
                     cafe: {
                         status: false
