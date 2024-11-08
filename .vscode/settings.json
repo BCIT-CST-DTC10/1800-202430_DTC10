@@ -1,4 +1,6 @@
 {
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "[html]": {

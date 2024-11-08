@@ -1,6 +1,7 @@
 main {
     padding-bottom: 5rem;
 }
+
 .mainProfile {
     display: flex;
     flex-direction: row;
@@ -8,12 +9,14 @@ main {
     margin-top: 3rem;
     margin-left: 2rem;
 }
+
 .image {
     width: 8.5rem;
     height: 8.5rem;
     border-radius: 25%;
     background-color: lightgray;
 }
+
 .username {
     background-color: lightgray;
     border-radius: 25px;
@@ -24,6 +27,7 @@ main {
     padding-top: 2.5%;
     padding-left: 1rem;
 }
+
 .bio {
     background-color: lightgray;
     border-radius: 25px;
@@ -45,13 +49,15 @@ main {
     margin-right: 2rem;
     margin-top: 2rem;
 }
+
 .reviewContainerTitle {
     text-align: center;
     font-weight: bold;
     margin-top: 1rem;
     position: relative;
-    font-size:  1.2rem;
+    font-size: 1.2rem;
 }
+
 .review {
     background-color: white;
     margin-left: 1rem;
@@ -74,9 +80,11 @@ main {
     flex-direction: row;
     align-items: center;
 }
+
 .icons {
     margin-left: 2rem;
 }
+
 .text {
     text-align: right;
     margin-left: 6rem;

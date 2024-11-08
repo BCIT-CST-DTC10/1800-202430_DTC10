@@ -1,8 +1,10 @@
- h1, a, span.button{
+h1,
+a,
+span.button {
     font-family: Arial, Helvetica, sans-serif
 }
 
-header{
+header {
     background-color: #e4e4e4;
     padding: 25% 0;
 
@@ -16,15 +18,15 @@ header{
     border-bottom: 1px solid #333333;
 }
 
-header h1{
+header h1 {
     font-size: 3rem;
 }
 
-header span{
+header span {
     font-weight: 600;
 }
 
-header a{
+header a {
     text-decoration: none;
     color: grey;
     padding: 10px;
@@ -34,11 +36,12 @@ header a{
 
 
 }
-header a:hover{
+
+header a:hover {
     color: rgb(92, 92, 92);
 }
 
-header span.button{
+header span.button {
     background-color: white;
     color: black;
     border: 4px;
@@ -47,15 +50,14 @@ header span.button{
     border-radius: 20px;
 }
 
-header span.button a{
+header span.button a {
     color: black;
 }
 
-header span.button:hover{
+header span.button:hover {
     background-color: grey;
 }
 
-header span.button a:hover{
+header span.button a:hover {
     color: #cccccc;
 }
-
