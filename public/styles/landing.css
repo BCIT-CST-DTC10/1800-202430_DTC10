@@ -13,8 +13,6 @@ header {
     display: flex;
     text-align: center;
     justify-content: center;
-    /* border-top: 1px solid #333333; */
-    border-bottom: 1px solid #333333;
 }
 
 header h1 {
