@@ -107,7 +107,8 @@ const db = firebase.firestore();
                 },
                 "555 Seymour St, Vancouver, BC V6B 3H6",
                 "https://maps.app.goo.gl/ZkmdWkmjK8Cv14GD7",
-                "This is a school for tech :)"
+                "This is a school for tech :)",
+                ["30a64443-2257-408b-9217-4249242911f6.jpg"]
             ],
             [
                 'ubc',
@@ -137,7 +138,8 @@ const db = firebase.firestore();
                 },
                 "UBC, University Endowment Lands, BC",
                 "https://maps.app.goo.gl/CbsUQ6zSzHTZPL556",
-                "this is a school whose students go to BCIT anyway"
+                "this is a school whose students go to BCIT anyway",
+                ["5e235690-1933-467d-a301-91a734f557a1.jpg"]
             ],
             [
                 'sfu',
@@ -167,7 +169,8 @@ const db = firebase.firestore();
                 },
                 "8888 University Dr W, Burnaby, BC V5A 1S6",
                 "https://maps.app.goo.gl/mfn2uG3h9QZqA5nU8",
-                "Simon Fraser University is a public research university in British Columbia, Canada. It maintains three campuses in Greater Vancouver, respectively located in Burnaby, Surrey, and Vancouver"
+                "Simon Fraser University is a public research university in British Columbia, Canada. It maintains three campuses in Greater Vancouver, respectively located in Burnaby, Surrey, and Vancouver",
+                ["b5d861b6-b70c-453d-9a35-57c794145095.jpg"]
             ],
             [
                 "vpl",
@@ -203,7 +206,8 @@ const db = firebase.firestore();
                 },
                 "350 West Georgia Street,Vancouver BC V6B 6B1, Canada",
                 "https://maps.app.goo.gl/C1VoanLfCF3PjLxL6",
-                "The city's grand central library, with a colonnaded surround reminiscent of a Roman amphitheater. Also has good books."
+                "The city's grand central library, with a colonnaded surround reminiscent of a Roman amphitheater. Also has good books.",
+                ["867a08e2-2ce0-42dd-b1da-8d0d368f72e0.webp"]
             ]
         ].forEach(async ([id, name, tags, schedule, address, googleMapLink, description]) => {
             await studySpots.doc(id).set({
