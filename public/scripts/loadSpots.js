@@ -29,14 +29,14 @@
         if (!rates.hasOwnProperty(data.studySpotId)) {
             rates[data.studySpotId] = {
                 count: 0,
-                rate: 0,
+                sum: 0,
             };
         }
         rates[data.studySpotId].count++;
-        rates[data.studySpotId].rate += data.rating;
+        rates[data.studySpotId].sum += data.rating;
     });
     Object.entries(rates).forEach(([k, v]) => {
-        rates[k] = v.rate / v.count;
+        rates[k] = v.sum / v.count;
     })
 
     const studySpotList = [];
@@ -45,7 +45,7 @@
 
         studySpotList.push({
             id: v.id,
-            image: v.data().images[0],
+            image: data.images[0],
             name: data.name,
             desc: data.description,
             type: Object.entries(data.tags).
