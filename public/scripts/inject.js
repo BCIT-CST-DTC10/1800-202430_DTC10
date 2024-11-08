@@ -140,6 +140,36 @@ const db = firebase.firestore();
                 "this is a school whose students go to BCIT anyway"
             ],
             [
+                'sfu',
+                "SFU",
+                {
+                    cafe: {
+                        status: false
+                    },
+                    school: {
+                        status: true
+                    },
+                    wifi: {
+                        status: "free"
+                    },
+                    charger: {
+                        status: false
+                    }
+                },
+                {
+                    monday: true,
+                    tuesday: true,
+                    wednesday: true,
+                    thursday: true,
+                    friday: true,
+                    saturday: true,
+                    sunday: true
+                },
+                "8888 University Dr W, Burnaby, BC V5A 1S6",
+                "https://maps.app.goo.gl/mfn2uG3h9QZqA5nU8",
+                "Simon Fraser University is a public research university in British Columbia, Canada. It maintains three campuses in Greater Vancouver, respectively located in Burnaby, Surrey, and Vancouver"
+            ],
+            [
                 "vpl",
                 "Vancouver Public Libary",
                 {
