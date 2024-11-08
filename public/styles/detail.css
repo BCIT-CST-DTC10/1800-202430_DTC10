@@ -2,15 +2,15 @@
     text-align: center;
     font-weight: bold;
     width: 60%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-left: auto;
     margin-right: auto;
 }
 
 .mainImage {
-    width: 20rem;
-    height: 20rem;
+    width: 20em;
+    height: 20em;
     margin-left: auto;
     margin-right: auto;
     background-color: gray;
@@ -18,15 +18,15 @@
 }
 
 .reviewStars {
-    margin-top: 2rem;
-    margin-left: 3rem;
+    margin-top: 2em;
+    margin-left: 3em;
 }
 
 .description {
     text-align: left;
-    margin-top: 1rem;
+    margin-top: 1em;
 
     width: 80%;
     float: left;
-    margin-left: 3rem;
+    margin-left: 3em;
 }
