@@ -14,26 +14,25 @@
     nav.nav-bar-before a {
 
         width: 100%;
-        max-width: 100%;
 
         overflow-y: hidden;
         align-items: center;
     }
 
     nav.nav-bar-before a.logo {
-        max-width: 80%;
-        margin-top: 20px;
         overflow: hidden;
     }
 
     nav.nav-bar-before a.search-button {
         overflow: hidden;
-        max-width: 10%;
+        margin-left: 1em;
+        margin-right: 1em;
     }
 
     nav.nav-bar-before a.profile-button {
         overflow: hidden;
-        max-width: 10%;
+        margin-left: 1em;
+        margin-right: 1em;
     }
 
     a.Logo>* {
@@ -41,8 +40,14 @@
         vertical-align: middle;
         margin-left: 0.5em;
         margin-right: 0.5em;
-        max-width: 30%;
         font-size: 1.5em;
+    }
+
+    @media screen and (max-width: 720px) {
+        a.Logo > h3 {
+            display: none;
+        }
+        
     }
 </style>
 
@@ -53,8 +58,7 @@
         <img src="/icons/search.svg" alt="search" class="icon">
     </a>
     <a href="/" class="Logo">
-        <img src="/icons/logoTemp.svg" height="60px">
-        <h3>GoStudy</h3>
+        <img src="/icons/logoTemp.svg" height="60px"><h3>GoStudy</h3>
     </a>
     <a href="/" class="profile-button">
         <img src="/icons/profile.svg" alt="profile" class="icon">
