@@ -139,6 +139,42 @@ const db = firebase.firestore();
                 "https://maps.app.goo.gl/CbsUQ6zSzHTZPL556",
                 "this is a school whose students go to BCIT anyway"
             ],
+            [
+                "vpl",
+                "Vancouver Public Libary",
+                {
+                    cafe: {
+                        status: false
+                    },
+                    school: {
+                        status: false
+                    },
+                    library: {
+                        status: true
+                    },
+                    wifi: {
+                        status: "free"
+                    },
+                    charger: {
+                        status: true
+                    }
+                },
+                {
+                    monday: {
+                        open: "09:00:00",
+                        close: "20:30:00"
+                    },
+                    tuesday: true,
+                    wednesday: true,
+                    thursday: true,
+                    friday: true,
+                    saturday: true,
+                    sunday: true
+                },
+                "350 West Georgia Street,Vancouver BC V6B 6B1, Canada",
+                "https://maps.app.goo.gl/C1VoanLfCF3PjLxL6",
+                "The city's grand central library, with a colonnaded surround reminiscent of a Roman amphitheater. Also has good books."
+            ]
         ].forEach(async ([id, name, tags, schedule, address, googleMapLink, description]) => {
             await studySpots.doc(id).set({
                 name,
