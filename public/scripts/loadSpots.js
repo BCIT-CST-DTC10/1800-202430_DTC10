@@ -1,5 +1,5 @@
 (async () => {
-    const [spotCard, star, starHalf, starOutline, firestoreLocations, firestoreRates, firestoreStudySpotsData, storageImages] = await Promise.all([
+    const [spotCard, star, starHalf, starOutline, firestoreLocations, firestoreReviews, firestoreStudySpots, storageImages] = await Promise.all([
         fetchComponent("cards/spot"),
         fetchIcon("star"),
         fetchIcon("starHalf"),
@@ -27,7 +27,7 @@
     });
 
     const rates = {};
-    firestoreRates.forEach((v) => {
+    firestoreReviews.forEach((v) => {
         const data = v.data();
         if (!rates.hasOwnProperty(data.studySpotId)) {
             rates[data.studySpotId] = {
@@ -43,7 +43,7 @@
     })
 
     const studySpotList = [];
-    firestoreStudySpotsData.forEach((v) => {
+    firestoreStudySpots.forEach((v) => {
         const data = v.data();
 
         studySpotList.push({
