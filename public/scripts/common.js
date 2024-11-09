@@ -51,20 +51,23 @@ const loadRateStar = async (rate) => {
 
 (async () => {
     document.querySelector("nav.toBeReplaced").innerHTML = await fetchComponent("topNav");
-})();
 
-firebase.auth().onAuthStateChanged(async (user) => {
-    if (user) {
-        const firebaseUser = firebase.firestore().collection("users").doc(user.uid);
-        try {
-            if (!(await firebaseUser.get()).exists) {
-                throw new Error("User not found");
+    firebase.auth().onAuthStateChanged(async (user) => {
+        if (user) {
+            document.querySelector("nav.nav-bar-before>a.signIn-button").style.display = "none";
+            const firebaseUser = firebase.firestore().collection("users").doc(user.uid);
+            try {
+                if (!(await firebaseUser.get()).exists) {
+                    throw new Error("User not found");
+                }
+            } catch (err) {
+                await firebaseUser.set({
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+                });
             }
-        } catch (err) {
-            await firebaseUser.set({
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            });
+        } else {
+            document.querySelector("nav.nav-bar-before>a.profile-button").style.display = "none";
         }
-    }
-});
+    });
+})();
