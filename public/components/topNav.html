@@ -35,6 +35,12 @@
         margin-right: 1em;
     }
 
+    nav.nav-bar-before a.signIn-button {
+        overflow: hidden;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
     a.logo-button>* {
         display: inline-block;
         vertical-align: middle;
@@ -56,7 +62,7 @@
 
     }
 
-    a.profile-button>button {
+    a.signIn-button>button {
         background-color: #020202;
         color: #D3D0CB;
         border: none;
@@ -67,29 +73,25 @@
         margin: 0;
     }
 
-    a.profile-button>button:hover {
+    a.signIn-button>button:hover {
         background-color: #D3D0CB;
         color: #020202;
         border-radius: 10px;
     }
-
-    a.profile-button>button {
-        display: none;
-    }
 </style>
 
-
-
 <nav class="nav-bar-before">
-    <a href="/" class="search-button">
+    <a href="/search" class="search-button">
         <img src="/icons/search.svg" alt="search" class="icon">
     </a>
     <a href="/" class="logo-button">
-        <img src="/icons/studious_domain.svg" height="60px"><h3>GoStudy</h3>
+        <img src="/icons/studious_domain.svg" height="60px">
+        <h3>GoStudy</h3>
     </a>
-    <a href="/" class="profile-button">
+    <a href="/profile" class="profile-button">
         <img src="/icons/profile.svg" alt="profile" class="icon">
-        <button class="signIn-button">Sign in</button>
+    </a>
+    <a href="/login" class="signIn-button">
+        <button>Sign in</button>
     </a>
 </nav>
-</header>
