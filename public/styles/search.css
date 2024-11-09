@@ -7,7 +7,7 @@ section {
     margin: 2.5em;
 }
 
-form.search-bar input[type=text] {
+div.search-bar input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid #22542c;
@@ -23,7 +23,7 @@ form.search-bar input[type=text] {
     display: block;
 }
 
-form.search-bar button {
+div.search-bar button {
     float: left;
     width: 15%;
     padding: 10px;
@@ -39,7 +39,7 @@ form.search-bar button {
     border-bottom-right-radius: 3em;
 }
 
-form.search-bar button:hover {
+div.search-bar button:hover {
     background: #59a4bd;
 }
 
@@ -63,13 +63,14 @@ section a {
 }
 
 section a.button {
-    background-color: none;
-    color: #3B2916;
     font-weight: 600;
     border: 2px solid #3B2916;
     border-radius: 15px;
     padding: 10px;
     text-decoration: none;
+
+    background-color: none;
+    color: #3B2916;
 }
 
 section a.button:hover {
