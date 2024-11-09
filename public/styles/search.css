@@ -1,24 +1,78 @@
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
+body {
+    background-color: #D3D0CB;
 }
 
-form.example button {
-    float: left;
-    width: 10%;
+section {
+    display: grid;
+    margin: 2.5em;
+}
+
+form.search-bar input[type=text] {
     padding: 10px;
-    background: #2196F3;
-    color: white;
     font-size: 17px;
-    border: 1px solid grey;
+    border: 1px solid #22542c;
+    max-width: 100em;
+    float: left;
+    width: 85%;
+    background: #f1f1f1;
+    padding-left: 1em;
+
+    border-top-left-radius: 3em;
+    border-bottom-left-radius: 3em;
+
+    display: block;
+}
+
+form.search-bar button {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    background: #40798C;
+    color: #D3D0CB;
+    font-size: 17px;
+    border: 1px solid #22542c;
     border-left: none;
     cursor: pointer;
+    padding-right: 1em;
+
+    border-top-right-radius: 3em;
+    border-bottom-right-radius: 3em;
 }
 
-form.example button:hover {
-    background: #0b7dda;
+form.search-bar button:hover {
+    background: #59a4bd;
+}
+
+#filter-section {
+    padding: 2em 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+section button.filter-button {
+    color: none;
+
+    border-radius: 3em;
+    padding: 6px;
+
+}
+
+section a {
+    padding-left: 2em;
+}
+
+section a.button {
+    background-color: none;
+    color: #3B2916;
+    font-weight: 600;
+    border: 2px solid #3B2916;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+section a.button:hover {
+    background-color: #3B2916;
+    color: #D3D0CB;
 }
