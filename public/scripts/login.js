@@ -1,6 +1,4 @@
-const auth = firebase.auth();
-
-(new firebaseui.auth.AuthUI(auth)).start("#firebaseui-auth-container", {
+(new firebaseui.auth.AuthUI(firebase.auth())).start("#firebaseui-auth-container", {
     signInFlow: "popup",
     signInSuccessUrl: "/",
     signInOptions: [
@@ -9,25 +7,17 @@ const auth = firebase.auth();
     ],
     tosUrl: "/term",
     privacyPolicyUrl: "/policy",
+    callbacks: {
+        // uiShown: () => {
+        //     // The widget is rendered.
+        //     // Hide the loader.
+        //     document.getElementById('loader').style.display = 'none';
+        // },
+    }
 });
 
-const db = firebase.firestore();
-
-auth.onAuthStateChanged(async (user) => {
+firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-        const firebaseUser = db.collection("users").doc(user.uid);
-
-        try {
-            if (!(await firebaseUser.get()).exists) {
-                throw new Error("Empty user");
-            }
-        } catch (err) {
-            await firebaseUser.set({
-                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            });
-        }
-
         window.location = "/";
     }
 });
