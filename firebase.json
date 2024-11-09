@@ -45,6 +45,14 @@
         "destination": "/profile",
         "type": 301
       }, {
+        "source": "/pages/search",
+        "destination": "/search",
+        "type": 301
+      }, {
+        "source": "/pages/search.html",
+        "destination": "/search",
+        "type": 301
+      }, {
         "source": "/pages/detail",
         "destination": "/detail",
         "type": 301
@@ -80,6 +88,9 @@
       }, {
         "source": "/profile",
         "destination": "/pages/profile.html"
+      }, {
+        "source": "/search",
+        "destination": "/pages/search.html"
       }, {
         "source": "/detail",
         "destination": "/pages/detail.html"

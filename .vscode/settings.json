@@ -14,6 +14,30 @@
     },
     "liveServer.settings.root": "/public",
     "liveServer.settings.file": "/404.html",
+    "liveServer.settings.mount": [
+        [
+            "/",
+            "./public/pages/"
+        ], [
+            "/login",
+            "./public/pages/login.html"
+        ], [
+            "/profile",
+            "./public/pages/profile.html"
+        ], [
+            "/search",
+            "./public/pages/search.html"
+        ], [
+            "/detail",
+            "./public/pages/detail.html"
+        ], [
+            "/review",
+            "./public/pages/review.html"
+        ], [
+            "/map",
+            "./public/pages/map.html"
+        ],
+    ],
     "cSpell.words": [
         "firestore"
     ],
