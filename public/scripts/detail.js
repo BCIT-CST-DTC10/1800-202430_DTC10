@@ -12,7 +12,7 @@
         fetchStorageFilesBySpotIds([id]),
         fetchFirestoreReviews({ spotIds: [id] }),
     ]);
-    const rating = (Object.values(reviewsData).reduce((p, c) => p + c.rating, 0) / Object.keys(reviewsData).length || 0).toFixed(2);
+    const rating = calculateRatingFromReviews(reviewsData);
 
     const aggSpot = {
         id,

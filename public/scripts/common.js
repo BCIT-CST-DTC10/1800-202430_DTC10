@@ -153,6 +153,10 @@ const fetchFirestoreReviews = async (options) => {
     }
 }
 
+const calculateRatingFromReviews = (reviews) => {
+    return (Object.values(reviews).reduce((p, c) => p + c.rating, 0) / Object.keys(reviews).length || 0).toFixed(2);
+}
+
 const generatingRatingStar = (rating) => {
     return [Math.floor(rating), rating % 1 ? 1 : 0, 5 - Math.floor(rating) - (rating % 1 ? 1 : 0)];
 }
