@@ -47,6 +47,19 @@ const fetchFirebaseUser = async () => {
     });
 }
 
+const fetchFirestoreTypes = async () => {
+    try {
+        const types = {};
+        (await firebase.firestore().collection("types").get()).
+            forEach((v) => {
+                types[v.id] = v.data();
+            });
+        return types;
+    } catch (err) {
+        console.error("fetchFirestoreTypes:", err);
+    }
+}
+
 const generateRateStar = (rate) => {
     return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
 }
