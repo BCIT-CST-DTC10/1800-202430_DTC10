@@ -1,63 +1,32 @@
 (async () => {
     const id = new URLSearchParams(window.location.search).get('id');
-    const [spotCard, star, starHalf, starOutline, firestoreLocations, firestoreReviews, firestoreStudySpot, storageImages] = await Promise.all([
-        fetchComponent("cards/spot"),
+    const [star, starHalf, starOutline, types, spot] = await Promise.all([
         fetchIcon("star"),
         fetchIcon("starHalf"),
         fetchIcon("starOutline"),
-        firebase.firestore().collection("tags").get(),
-        firebase.firestore().collection("reviews").where("studySpotId", "==", id).get(),
-        firebase.firestore().collection("studySpots").doc(id).get(),
-        (async () => Object.fromEntries(await Promise.all((
-            await firebase.storage().ref().listAll()
-        ).items.map((v) => new Promise((resolve, reject) => {
-            v.getDownloadURL().then((w) => {
-                resolve([v.fullPath, w]);
-            }).catch((err) => {
-                reject(err);
-            });
-        })))))(),
-    ])
+        fetchFirestoreTypes(),
+        fetchFirestoreSpotById(id),
+    ]);
 
-    const tags = {};
-    firestoreLocations.forEach((v) => {
-        tags[v.id] = v.data();
-    });
+    const [{ [id]: images }, reviewsData] = await Promise.all([
+        fetchStorageFilesBySpotIds([id]),
+        fetchFirestoreReviews({ spotIds: [id] }),
+    ]);
+    const rating = (Object.values(reviewsData).reduce((p, c) => p + c.rating, 0) / Object.keys(reviewsData).length || 0).toFixed(2);
 
-    const locations = Object.fromEntries(Object.entries(tags).
-        filter(([_, v]) => v.type === "location").
-        map(([k, v]) => [k, v.name]));
-    const features = Object.fromEntries(Object.entries(tags).
-        filter(([_, v]) => v.type === "feature").
-        map(([k, v]) => [k, v.name]));
-
-    let ratingCount = 0;
-    let ratingSum = 0;
-    firestoreReviews.forEach((v) => {
-        ratingCount++;
-        ratingSum += v.data().rating;
-    });
-    const rating = ratingSum / ratingCount || 0;
-
-    const studySpotData = firestoreStudySpot.data();
-    const studySpot = {
-        id: firestoreStudySpot.id,
-        images: studySpotData.images,
-        name: studySpotData.name,
-        desc: studySpotData.description,
-        types: Object.entries(studySpotData.tags).
-            filter(([k, v]) => locations.hasOwnProperty(k) && v.status).
-            map((v) => locations[v[0]]),
-        features: Object.fromEntries(Object.entries(studySpotData.tags).
-            filter(([k]) => features.hasOwnProperty(k)).
-            map(([k, v]) => [features[k], v.status])),
-        rating: rating,
+    const aggSpot = {
+        id,
+        images: Object.values(images),
+        name: spot.name,
+        description: spot.description,
+        type: types[spot.type].name,
+        rating,
     };
 
-    document.querySelector("main>h1.title").innerText = studySpot.name;
-    document.querySelector("main>div.toBeReplaced.mainImage").innerHTML = storageImages[studySpot.images[0]];
-    document.querySelector("main>div.toBeReplaced.description").innerText = studySpot.desc;
-    document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generatingRatingStar(studySpot.rating).
+    document.querySelector("main>h1.title").innerText = aggSpot.name;
+    document.querySelector("main>div.toBeReplaced.mainImage").innerHTML = aggSpot.images;
+    document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
+    document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generatingRatingStar(aggSpot.rating).
         reduce((p, c, i) => {
             switch (i) {
                 case 0:

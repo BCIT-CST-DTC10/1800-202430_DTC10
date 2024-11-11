@@ -97,6 +97,14 @@ const fetchFirestoreSpots = async (options) => {
     }
 }
 
+const fetchFirestoreSpotById = async (spotId) => {
+    try {
+        return (await firebase.firestore().collection("spots").doc(spotId).get()).data();
+    } catch (err) {
+        console.error("fetchFirestoreSpotById:", err);
+    }
+}
+
 const fetchStorageFilesBySpotIds = async (spotIds) => {
     try {
         const storage = firebase.storage();
