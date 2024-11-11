@@ -61,9 +61,13 @@
                 }
             }, "")).
             replaceAll("{{rating}}", c.rating);
-    }, document.querySelector("div.toBeReplaced#spotList").innerHTML)
+    }, document.querySelector("div.toBeReplaced#spotList").innerHTML);
 
     document.querySelectorAll("div.toBeReplaced#spotList svg").forEach((w) => {
-        w.style = "display: inline-block; margin: auto 0; fill: #000;"
-    })
+        w.style = "display: inline-block; margin: auto 0; fill: #000;";
+    });
+
+    document.querySelector("a#randomButton").addEventListener("click", () => {
+        window.location = `/detail?id=${spotKeys[Math.floor(Math.random() * spotKeys.length)]}`;
+    });
 })();
