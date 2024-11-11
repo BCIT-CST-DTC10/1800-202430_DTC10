@@ -73,6 +73,30 @@ const fetchFirestoreFeatures = async () => {
     }
 }
 
+const fetchFirestoreSpots = async (options) => {
+    const {
+        types,
+        features,
+    } = options ?? {};
+    try {
+        const spots = {};
+        const firestoreCollection = firebase.firestore().collection("spots");
+        let firestoreQuery = types instanceof Array ?
+            firestoreCollection.where("type", "in", types) :
+            firestoreCollection;
+        firestoreQuery = features instanceof Array ?
+            firestoreQuery.where("type", "in", features) :
+            firestoreQuery;
+        (await firestoreQuery.get()).
+            forEach((v) => {
+                spots[v.id] = v.data();
+            });
+        return spots;
+    } catch (err) {
+        console.error("fetchFirestoreSpots:", err);
+    }
+}
+
 const generateRateStar = (rate) => {
     return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
 }
