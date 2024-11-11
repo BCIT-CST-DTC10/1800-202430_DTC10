@@ -60,6 +60,19 @@ const fetchFirestoreTypes = async () => {
     }
 }
 
+const fetchFirestoreFeatures = async () => {
+    try {
+        const features = {};
+        (await firebase.firestore().collection("features").get()).
+            forEach((v) => {
+                features[v.id] = v.data();
+            });
+        return features;
+    } catch (err) {
+        console.error("fetchFirestoreFeatures:", err);
+    }
+}
+
 const generateRateStar = (rate) => {
     return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
 }
