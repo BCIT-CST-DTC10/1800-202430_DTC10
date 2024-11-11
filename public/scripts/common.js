@@ -121,8 +121,6 @@ const fetchStorageFilesBySpotIds = async (spotIds) => {
     }
 }
 
-const generateRateStar = (rate) => {
-    return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
 const fetchFirestoreReviews = async (options) => {
     const {
         userIds,
@@ -147,10 +145,12 @@ const fetchFirestoreReviews = async (options) => {
     }
 }
 
+const generatingRatingStar = (rating) => {
+    return [Math.floor(rating), rating % 1 ? 1 : 0, 5 - Math.floor(rating) - (rating % 1 ? 1 : 0)];
 }
 
-const loadRateStar = async (rate) => {
-    const stars = generateRateStar(rate);
+const loadRatingStar = async (rating) => {
+    const stars = generatingRatingStar(rating);
     const star = await fetchIcon("star");
     const starHalf = await fetchIcon("starHalf");
     const starOutline = await fetchIcon("starOutline");

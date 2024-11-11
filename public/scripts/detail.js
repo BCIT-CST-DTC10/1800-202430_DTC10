@@ -31,13 +31,13 @@
         filter(([_, v]) => v.type === "feature").
         map(([k, v]) => [k, v.name]));
 
-    let rateCount = 0;
-    let rateSum = 0;
+    let ratingCount = 0;
+    let ratingSum = 0;
     firestoreReviews.forEach((v) => {
-        rateCount++;
-        rateSum += v.data().rating;
+        ratingCount++;
+        ratingSum += v.data().rating;
     });
-    const rate = rateSum / rateCount || 0;
+    const rating = ratingSum / ratingCount || 0;
 
     const studySpotData = firestoreStudySpot.data();
     const studySpot = {
@@ -51,13 +51,13 @@
         features: Object.fromEntries(Object.entries(studySpotData.tags).
             filter(([k]) => features.hasOwnProperty(k)).
             map(([k, v]) => [features[k], v.status])),
-        rate: rate,
+        rating: rating,
     };
 
     document.querySelector("main>h1.title").innerText = studySpot.name;
     document.querySelector("main>div.toBeReplaced.mainImage").innerHTML = storageImages[studySpot.images[0]];
     document.querySelector("main>div.toBeReplaced.description").innerText = studySpot.desc;
-    document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generateRateStar(studySpot.rate).
+    document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generatingRatingStar(studySpot.rating).
         reduce((p, c, i) => {
             switch (i) {
                 case 0:
