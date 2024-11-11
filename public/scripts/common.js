@@ -29,7 +29,7 @@ const fetchIcon = async (fileName) => {
 }
 
 const fetchFirebaseUser = async () => {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
                 firebase.firestore().collection("users").doc(
