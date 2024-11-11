@@ -1,64 +1,36 @@
 (async () => {
-    const [spotCard, star, starHalf, starOutline, firestoreLocations, firestoreReviews, firestoreStudySpots, storageImages] = await Promise.all([
+    const [spotCard, star, starHalf, starOutline, types, spots] = await Promise.all([
         fetchComponent("cards/spot"),
         fetchIcon("star"),
         fetchIcon("starHalf"),
         fetchIcon("starOutline"),
-        firebase.firestore().collection("tags").where("type", "==", "location").get(),
-        firebase.firestore().collection("reviews").get(),
-        firebase.firestore().collection("studySpots").get(),
-        (async () => Object.fromEntries(await Promise.all((
-            await firebase.storage().ref().listAll()
-        ).items.map((v) => new Promise((resolve, reject) => {
-            v.getDownloadURL().then((w) => {
-                resolve([v.fullPath, w]);
-            }).catch((err) => {
-                reject(err);
-            });
-        })))))(),
-    ])
+        fetchFirestoreTypes(),
+        fetchFirestoreSpots(),
+    ]);
 
-    const locations = {};
-    firestoreLocations.forEach((v) => {
-        locations[v.id] = v.data().name;
-    });
+    const spotKeys = Object.keys(spots);
+    const [images, ...reviewsData] = await Promise.all([
+        fetchStorageFilesBySpotIds(spotKeys),
+        ...spotKeys.map((v) =>
+            fetchFirestoreReviews({
+                spotIds: [v],
+            })),
+    ]);
+    const ratings = Object.fromEntries(spotKeys.map((v, i) => [v,
+        (Object.values(reviewsData[i]).reduce((p, c) => p + c.rating, 0) / Object.keys(reviewsData[i]).length || 0).toFixed(2),
+    ]));
 
-    const rates = {};
-    firestoreReviews.forEach((v) => {
-        const data = v.data();
-        if (!rates.hasOwnProperty(data.studySpotId)) {
-            rates[data.studySpotId] = {
-                count: 0,
-                sum: 0,
-            };
-        }
-        rates[data.studySpotId].count++;
-        rates[data.studySpotId].sum += data.rating;
-    });
-    Object.entries(rates).forEach(([k, v]) => {
-        rates[k] = v.sum / v.count;
-    })
-
-    const studySpotList = [];
-    firestoreStudySpots.forEach((v) => {
-        const data = v.data();
-
-        studySpotList.push({
-            id: v.id,
-            image: data.images[0],
-            name: data.name,
-            desc: data.description,
-            type: Object.entries(data.tags).
-                filter(([k, v]) => locations.hasOwnProperty(k) && v.status).
-                map((v) => locations[v[0]]).
-                reduce((p, c) => c ? `${p} ${c}` : p, ""),
-            rate: rates[v.id] ?? 0,
-        });
-    });
-    studySpotList.sort((i, j) => {
-        if (i.rate > j.rate) {
+    const aggSpotList = Object.entries(spots).map(([k, v]) => ({
+        id: k,
+        image: Object.values(images[k])[0],
+        name: v.name,
+        description: v.description,
+        type: types[v.type].name,
+        rating: ratings[k],
+    })).sort((i, j) => {
+        if (i.rating > j.rating) {
             return -1;
-        } else if (j.rate > i.rate) {
+        } else if (j.rating > i.rating) {
             return 1;
         }
 
@@ -71,14 +43,14 @@
         return 0;
     });
 
-    document.querySelector("div.toBeReplaced#spotList").innerHTML = studySpotList.reduce((p, c) => {
+    document.querySelector("div.toBeReplaced#spotList").innerHTML = aggSpotList.reduce((p, c) => {
         return p + spotCard.
             replaceAll("{{id}}", c.id).
-            replaceAll("{{image}}", storageImages[c.image]).
+            replaceAll("{{image}}", c.image).
             replaceAll("{{name}}", c.name).
-            replaceAll("{{desc}}", c.desc).
+            replaceAll("{{desc}}", c.description).
             replaceAll("{{type}}", c.type).
-            replaceAll("{{star}}", generateRateStar(c.rate).reduce((p, c, i) => {
+            replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
                 switch (i) {
                     case 0:
                         return p + star.repeat(c);
@@ -88,7 +60,7 @@
                         return p + starOutline.repeat(c);
                 }
             }, "")).
-            replaceAll("{{rate}}", c.rate);
+            replaceAll("{{rating}}", c.rating);
     }, document.querySelector("div.toBeReplaced#spotList").innerHTML)
 
     document.querySelectorAll("div.toBeReplaced#spotList svg").forEach((w) => {
