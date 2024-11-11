@@ -48,7 +48,7 @@
             replaceAll("{{id}}", c.id).
             replaceAll("{{image}}", c.image).
             replaceAll("{{name}}", c.name).
-            replaceAll("{{desc}}", c.description).
+            replaceAll("{{description}}", c.description).
             replaceAll("{{type}}", c.type).
             replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
                 switch (i) {
