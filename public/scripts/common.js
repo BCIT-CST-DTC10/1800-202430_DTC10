@@ -37,7 +37,7 @@ const fetchFirebaseUser = async () => {
                 ).get().then((v) => {
                     res(Object.assign(user, v.data()));
                 }).catch((err) => {
-                    console.error("fetchFirestoreUser:", err);
+                    console.error("fetchFirebaseUser:", err);
                 });
             }
             else {
@@ -117,7 +117,7 @@ const fetchStorageFilesBySpotIds = async (spotIds) => {
             [v, Object.fromEntries(storageFiles[i])]
         ));
     } catch (err) {
-        console.error("fetchFirestoreSpots:", err);
+        console.error("fetchStorageFilesBySpotIds:", err);
     }
 }
 
