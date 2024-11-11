@@ -85,7 +85,7 @@ const fetchFirestoreSpots = async (options) => {
             firestoreCollection.where("type", "in", types) :
             firestoreCollection;
         firestoreQuery = features instanceof Array ?
-            firestoreQuery.where("type", "in", features) :
+            firestoreQuery.where("feature", "in", features) :
             firestoreQuery;
         (await firestoreQuery.get()).
             forEach((v) => {
