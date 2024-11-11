@@ -9,7 +9,7 @@ const fetchComponent = async (fileName) => {
 
         return await response.text();
     } catch (err) {
-        console.error(err.message);
+        console.error("fetchComponent:", err.message);
     }
 }
 
@@ -24,7 +24,7 @@ const fetchIcon = async (fileName) => {
 
         return await response.text();
     } catch (err) {
-        console.error(err.message);
+        console.error("fetchIcon:", err.message);
     }
 }
 
