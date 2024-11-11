@@ -123,6 +123,30 @@ const fetchStorageFilesBySpotIds = async (spotIds) => {
 
 const generateRateStar = (rate) => {
     return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
+const fetchFirestoreReviews = async (options) => {
+    const {
+        userIds,
+        spotIds,
+    } = options ?? {};
+    try {
+        const reviews = {};
+        const firestoreCollection = firebase.firestore().collection("reviews");
+        let firestoreQuery = userIds instanceof Array ?
+            firestoreCollection.where("userId", "in", userIds) :
+            firestoreCollection;
+        firestoreQuery = spotIds instanceof Array ?
+            firestoreQuery.where("spotId", "in", spotIds) :
+            firestoreQuery;
+        (await firestoreQuery.get()).
+            forEach((v) => {
+                reviews[v.id] = v.data();
+            });
+        return reviews;
+    } catch (err) {
+        console.error("fetchFirestoreReviews:", err);
+    }
+}
+
 }
 
 const loadRateStar = async (rate) => {
