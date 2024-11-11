@@ -97,6 +97,30 @@ const fetchFirestoreSpots = async (options) => {
     }
 }
 
+const fetchStorageFilesBySpotIds = async (spotIds) => {
+    try {
+        const storage = firebase.storage();
+        const storageFiles = await Promise.all((
+            await Promise.all(spotIds.map((v) => storage.ref(v).listAll()))
+        ).map((v) =>
+            Promise.all(v.items.map((w) =>
+                new Promise((resolve, reject) => {
+                    w.getDownloadURL().then((x) => {
+                        resolve([w.fullPath, x]);
+                    }).catch((err) => {
+                        reject(err);
+                    });
+                })
+            ))
+        ));
+        return Object.fromEntries(spotIds.map((v, i) =>
+            [v, Object.fromEntries(storageFiles[i])]
+        ));
+    } catch (err) {
+        console.error("fetchFirestoreSpots:", err);
+    }
+}
+
 const generateRateStar = (rate) => {
     return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
 }
