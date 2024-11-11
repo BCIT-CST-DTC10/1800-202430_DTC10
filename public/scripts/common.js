@@ -28,6 +28,25 @@ const fetchIcon = async (fileName) => {
     }
 }
 
+const fetchFirebaseUser = async () => {
+    return new Promise((res, rej) => {
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (user) {
+                firebase.firestore().collection("users").doc(
+                    user.uid
+                ).get().then((v) => {
+                    res(Object.assign(user, v.data()));
+                }).catch((err) => {
+                    console.error("fetchFirestoreUser:", err);
+                });
+            }
+            else {
+                res();
+            }
+        });
+    });
+}
+
 const generateRateStar = (rate) => {
     return [Math.floor(rate), rate % 1 ? 1 : 0, 5 - Math.floor(rate) - (rate % 1 ? 1 : 0)];
 }
