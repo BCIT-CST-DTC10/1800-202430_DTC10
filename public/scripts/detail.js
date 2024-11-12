@@ -24,7 +24,11 @@
     };
 
     document.querySelector("main>h1.title").innerText = aggSpot.name;
-    document.querySelector("main>div.toBeReplaced.mainImage").innerHTML = aggSpot.images;
+    document.querySelector("main>div.toBeReplaced.mainImage").append(...aggSpot.images.map((v) => {
+        const image = document.createElement("img");
+        image.src = v;
+        return image;
+    }));
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
     document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generatingRatingStar(aggSpot.rating).
         reduce((p, c, i) => {
