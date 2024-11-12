@@ -65,6 +65,39 @@
         }, "")).
         replaceAll("{{rating}}", c.rating);
 
+    const updateSpotCards = () => {
+        let filtered = aggSpots;
+
+        const search = document.querySelector("div.search-bar>input").value;
+        if (search) {
+            filtered = filtered.
+                filter((v) => RegExp(search, "gi").test(v.name) || RegExp(search, "gi").test(v.description));
+        }
+
+        const types = []
+        document.querySelectorAll("div#filter-section>a.button.activated").forEach((v) => {
+            types.push(v.id);
+        });
+        if (types.length) {
+            filtered = filtered.
+                filter((v) => types.includes(v.type));
+        }
+
+        const features = []
+        document.querySelectorAll("div#filter-section>a.button.activated").forEach((v) => {
+            types.push(v.id);
+        });
+        if (features) {
+            filtered = filtered.
+                filter((v) => features.filter(value => Object.keys(v.features).includes(value)).length);
+        }
+
+        if (filtered.length === aggSpots.length) {
+            filtered = aggSpots.slice(0, 5);
+        }
+        document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");
+    }
+
     document.querySelector("div#filter-section").innerHTML = Object.entries(types).
         map(([k, v]) => ({
             id: k,
@@ -83,10 +116,6 @@
             replaceAll("{{id}}", c.id).
             replaceAll("{{name}}", c.name), document.querySelector("div#filter-section").innerHTML);
 
-    document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = aggSpots.
-        slice(0, 5).
-        reduce(callbackReduceAggSpotsToSpotCards, document.querySelector("div.toBeReplaced#top-spot-List").innerHTML);
-
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((w) => {
         w.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
@@ -98,20 +127,13 @@
             } else {
                 e.target.classList.add("activated");
             }
+            updateSpotCards();
         });
-        v.addEventListener("click", (e) => {
-            const types = []
-            document.querySelectorAll("div#filter-section>a.button.activated").forEach((v) => {
-                types.push(v.id);
-            });
-            if (types.length) {
-                document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = aggSpots.
-                    filter((v) => types.includes(v.type)).
-                    reduce(callbackReduceAggSpotsToSpotCards, "");
-            } else {
-                document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = aggSpots.
-                    reduce(callbackReduceAggSpotsToSpotCards, "");
-            }
-        });
-    })
+    });
+
+    document.querySelector("div.search-bar>button").addEventListener("click", () => {
+        updateSpotCards();
+    });
+
+    updateSpotCards();
 })();
