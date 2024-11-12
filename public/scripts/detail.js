@@ -1,5 +1,8 @@
 (async () => {
     const id = new URLSearchParams(window.location.search).get('id');
+    if (!id) {
+        window.location = "/404";
+    }
     const [star, starHalf, starOutline, types, spot] = await Promise.all([
         fetchIcon("star"),
         fetchIcon("starHalf"),
