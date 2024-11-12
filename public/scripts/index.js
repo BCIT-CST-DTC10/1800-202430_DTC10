@@ -18,31 +18,31 @@
     ]);
     const ratings = Object.fromEntries(spotKeys.map((v, i) => [v, calculateRatingFromReviews(reviews[i])]));
 
-    const aggSpotList = Object.entries(spots).map(([k, v]) => ({
-        id: k,
-        image: Object.values(images[k])[0],
-        name: v.name,
-        description: v.description,
-        type: types[v.type].name,
-        rating: ratings[k],
-    })).sort((i, j) => {
-        if (i.rating > j.rating) {
-            return -1;
-        } else if (j.rating > i.rating) {
-            return 1;
-        }
+    document.querySelector("div.toBeReplaced#spotList").innerHTML = Object.entries(spots).
+        map(([k, v]) => ({
+            id: k,
+            image: Object.values(images[k])[0],
+            name: v.name,
+            description: v.description,
+            type: types[v.type].name,
+            rating: ratings[k],
+        })).
+        sort((i, j) => {
+            if (i.rating > j.rating) {
+                return -1;
+            } else if (j.rating > i.rating) {
+                return 1;
+            }
 
-        if (i.name > j.name) {
-            return 1;
-        } else if (j.name > i.name) {
-            return -1;
-        }
+            if (i.name > j.name) {
+                return 1;
+            } else if (j.name > i.name) {
+                return -1;
+            }
 
-        return 0;
-    });
-
-    document.querySelector("div.toBeReplaced#spotList").innerHTML = aggSpotList.reduce((p, c) => {
-        return p + spotCard.
+            return 0;
+        }).
+        reduce((p, c) => p + spotCard.
             replaceAll("{{id}}", c.id).
             replaceAll("{{image}}", c.image).
             replaceAll("{{name}}", c.name).
@@ -58,8 +58,7 @@
                         return p + starOutline.repeat(c);
                 }
             }, "")).
-            replaceAll("{{rating}}", c.rating);
-    }, document.querySelector("div.toBeReplaced#spotList").innerHTML);
+            replaceAll("{{rating}}", c.rating), document.querySelector("div.toBeReplaced#spotList").innerHTML);
 
     document.querySelectorAll("div.toBeReplaced#spotList svg").forEach((w) => {
         w.style = "display: inline-block; margin: auto 0; fill: #000;";
