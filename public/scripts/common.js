@@ -153,27 +153,23 @@ const fetchFirestoreReviews = async (options) => {
     }
 }
 
-const calculateRatingFromReviews = (reviews) => {
-    return (Object.values(reviews).reduce((p, c) => p + c.rating, 0) / Object.keys(reviews).length || 0).toFixed(2);
-}
+const calculateRatingFromReviews = (reviews) => (Object.values(reviews).reduce((p, c) => p + c.rating, 0) / Object.keys(reviews).length || 0).toFixed(2);
 
-const generatingRatingStar = (rating) => {
-    return [Math.floor(rating), rating % 1 ? 1 : 0, 5 - Math.floor(rating) - (rating % 1 ? 1 : 0)];
-}
+const generatingRatingStar = (rating) => [Math.floor(rating), rating % 1 ? 1 : 0, 5 - Math.floor(rating) - (rating % 1 ? 1 : 0)];
 
 const loadRatingStar = async (rating) => {
     const stars = generatingRatingStar(rating);
     const star = await fetchIcon("star");
     const starHalf = await fetchIcon("starHalf");
     const starOutline = await fetchIcon("starOutline");
-    return stars.reduce((pre, cur, i) => {
+    return stars.reduce((p, c, i) => {
         switch (i) {
             case 0:
-                return pre + star.repeat(cur);
+                return p + star.repeat(c);
             case 1:
-                return pre + starHalf.repeat(cur);
+                return p + starHalf.repeat(c);
             case 2:
-                return pre + starOutline.repeat(cur);
+                return p + starOutline.repeat(c);
         }
     }, "")
 }
