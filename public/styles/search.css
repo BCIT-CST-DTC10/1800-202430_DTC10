@@ -73,7 +73,7 @@ section a.button {
     color: #3B2916;
 }
 
-section a.button:hover {
+section a.button.activated {
     background-color: #3B2916;
     color: #D3D0CB;
 }
