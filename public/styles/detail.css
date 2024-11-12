@@ -13,6 +13,12 @@
     border-radius: 25px;
 }
 
+.mainImage:only-child {
+    width: 20em;
+    height: 20em;
+    border-radius: 1em;
+}
+
 .reviewStars {
     margin-top: 2em;
     margin-left: 3em;
