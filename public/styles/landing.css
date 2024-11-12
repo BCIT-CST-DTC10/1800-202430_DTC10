@@ -39,7 +39,8 @@ header a {
     padding: 10px;
     border-radius: 15px;
 }
-.topDisplay a:hover{
+
+.topDisplay a:hover {
     background-color: #D3D0CB;
     color: #020102;
 }
