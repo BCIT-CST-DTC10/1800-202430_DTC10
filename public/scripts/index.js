@@ -9,14 +9,14 @@
     ]);
 
     const spotKeys = Object.keys(spots);
-    const [images, ...reviewsData] = await Promise.all([
+    const [images, ...reviews] = await Promise.all([
         fetchStorageFilesBySpotIds(spotKeys),
         ...spotKeys.map((v) =>
             fetchFirestoreReviews({
                 spotIds: [v],
             })),
     ]);
-    const ratings = Object.fromEntries(spotKeys.map((v, i) => [v, calculateRatingFromReviews(reviewsData[i])]));
+    const ratings = Object.fromEntries(spotKeys.map((v, i) => [v, calculateRatingFromReviews(reviews[i])]));
 
     const aggSpotList = Object.entries(spots).map(([k, v]) => ({
         id: k,

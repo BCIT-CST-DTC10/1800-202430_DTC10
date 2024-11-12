@@ -12,11 +12,11 @@
         fetchFirestoreSpotById(id),
     ]);
 
-    const [{ [id]: images }, reviewsData] = await Promise.all([
+    const [{ [id]: images }, reviews] = await Promise.all([
         fetchStorageFilesBySpotIds([id]),
         fetchFirestoreReviews({ spotIds: [id] }),
     ]);
-    const rating = calculateRatingFromReviews(reviewsData);
+    const rating = calculateRatingFromReviews(reviews);
 
     const aggSpot = {
         id,
