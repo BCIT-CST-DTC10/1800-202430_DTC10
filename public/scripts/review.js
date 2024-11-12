@@ -38,4 +38,8 @@
                         return p + starOutline.trim().repeat(c);
                 }
             }, "")), document.querySelector("div#reviews-go-here").innerHTML);
+
+    document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((w) => {
+        w.style = "display: inline-block; margin: auto 0; fill: #000;";
+    });
 })();
