@@ -3,6 +3,7 @@
     if (!id) {
         window.location = "/404";
     }
+
     const [star, starHalf, starOutline, types, spot] = await Promise.all([
         fetchIcon("star"),
         fetchIcon("starHalf"),
