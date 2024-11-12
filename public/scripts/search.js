@@ -1,6 +1,7 @@
 (async () => {
-    const [spotCard, star, starHalf, starOutline, types, features, spots] = await Promise.all([
+    const [spotCard, button, star, starHalf, starOutline, types, features, spots] = await Promise.all([
         fetchComponent("cards/spot"),
+        fetchComponent("searchFilterButton"),
         fetchIcon("star"),
         fetchIcon("starHalf"),
         fetchIcon("starOutline"),
@@ -30,6 +31,24 @@
             features: v.features,
             rating: ratings[k],
         }));
+
+    document.querySelector("div#filter-section").innerHTML = Object.entries(types).
+        map(([k, v]) => ({
+            id: k,
+            name: v.name,
+        })).
+        sort((i, j) => {
+            if (i.name > j.name) {
+                return 1;
+            } else if (j.name > i.name) {
+                return -1;
+            }
+
+            return 0;
+        }).
+        reduce((p, c) => p + button.
+            replaceAll("{{id}}", c.id).
+            replaceAll("{{name}}", c.name), document.querySelector("div#filter-section").innerHTML);
 
     document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = aggSpots.
         sort((i, j) => {
