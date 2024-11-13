@@ -46,7 +46,17 @@
 
     document.querySelectorAll("div.star-container>img").forEach((v) => {
         v.addEventListener("click", (e) => {
-            document.querySelector("input#rating").value = e.target.name.replace(/.*-/, "");
+            const starId = Number(e.target.name.replace(/.*-/, ""));
+            document.querySelector("input#rating").value = starId;
+            document.querySelectorAll("div.star-container>img").forEach((v, i) => {
+                if (i < starId) {
+                    v.src = "/icons/star.svg";
+                } else {
+                    v.src = "/icons/starOutline.svg";
+                }
+            });
+        });
+    });
 
     document.querySelector("div#submitReview>button").addEventListener("click", async () => {
         await firebase.firestore().collection("reviews").add({
