@@ -46,7 +46,7 @@
             }
         }, "");
 
-    document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((w) => {
-        w.style = "display: inline-block; margin: auto 0; fill: #000;";
+    document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
+        v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
 })();

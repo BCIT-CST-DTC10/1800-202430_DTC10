@@ -60,8 +60,8 @@
             }, "")).
             replaceAll("{{rating}}", c.rating), document.querySelector("div.toBeReplaced#spotList").innerHTML);
 
-    document.querySelectorAll("div.toBeReplaced#spotList svg").forEach((w) => {
-        w.style = "display: inline-block; margin: auto 0; fill: #000;";
+    document.querySelectorAll("div.toBeReplaced#spotList svg").forEach((v) => {
+        v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
 
     document.querySelector("a#randomButton").addEventListener("click", () => {

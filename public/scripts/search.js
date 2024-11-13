@@ -116,8 +116,8 @@
             replaceAll("{{id}}", c.id).
             replaceAll("{{name}}", c.name), document.querySelector("div#filter-section").innerHTML);
 
-    document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((w) => {
-        w.style = "display: inline-block; margin: auto 0; fill: #000;";
+    document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
+        v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
 
     document.querySelectorAll("div#filter-section>a.button").forEach((v) => {
