@@ -49,4 +49,10 @@
             document.querySelector("input#rating").value = Number(e.target.name.replace(/.*-/, ""));
         });
     });
+
+    firebase.auth().onAuthStateChanged(async (user) => {
+        if (!user) {
+            document.querySelector("main>section>div").style.display = "none";
+        }
+    });
 })();
