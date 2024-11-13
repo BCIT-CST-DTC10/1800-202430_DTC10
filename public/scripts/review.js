@@ -4,13 +4,14 @@
         window.location = "/404";
     }
 
-    const [reviewCard, star, starHalf, starOutline, spot, reviews] = await Promise.all([
+    const [reviewCard, star, starHalf, starOutline, spot, reviews, user] = await Promise.all([
         fetchComponent("cards/review"),
         fetchIcon("star"),
         fetchIcon("starHalf"),
         fetchIcon("starOutline"),
         fetchFirestoreSpotById(id),
         fetchFirestoreReviews({ spotIds: [id] }),
+        fetchFirebaseUser(),
     ]);
 
     document.querySelector("main>section>h1.title").innerText = spot.name;
@@ -46,7 +47,17 @@
     document.querySelectorAll("div.star-container>img").forEach((v) => {
         v.addEventListener("click", (e) => {
             document.querySelector("input#rating").value = e.target.name.replace(/.*-/, "");
+
+    document.querySelector("div#submitReview>button").addEventListener("click", async () => {
+        await firebase.firestore().collection("reviews").add({
+            spotId: id,
+            userId: user.uid,
+            rating: Number(document.querySelector("input#rating").value),
+            comment: document.querySelector("textarea#floatingTextarea2").value,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
         });
+        window.location = window.location;
     });
 
     firebase.auth().onAuthStateChanged(async (user) => {
