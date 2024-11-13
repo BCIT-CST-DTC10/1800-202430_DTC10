@@ -45,8 +45,7 @@
 
     document.querySelectorAll("div.star-container>img").forEach((v) => {
         v.addEventListener("click", (e) => {
-            console.log(e.target.name);
-            document.querySelector("input#rating").value = Number(e.target.name.replace(/.*-/, ""));
+            document.querySelector("input#rating").value = e.target.name.replace(/.*-/, "");
         });
     });
 
