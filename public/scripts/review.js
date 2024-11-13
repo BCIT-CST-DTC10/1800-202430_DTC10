@@ -1,5 +1,5 @@
 (async () => {
-    const id = new URLSearchParams(window.location.search).get('id');
+    const id = new URLSearchParams(window.location.search).get(idKey);
     if (!id) {
         window.location = "/404";
     }
@@ -67,7 +67,7 @@
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
         });
-        window.location = window.location;
+        window.location.reload();
     });
 
     firebase.auth().onAuthStateChanged(async (user) => {

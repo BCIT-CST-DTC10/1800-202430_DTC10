@@ -1,10 +1,12 @@
 firebase.auth().onAuthStateChanged((user) => {
+    const redirectUri = new URLSearchParams(window.location.search).get(redirectUriKey);
+
     if (user) {
-        window.location = "/";
+        window.location = redirectUri;
     } else {
         (new firebaseui.auth.AuthUI(firebase.auth())).start("#firebaseui-auth-container", {
             signInFlow: "popup",
-            signInSuccessUrl: "/",
+            signInSuccessUrl: redirectUri,
             signInOptions: [
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,

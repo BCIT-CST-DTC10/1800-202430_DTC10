@@ -1,3 +1,6 @@
+const idKey = "id";
+const redirectUriKey = "redirect_uri";
+
 const fetchComponent = async (fileName) => {
     try {
         const response = await fetch(
@@ -176,6 +179,10 @@ const loadRatingStar = async (rating) => {
 
 (async () => {
     document.querySelector("nav.toBeReplaced").innerHTML = await fetchComponent("topNav");
+
+    document.querySelector("nav.nav-bar-before>a.signIn-button").addEventListener("click", () => {
+        window.location = `/login?redirect_uri=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+    });
 
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {

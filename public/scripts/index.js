@@ -65,6 +65,6 @@
     });
 
     document.querySelector("a#randomButton").addEventListener("click", () => {
-        window.location = `/detail?id=${spotKeys[Math.floor(Math.random() * spotKeys.length)]}`;
+        window.location = `/detail?${idKey}=${spotKeys[Math.floor(Math.random() * spotKeys.length)]}`;
     });
 })();
