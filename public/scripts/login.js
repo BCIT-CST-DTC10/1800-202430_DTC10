@@ -11,8 +11,6 @@ firebase.auth().onAuthStateChanged((user) => {
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
             ],
-            tosUrl: "/term",
-            privacyPolicyUrl: "/policy",
             callbacks: {
                 uiShown: () => {
                     document.getElementById('message').style.display = 'none';
