@@ -22,6 +22,7 @@
         id,
         images: Object.values(images),
         name: spot.name,
+        cid: spot.googleMapsCid,
         description: spot.description,
         type: types[spot.type].name,
         rating,
@@ -49,4 +50,10 @@
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
         v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
+
+    const iframe = document.createElement("iframe");
+    iframe.height = 800;
+    iframe.width = window.innerWidth;
+    iframe.src = `https://maps.google.com/maps?output=embed&hl=en&cid=${BigInt(aggSpot.cid)}`;
+    document.querySelector("main>div.toBeReplaced.map").appendChild(iframe);
 })();
