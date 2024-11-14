@@ -27,7 +27,7 @@ div.search-bar button {
     float: left;
     width: 15%;
     padding: 10px;
-    background: #40798C;
+    background: #f0a92e;
     color: #D3D0CB;
     font-size: 17px;
     border: 1px solid #22542c;
@@ -40,7 +40,7 @@ div.search-bar button {
 }
 
 div.search-bar button:hover {
-    background: #59a4bd;
+    background: #ffb432;
 }
 
 #filter-section {
