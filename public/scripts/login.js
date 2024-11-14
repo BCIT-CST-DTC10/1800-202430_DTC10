@@ -1,5 +1,5 @@
 firebase.auth().onAuthStateChanged((user) => {
-    const redirectUri = new URLSearchParams(window.location.search).get(redirectUriKey);
+    const redirectUri = new URL(window.location).searchParams.get(redirectUriKey);
 
     if (user) {
         window.location = redirectUri;

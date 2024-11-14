@@ -1,5 +1,5 @@
 (async () => {
-    const id = new URLSearchParams(window.location.search).get(idKey);
+    const id = new URL(window.location).searchParams.get(idKey);
     if (!id) {
         window.location = "/404";
     }
