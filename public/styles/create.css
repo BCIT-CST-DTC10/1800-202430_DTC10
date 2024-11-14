@@ -9,13 +9,20 @@ div.addImageBox {
     margin-bottom: 2em;
 }
 
-#imageButton {
+#fileInput {
     display: none;
 }
 
-#imageButtonLabel {
+#imageButton {
     background-color: green;
     cursor: pointer;
     padding: 1em;
+    border-radius: 1em;
+    font-size: 1em;
+}
+
+#img-0 {
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 1em;
 }
