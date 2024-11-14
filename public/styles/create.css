@@ -1,4 +1,21 @@
 div.title {
     text-align: center;
-    font-size: 2em;    
+    font-size: 2em;
+    margin-bottom: 1.5em;
+}
+
+div.addImageBox {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#imageButton {
+    display: none;
+}
+
+#imageButtonLabel {
+    background-color: green;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 1em;
 }
