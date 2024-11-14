@@ -177,12 +177,14 @@ const loadRatingStar = async (rating) => {
     }, "")
 }
 
+const redirectToLogin = () => {
+    window.location = `/login?redirect_uri=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+}
+
 (async () => {
     document.querySelector("nav.toBeReplaced").innerHTML = await fetchComponent("topNav");
 
-    document.querySelector("nav.nav-bar-before>a.signIn-button").addEventListener("click", () => {
-        window.location = `/login?redirect_uri=${encodeURIComponent(window.location.pathname + window.location.search)}`;
-    });
+    document.querySelector("nav.nav-bar-before>a.signIn-button").addEventListener("click", redirectToLogin);
 
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
@@ -200,6 +202,10 @@ const loadRatingStar = async (rating) => {
             }
         } else {
             document.querySelector("nav.nav-bar-before>a.profile-button").style.display = "none";
+
+            if (/\b(profile|create)\b/.test(window.location.pathname)) {
+                redirectToLogin();
+            }
         }
     });
 })();
