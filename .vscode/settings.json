@@ -36,6 +36,9 @@
         ], [
             "/map",
             "./public/pages/map.html"
+        ], [
+            "/create",
+            "./public/pages/create.html"
         ],
     ],
     "cSpell.words": [

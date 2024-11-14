@@ -76,6 +76,14 @@
         "source": "/pages/map.html",
         "destination": "/map",
         "type": 301
+      }, {
+        "source": "/pages/create",
+        "destination": "/create",
+        "type": 301
+      }, {
+        "source": "/pages/create.html",
+        "destination": "/create",
+        "type": 301
       }
     ],
     "rewrites": [
@@ -100,6 +108,9 @@
       }, {
         "source": "/map",
         "destination": "/pages/map.html"
+      }, {
+        "source": "/create",
+        "destination": "/pages/create.html"
       }
     ]
   },
