@@ -52,7 +52,7 @@
     });
 
     const iframe = document.createElement("iframe");
-    iframe.height = 800;
+    iframe.height = window.innerWidth;
     iframe.width = window.innerWidth;
     iframe.src = `https://maps.google.com/maps?output=embed&hl=en&cid=${BigInt(aggSpot.cid)}`;
     document.querySelector("main>div.toBeReplaced.map").appendChild(iframe);
