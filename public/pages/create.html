@@ -16,6 +16,10 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+    <!-- Flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <!-- Firebase -->
     <script src="/__/firebase/11.0.1/firebase-app-compat.js"></script>
     <!-- Firebase features -->
@@ -30,10 +34,53 @@
     <script defer src="/scripts/create.js"></script>
     <!-- Homemade CSS -->
     <link rel="stylesheet" href="/styles/create.css" />
+
+    <style>
+        /* external css: flickity.css */
+
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .gallery {
+            background: #EEE;
+        }
+
+        .gallery-cell {
+            width: 100%;
+            height: 200px;
+            margin-right: 10px;
+            background: #8C8;
+            counter-increment: gallery-cell;
+        }
+
+        /* cell number */
+        .gallery-cell:before {
+            display: block;
+            text-align: center;
+            content: counter(gallery-cell);
+            line-height: 200px;
+            font-size: 80px;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
+    <!-- Flickity HTML init -->
+    <div class="gallery js-flickity">
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+        <div class="gallery-cell"></div>
+    </div>
     <main>
         <div class="title">Create a Study Spot</div>
         <div id="preview"></div>
