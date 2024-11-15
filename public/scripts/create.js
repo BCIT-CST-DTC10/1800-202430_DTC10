@@ -1,7 +1,7 @@
 document.getElementById('fileInput').addEventListener('change', function (event) {
     var files = event.target.files;
     var preview = document.getElementById('preview');
-    var uploadButton = document.getElementById("imageButton")
+    var uploadButton = document.getElementById("imageButton");
 
     // Clear any existing content
     preview.innerHTML = '';
@@ -15,23 +15,27 @@ document.getElementById('fileInput').addEventListener('change', function (event)
             continue;
         }
 
-        var imgContainer = document.createElement('div');
-        imgContainer.style.marginBottom = '20px'; // Spacing between each image container
+        var cell = document.createElement('div');
+        cell.className = 'gallery-cell';
+        preview.appendChild(cell);
 
-        var img = document.createElement('img');
-        img.id = 'img-' + i;
-        img.className = 'images';
-        img.src = URL.createObjectURL(file);
-        img.style.height = '20em';
-        img.style.width = '20em';
-        img.style.display = 'block'; // Ensure the image is displayed in a block to put it on a new line
-        img.style.marginBottom = '10px';
+        // var imgContainer = document.createElement('div');
+        // // imgContainer.style.marginBottom = '20px'; // Spacing between each image container
+        // imgContainer.className = 'gallery-cell';
 
-        // Append the image and file info to the container
-        imgContainer.appendChild(img);
+        // var img = document.createElement('img');
+        // img.id = 'img-' + i;
+        // img.src = URL.createObjectURL(file);
+        // img.style.height = '20em';
+        // img.style.width = '20em';
+        // img.style.display = 'block'; // Ensure the image is displayed in a block to put it on a new line
+        // img.style.marginBottom = '10px';
 
-        // Append the container to the preview div
-        preview.appendChild(imgContainer);
+        // // Append the image and file info to the container
+        // imgContainer.appendChild(img);
+
+        // // Append the container to the preview div
+        // preview.appendChild(imgContainer);
     }
 
     uploadButton.innerHTML = "Upload Different"

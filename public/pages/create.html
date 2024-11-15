@@ -32,6 +32,13 @@
     <!-- Homemade JS -->
     <script defer src="/scripts/common.js"></script>
     <script defer src="/scripts/create.js"></script>
+
+    <!-- Flickity JS -->
+    <script src="/scripts/flickity.pkgd.min.js"></script>
+
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="/styles/flickity.css" media="screen">
+
     <!-- Homemade CSS -->
     <link rel="stylesheet" href="/styles/create.css" />
 
@@ -83,7 +90,7 @@
     </div>
     <main>
         <div class="title">Create a Study Spot</div>
-        <div id="preview"></div>
+        <div id="preview" class="gallery js-flickity" data-flickity-options="{'wraparound': true}"></div>
         <div class="addImageBox">
             <input type="file" id="fileInput" accept="image" capture="camera" multiple>
             <label for="fileInput" class="button" id="imageButton">
