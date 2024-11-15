@@ -15,7 +15,7 @@ div.addImageBox {
 
 #imageButton {
     margin-top: 2em;
-    background-color: green;
+    background-color: #3b77b6;
     cursor: pointer;
     padding: 1em;
     border-radius: 1em;
@@ -32,3 +32,32 @@ div.addImageBox {
     margin-right: auto;
     border-radius: 1em;
 } */
+
+.tags {
+    /* background-color: rgba(238, 130, 238, 0.1); */
+    margin-top: 2em;
+    margin-bottom: 4em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    text-align: center;
+}
+
+.tags>label {
+    font-weight: bold;
+}
+
+.dropdowns {
+    max-width: 100%;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 0.5em;
+    width: 12em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    background-color: #3b77b6;
+}
+
+.optionDefault {
+    display: none;
+}
