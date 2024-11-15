@@ -1,10 +1,10 @@
 document.getElementById('fileInput').addEventListener('change', function (event) {
     var files = event.target.files;
-    var preview = document.getElementById('preview');
+    var gallery = document.getElementById('preview');
     var uploadButton = document.getElementById("imageButton");
 
     // Clear any existing content
-    preview.innerHTML = '';
+    gallery.innerHTML = '';
 
     // Loop through all selected files
     for (var i = 0; i < files.length; i++) {
@@ -17,7 +17,7 @@ document.getElementById('fileInput').addEventListener('change', function (event)
 
         var cell = document.createElement('div');
         cell.className = 'gallery-cell';
-        preview.appendChild(cell);
+        gallery.appendChild(cell);
 
         // var imgContainer = document.createElement('div');
         // // imgContainer.style.marginBottom = '20px'; // Spacing between each image container
