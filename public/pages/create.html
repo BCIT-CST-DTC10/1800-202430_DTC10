@@ -41,6 +41,7 @@
 
     <!-- Homemade CSS -->
     <link rel="stylesheet" href="/styles/create.css" />
+    <link rel="stylesheet" href="/styles/common.css" />
 </head>
 
 <body>
@@ -81,6 +82,39 @@
                     <label for="floatingTextarea">Description</label>
                 </div>
             </div>
+        </div>
+
+        <div class="tags">
+            <select name="placeholderTag" id="placeholderTag" class="dropdowns">
+                <option value="placeholderTag" selected="true" disabled="disabled" class="optionDefault">Wifi Status
+                </option>
+                <option value="wifiFree">Free</option>
+                <option value="wifiPaid">Paid</option>
+                <option value="wifiNone">None</option>
+            </select>
+            <select name="placeholderTag" id="placeholderTag" class="dropdowns">
+                <option value="placeholderTag" selected="true" disabled="disabled" class="optionDefault">Location Type
+                </option>
+                <option value="locationCafe">Cafe</option>
+                <option value="locationLibrary">Library</option>
+                <option value="locationSchool">School</option>
+                <option value="locationOther">Other</option>
+            </select>
+            <select name="placeholderTag" id="placeholderTag" class="dropdowns">
+                <option value="placeholderTag" selected="true" disabled="disabled" class="optionDefault">Noisy?</option>
+                <option value="noiseYes">Yes</option>
+                <option value="noiseNo">No</option>
+            </select>
+            <select name="placeholderTag" id="placeholderTag" class="dropdowns">
+                <option value="placeholderTag" selected="true" disabled="disabled" class="optionDefault">Outlets/power?
+                </option>
+                <option value="powerYes">Yes</option>
+                <option value="powerNo">No</option>
+            </select>
+        </div>
+
+        <div class="submit">
+            <label type="button" class="createLocation" id="submitButton">Submit</label>
         </div>
     </main>
     <footer class="toBeReplaced"></footer>
