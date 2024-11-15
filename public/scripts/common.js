@@ -156,7 +156,23 @@ const fetchFirestoreReviews = async (options) => {
     }
 }
 
-const calculateRatingFromReviews = (reviews) => (Object.values(reviews).reduce((p, c) => p + c.rating, 0) / Object.keys(reviews).length || 0).toFixed(2);
+const calculateRatingFromReviews = (reviews) => {
+    const rating = {
+        average: 0,
+        count: [0, 0, 0, 0, 0]
+    };
+
+    Object.values(reviews).forEach((v) => {
+        rating.average += v.rating;
+        rating.count[v.rating - 1]++;
+    });
+
+    rating.average /= Object.keys(reviews).length;
+
+    rating.average = (rating.average || 0).toFixed(2);
+
+    return rating
+};
 
 const generatingRatingStar = (rating) => [Math.floor(rating), rating % 1 ? 1 : 0, 5 - Math.floor(rating) - (rating % 1 ? 1 : 0)];
 

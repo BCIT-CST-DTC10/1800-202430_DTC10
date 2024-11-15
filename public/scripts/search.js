@@ -18,7 +18,7 @@
                 spotIds: [v],
             })),
     ]);
-    const ratings = Object.fromEntries(spotKeys.map((v, i) => [v, calculateRatingFromReviews(reviews[i])]));
+    const ratings = Object.fromEntries(spotKeys.map((v, i) => [v, calculateRatingFromReviews(reviews[i]).average]));
 
     const aggSpots = Object.entries(spots).
         map(([k, v]) => ({

@@ -39,7 +39,7 @@
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
     const reviewLink = document.createElement("a");
     reviewLink.href = `/review?id=${id}`;
-    reviewLink.innerHTML = generatingRatingStar(aggSpot.rating).
+    reviewLink.innerHTML = generatingRatingStar(aggSpot.rating.average).
         reduce((p, c, i) => {
             switch (i) {
                 case 0:
