@@ -15,7 +15,8 @@ div.addImageBox {
 
 #imageButton {
     margin-top: 2em;
-    background-color: #3b77b6;
+    background-color: #22542c;
+    color: white;
     cursor: pointer;
     padding: 1em;
     border-radius: 1em;
@@ -54,10 +55,30 @@ div.addImageBox {
     width: 12em;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 0.5em;
-    background-color: #3b77b6;
+    margin-top: 0.5em;
+    background-color: #22542c;
+    color: white;
+    cursor: pointer;
 }
 
 .optionDefault {
     display: none;
+}
+
+.createLocation {
+    background-color: #22542c;
+    color: white;
+    cursor: pointer;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    font-size: 1em;
+    width: 90%;
+    margin-bottom: 2em;
+    color: white;
+    background-color: #22542c;
+    font-size: 2em;
+}
+
+div.submit {
+    text-align: center;
 }
