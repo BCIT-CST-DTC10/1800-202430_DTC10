@@ -106,7 +106,8 @@
             Are You lost?
             <br />
             <br />
-            <a href="javascript:history.back()" class="helpLinks">Go back</a>
+            <a href="javascript:if (document.referrer.startsWith(window.location.origin)) { history.back(); } else { window.location = &quot;/&quot;; }"
+                class="helpLinks">Go back</a>
         </p>
     </main>
     <footer class="toBeReplaced"></footer>
