@@ -14,6 +14,7 @@ div.addImageBox {
 }
 
 #imageButton {
+    margin-top: 2em;
     background-color: green;
     cursor: pointer;
     padding: 1em;

@@ -45,17 +45,16 @@
 
 <body>
     <nav class="toBeReplaced"></nav>
-    <!-- Flickity HTML init -->
-    <div class="gallery js-flickity" id="gallery">
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-        <div class="gallery-cell"></div>
-    </div>
     <main>
         <div class="title">Create a Study Spot</div>
-        <div id="preview" class="gallery js-flickity" data-flickity-options="{'wraparound': true}"></div>
+        <!-- Flickity HTML init -->
+        <div class="gallery js-flickity carousel" id="gallery" data-flickity='{ "wrapAround": true }'>
+            <!-- <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div> -->
+        </div>
         <div class="addImageBox">
             <input type="file" id="fileInput" accept="image" capture="camera" multiple>
             <label for="fileInput" class="button" id="imageButton">

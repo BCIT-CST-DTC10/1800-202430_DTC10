@@ -1,15 +1,15 @@
 document.getElementById('fileInput').addEventListener('change', function (event) {
     var files = event.target.files;
-    var gallery = document.getElementById('preview');
+    var gallery = document.getElementById('gallery');
     var uploadButton = document.getElementById("imageButton");
-
+    
     // Clear any existing content
-    gallery.innerHTML = '';
-
+    // gallery.innerHTML = '';
+    
     // Loop through all selected files
     for (var i = 0; i < files.length; i++) {
         var file = files[i];
-
+        
         // Only process image files
         if (!file.type.match('image.*')) {
             continue;
