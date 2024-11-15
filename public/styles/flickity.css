@@ -10,7 +10,6 @@ body {
 }
 
 .gallery {
-    background: #EEE;
     margin-left: auto;
     margin-right: auto;
     height: 20em;
@@ -24,6 +23,7 @@ body {
     margin-right: 10px;
     background: #8C8;
     counter-increment: gallery-cell;
+    border-radius: 1em;
 }
 
 /* cell number */
