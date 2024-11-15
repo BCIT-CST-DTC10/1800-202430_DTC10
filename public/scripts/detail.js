@@ -37,7 +37,9 @@
     }));
     document.querySelector("main>div.toBeReplaced.createdAt").innerText = `Location added at ${aggSpot.createdAt.toLocaleString("en-CA")}`;
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
-    document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generatingRatingStar(aggSpot.rating).
+    const reviewLink = document.createElement("a");
+    reviewLink.href = `/review?id=${id}`;
+    reviewLink.innerHTML = generatingRatingStar(aggSpot.rating).
         reduce((p, c, i) => {
             switch (i) {
                 case 0:
@@ -48,6 +50,7 @@
                     return p + starOutline.trim().repeat(c);
             }
         }, "");
+    document.querySelector("main>div.toBeReplaced.reviewStars").replaceChildren(reviewLink);
 
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
         v.style = "display: inline-block; margin: auto 0; fill: #000;";
