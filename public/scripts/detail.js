@@ -61,7 +61,7 @@
     document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = reviewLink.outerHTML;
 
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
-        v.style = "display: inline-block; margin: auto 0; fill: black;";
+        v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
 
     const iframe = document.createElement("iframe");
