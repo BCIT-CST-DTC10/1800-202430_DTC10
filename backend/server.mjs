@@ -8,14 +8,17 @@ const PORT = env.PORT ?? 3000;
 const app = express();
 
 app.use((req, res, next) => {
-    const origin = req.headers.origin ?? ""
+    const origin = req.headers.origin ?? "";
     const corsWhitelist = [
         'https://gostudy.web.app',
     ];
     if (corsWhitelist.indexOf(origin) !== -1 || origin.startsWith('http://127.0.0.1')) {
         res.header('Access-Control-Allow-Origin', origin);
+        next();
+    } else {
+        res.status(200).json({});
+        return;
     }
-    next();
 });
 
 app.get("/googleMapsCid", async (req, res) => {
@@ -27,7 +30,11 @@ app.get("/googleMapsCid", async (req, res) => {
         res.json({
             url,
             cid: decode ? decode : query,
-        })
+        });
+    } catch (error) {
+        res.status(500).json({ error });
+    }
+});
     } catch (error) {
         res.status(500).json({ error });
     }
