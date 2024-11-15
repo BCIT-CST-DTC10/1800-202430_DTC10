@@ -21,9 +21,12 @@ app.use((req, res, next) => {
 app.get("/googleMapsCid", async (req, res) => {
     try {
         const url = (await axios.get(req.query.url)).request.res.responseUrl ?? "";
+
+        const decode = Array.from(/!1s0x.*?:(?<cid>0x.*?)!/gi[Symbol.matchAll](url), (v) => v.groups.cid).pop();
+        const query = (new URLSearchParams(url)).get("cid");
         res.json({
             url,
-            cid: Array.from(/!1s0x.*?:(?<cid>0x.*?)!/gi[Symbol.matchAll](url), (v) => v.groups.cid).pop(),
+            cid: decode ? decode : query,
         })
     } catch (error) {
         res.status(500).json({ error });
