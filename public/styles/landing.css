@@ -6,7 +6,7 @@ span.button {
 
 header {
     /* background-color: #e4e4e4; */
-    background: linear-gradient(rgba(33, 84, 44, 0.8), rgba(70, 70, 70, 0.95) 90%), url(/images/lofiRainBackground.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(33, 84, 44, 0.8), rgba(60, 60, 60, 0.95) 90%), url(/images/lofiRainBackground.jpg) no-repeat center center/cover;
     color: #020102;
     padding: 10em 0;
 
