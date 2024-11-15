@@ -20,6 +20,7 @@ document.getElementById('fileInput').addEventListener('change', function (event)
 
         var img = document.createElement('img');
         img.id = 'img-' + i;
+        img.className = 'images';
         img.src = URL.createObjectURL(file);
         img.style.height = '20em';
         img.style.width = '20em';
