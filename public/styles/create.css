@@ -21,8 +21,13 @@ div.addImageBox {
     font-size: 1em;
 }
 
-#img-0 {
+#preview {
+    width: 20em;
+    height: 20em;
+}
+
+/* #img-0 {
     margin-left: auto;
     margin-right: auto;
     border-radius: 1em;
-}
+} */
