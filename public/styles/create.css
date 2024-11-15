@@ -46,6 +46,9 @@ div.addImageBox {
 .tags>label {
     font-weight: bold;
 }
+.form-floating>label {
+    color: black;
+}
 
 .dropdowns {
     max-width: 100%;
