@@ -2,14 +2,14 @@ document.getElementById('fileInput').addEventListener('change', function (event)
     var files = event.target.files;
     var gallery = document.getElementById('gallery');
     var uploadButton = document.getElementById("imageButton");
-    
+
     // Clear any existing content
     // gallery.innerHTML = '';
-    
+
     // Loop through all selected files
     for (var i = 0; i < files.length; i++) {
         var file = files[i];
-        
+
         // Only process image files
         if (!file.type.match('image.*')) {
             continue;
@@ -40,4 +40,19 @@ document.getElementById('fileInput').addEventListener('change', function (event)
 
     uploadButton.innerHTML = "Upload Different"
     uploadButton.style.padding = "0.5em"
+});
+
+
+document.querySelector("label#openMapButton.button").addEventListener("click", (e) => {
+    const iframe = document.createElement("iframe");
+    iframe.height = window.innerWidth;
+    iframe.width = window.innerWidth;
+    iframe.src = `https://maps.google.com/maps?output=embed&cid=${BigInt("0xbb9196ea9b81f38b")}`;
+    document.querySelector("div.toBeReplaced.map").appendChild(iframe);
+    e.target.style = "display: none;";
+    document.querySelector("label#loadPlaceButton.button").style = "";
+});
+
+document.querySelector("label#loadPlaceButton.button").addEventListener("click", async () => {
+    console.log(await fetch(`https://one800-202430-dtc10.onrender.com/googleMapsCid?url=${encodeURIComponent("https://maps.google.com/maps?ll=49.257735,-123.123904&z=11&t=m&hl=en-US&gl=US&mapclient=embed&cid=17532711177779613534")}`));
 });

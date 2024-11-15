@@ -33,12 +33,6 @@
     <script defer src="/scripts/common.js"></script>
     <script defer src="/scripts/create.js"></script>
 
-    <!-- Flickity JS -->
-    <script src="/scripts/flickity.pkgd.min.js"></script>
-
-    <!-- Flickity CSS -->
-    <link rel="stylesheet" href="/styles/flickity.css" media="screen">
-
     <!-- Homemade CSS -->
     <link rel="stylesheet" href="/styles/create.css" />
     <link rel="stylesheet" href="/styles/common.css" />
@@ -62,6 +56,15 @@
                 Upload Image
             </label>
         </div>
+        <div class="addImageBox">
+            <label class="button" id="openMapButton">
+                Open and load from map
+            </label>
+            <label class="button" style="display: none;" id="loadPlaceButton">
+                Load selected place from map
+            </label>
+        </div>
+        <div class="map toBeReplaced"></div>
         <div class="px-4">
             <div class="col mb-3">
                 <div class="form-floating">

@@ -13,7 +13,7 @@ div.addImageBox {
     display: none;
 }
 
-#imageButton {
+.button {
     margin-top: 2em;
     background-color: #22542c;
     color: white;
