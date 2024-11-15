@@ -8,7 +8,16 @@ const PORT = env.PORT ?? 3000;
 const app = express();
 
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://gostudy.web.app");
+    const origin = req.headers.origin ?? ""
+    const corsWhitelist = [
+        'https://gostudy.web.app',
+    ];
+    if (corsWhitelist.indexOf(origin) !== -1) {
+        res.header('Access-Control-Allow-Origin', origin);
+    }
+    if (origin.startsWith('http://127.0.0.1')) {
+        res.header('Access-Control-Allow-Origin', origin);
+    }
     next();
 });
 
