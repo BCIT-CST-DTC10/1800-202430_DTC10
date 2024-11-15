@@ -27,7 +27,7 @@
         sort((a, b) => b.createdAt - a.createdAt).
         reduce((p, c) => p + reviewCard.
             replaceAll("{{user}}", c.userId).
-            replaceAll("{{createdAt}}", c.createdAt.toDate()).
+            replaceAll("{{createdAt}}", c.createdAt.toDate().toLocaleString("en-CA")).
             replaceAll("{{comment}}", c.comment).
             replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
                 switch (i) {
