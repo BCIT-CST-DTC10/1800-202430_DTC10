@@ -159,19 +159,19 @@ const fetchFirestoreReviews = async (options) => {
 const calculateRatingFromReviews = (reviews) => {
     const rating = {
         average: 0,
-        count: [0, 0, 0, 0, 0]
+        count: Object.keys(reviews).length,
+        ratingCount: [0, 0, 0, 0, 0]
     };
 
     Object.values(reviews).forEach((v) => {
         rating.average += v.rating;
-        rating.count[v.rating - 1]++;
+        rating.ratingCount[v.rating - 1]++;
     });
 
-    rating.average /= Object.keys(reviews).length;
-
+    rating.average /= rating.count;
     rating.average = (rating.average || 0).toFixed(2);
 
-    return rating
+    return rating;
 };
 
 const generatingRatingStar = (rating) => [Math.floor(rating), rating % 1 ? 1 : 0, 5 - Math.floor(rating) - (rating % 1 ? 1 : 0)];
