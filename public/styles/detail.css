@@ -24,6 +24,12 @@ div.mainImage>img {
     margin-left: 3em;
 }
 
+.createdAt {
+    text-align: left;
+    float: left;
+    margin: 1em 3em 0;
+}
+
 .description {
     text-align: left;
     float: left;
