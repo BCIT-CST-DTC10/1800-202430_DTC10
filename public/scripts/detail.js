@@ -35,7 +35,7 @@
         image.src = v;
         return image;
     }));
-    document.querySelector("main>div.toBeReplaced.createdAt").innerText = aggSpot.createdAt.toLocaleString("en-CA");
+    document.querySelector("main>div.toBeReplaced.createdAt").innerText = `Location added at ${aggSpot.createdAt.toLocaleString("en-CA")}`;
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
     document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = generatingRatingStar(aggSpot.rating).
         reduce((p, c, i) => {
