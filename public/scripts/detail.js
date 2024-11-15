@@ -50,7 +50,15 @@
                     return p + starOutline.trim().repeat(c);
             }
         }, "");
-    document.querySelector("main>div.toBeReplaced.reviewStars").replaceChildren(reviewLink);
+    document.querySelector("main>div.toBeReplaced.reviewStars").innerHTML = reviewLink.outerHTML + aggSpot.rating.ratingCount.
+        map((v) => [v, Math.round(v / aggSpot.rating.count * 100 || 0)]).
+        reduce((p, c) => {
+            const percentage = document.createElement("percentage");
+            percentage.style = `--count: ${c[0]}; --percentage: ${c[1]};`;
+            const bar = document.createElement("bar");
+            bar.appendChild(percentage);
+            return bar.outerHTML + p;
+        }, "")
 
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
         v.style = "display: inline-block; margin: auto 0; fill: #000;";
