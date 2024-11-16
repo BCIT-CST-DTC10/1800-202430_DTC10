@@ -54,5 +54,5 @@ document.querySelector("label#openMapButton.button").addEventListener("click", (
 });
 
 document.querySelector("label#loadPlaceButton.button").addEventListener("click", async () => {
-    console.log(await fetch(`https://one800-202430-dtc10.onrender.com/googleMapsCid?url=${encodeURIComponent("https://maps.google.com/maps?ll=49.257735,-123.123904&z=11&t=m&hl=en-US&gl=US&mapclient=embed&cid=17532711177779613534")}`));
+    console.log(await fetch(`${backend}/googleMapsCid?url=${encodeURIComponent("https://maps.google.com/maps?ll=49.257735,-123.123904&z=11&t=m&hl=en-US&gl=US&mapclient=embed&cid=17532711177779613534")}`));
 });

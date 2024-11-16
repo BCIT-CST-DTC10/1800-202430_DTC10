@@ -1,5 +1,6 @@
 const idKey = "id";
 const redirectUriKey = "redirect_uri";
+const backend = "https://one800-202430-dtc10.onrender.com"
 
 const fetchComponent = async (fileName) => {
     try {
@@ -48,6 +49,21 @@ const fetchFirebaseUser = async () => {
             }
         });
     });
+}
+
+const fetchAuthUserByIds = async (ids) => {
+    try {
+        const response = await fetch(
+            `${backend}/listUser?` + [ids].flat().map((v) => `uid=${v}`).join("&"),
+        );
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        return await response.json();
+    } catch (err) {
+        console.error("fetchAuthUserByIds:", err.message);
+    }
 }
 
 const fetchFirestoreTypes = async () => {
