@@ -46,8 +46,9 @@
     <main>
         <section>
             <h1 class="title pt-4 px-4">Placeholder</h1>
-            <div class="px-4">
-                <div class="col py-2">
+            <div class="px-4" id="reviewBox">
+                <input type="title" class="form-control" id="reviewTitle" placeholder="write review title...">
+                <div class="col py-3 px-2">
                     <div class="star-container">
                         <img name="star-1" src="/icons/starOutline.svg"><img name="star-2"
                             src="/icons/starOutline.svg"><img name="star-3" src="/icons/starOutline.svg"><img
@@ -59,16 +60,16 @@
                     <div class="form-floating">
                         <textarea class="form-control" placeholder="Write Review..." id="floatingTextarea2"
                             style="height: 250px"></textarea>
-                        <label for="floatingTextarea2" class="px-4">Write review</label>
+                        <label for="floatingTextarea2" class="px-4">Write description</label>
                     </div>
                 </div>
-                <div class="col" id="submitReview" style="flex: none; margin-left: 8px;">
-                    <button type="submit" class="btn btn-secondary px-5">Post</button>
+                <div class="col" id="submitReview">
+                    <button id="submitButton" type="submit" class="btn px-5">Post</button>
                 </div>
             </div>
         </section>
         <article class="pt-4 px-5">
-            <h3 class="">Reviews</h3>
+            <h3>Reviews</h3>
             <!-- Here is the container for cards  -->
             <div class="container">
                 <div id="reviews-go-here" class="row row-cols-auto">
