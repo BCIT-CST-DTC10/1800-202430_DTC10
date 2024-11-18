@@ -18,6 +18,24 @@ h3 {
     color: #D3D0CB;
 }
 
+#reviewTitle {
+    padding: 10px;
+    color: #171d1cff;
+    font-size: larger;
+}
+
+#reviewBox {
+    background: #D3D0CB;
+    padding: 1em;
+
+    border: 3px solid #171d1cff;
+    border-radius: 1em;
+}
+
+#form-control {
+    color: #171d1cff;
+}
+
 #submitReview {
     flex: none;
     margin-left: 8px;
