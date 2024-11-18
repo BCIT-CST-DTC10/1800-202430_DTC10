@@ -12,3 +12,17 @@ h1 {
     padding-left: 1em;
     color: #D3D0CB;
 }
+
+h3 {
+    padding-top: 5px;
+    color: #D3D0CB;
+}
+
+#submitButton {
+    color: #171d1cff;
+    background: #f0a92e;
+}
+
+#submitButton:hover {
+    background: #ffb432;
+}
