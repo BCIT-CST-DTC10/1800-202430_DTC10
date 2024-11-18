@@ -1,3 +1,9 @@
 main {
     margin: 2em;
 }
+
+section,
+article {
+    margin: 2em 4em;
+}
+
