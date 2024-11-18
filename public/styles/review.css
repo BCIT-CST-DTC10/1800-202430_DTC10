@@ -7,3 +7,8 @@ article {
     margin: 2em 4em;
 }
 
+h1 {
+    padding-top: 0.5em;
+    padding-left: 1em;
+    color: #D3D0CB;
+}
