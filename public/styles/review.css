@@ -49,3 +49,11 @@ article h3 {
 #submitButton:hover {
     background: #ffb432;
 }
+
+@media only screen and (max-width: 600px) {
+
+    section,
+    article {
+        margin: 0;
+    }
+}
