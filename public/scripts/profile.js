@@ -22,6 +22,4 @@
         .forEach((v, i) => {
             v.innerHTML = reviews[i].comment;
         })
-
-    console.log({ user });
 })();
