@@ -22,6 +22,7 @@
         .map(([k, v]) => ({
             id: k,
             userName: users[v.userId].displayName,
+            title: v.title,
             rating: v.rating,
             comment: v.comment,
             createdAt: v.createdAt,
@@ -29,6 +30,7 @@
         .sort((a, b) => b.createdAt - a.createdAt)
         .reduce((p, c) => p + reviewCard
             .replaceAll("{{user}}", c.userName)
+            .replaceAll("{{title}}", c.title)
             .replaceAll("{{createdAt}}", c.createdAt.toDate().toLocaleString("en-CA"))
             .replaceAll("{{comment}}", c.comment)
             .replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
@@ -64,6 +66,7 @@
         await firebase.firestore().collection("reviews").add({
             spotId: id,
             userId: user.uid,
+            title: document.querySelector("input#reviewTitle").value,
             rating: Number(document.querySelector("input#rating").value),
             comment: document.querySelector("textarea#floatingTextarea2").value,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
