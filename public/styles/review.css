@@ -50,6 +50,10 @@ article h3 {
     background: #ffb432;
 }
 
+textarea#floatingTextarea2.form-control {
+    color: #171d1cff;
+}
+
 @media only screen and (max-width: 600px) {
 
     section,
