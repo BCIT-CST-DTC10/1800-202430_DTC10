@@ -87,7 +87,7 @@
         document.querySelectorAll("div#filter-section>a.button.activated").forEach((v) => {
             types.push(v.id);
         });
-        if (features) {
+        if (features.length) {
             filtered = filtered
                 .filter((v) => features.filter(value => Object.keys(v.features).includes(value)).length);
         }
