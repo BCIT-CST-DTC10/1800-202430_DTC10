@@ -50,7 +50,7 @@ article h3 {
     background: #ffb432;
 }
 
-textarea#floatingTextarea2.form-control {
+label.px-4 {
     color: #171d1cff;
 }
 
