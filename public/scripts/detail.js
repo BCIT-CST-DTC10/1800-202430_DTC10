@@ -39,8 +39,8 @@
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
     const reviewLink = document.createElement("a");
     reviewLink.href = `/review?id=${id}`;
-    reviewLink.innerHTML = generatingRatingStar(aggSpot.rating.average).
-        reduce((p, c, i) => {
+    reviewLink.innerHTML = generatingRatingStar(aggSpot.rating.average)
+        .reduce((p, c, i) => {
             switch (i) {
                 case 0:
                     return p + star.trim().repeat(c);
@@ -49,9 +49,9 @@
                 case 2:
                     return p + starOutline.trim().repeat(c);
             }
-        }, "") + aggSpot.rating.ratingCount.
-            map((v) => [v, Math.round(v / aggSpot.rating.count * 100 || 0)]).
-            reduce((p, c) => {
+        }, "") + aggSpot.rating.ratingCount
+            .map((v) => [v, Math.round(v / aggSpot.rating.count * 100 || 0)])
+            .reduce((p, c) => {
                 const percentage = document.createElement("percentage");
                 percentage.style = `--count: ${c[0]}; --percentage: ${c[1]};`;
                 const bar = document.createElement("bar");

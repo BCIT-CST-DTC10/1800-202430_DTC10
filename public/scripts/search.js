@@ -20,8 +20,8 @@
     ]);
     const ratings = Object.fromEntries(spotKeys.map((v, i) => [v, calculateRatingFromReviews(reviews[i]).average]));
 
-    const aggSpots = Object.entries(spots).
-        map(([k, v]) => ({
+    const aggSpots = Object.entries(spots)
+        .map(([k, v]) => ({
             id: k,
             image: Object.values(images[k])[0],
             name: v.name,
@@ -30,8 +30,8 @@
             type: v.type,
             features: v.features,
             rating: ratings[k],
-        })).
-        sort((i, j) => {
+        }))
+        .sort((i, j) => {
             if (i.rating > j.rating) {
                 return -1;
             } else if (j.rating > i.rating) {
@@ -47,13 +47,13 @@
             return 0;
         });
 
-    const callbackReduceAggSpotsToSpotCards = (p, c) => p + spotCard.
-        replaceAll("{{id}}", c.id).
-        replaceAll("{{image}}", c.image).
-        replaceAll("{{name}}", c.name).
-        replaceAll("{{description}}", c.description).
-        replaceAll("{{type}}", c.typeName).
-        replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
+    const callbackReduceAggSpotsToSpotCards = (p, c) => p + spotCard
+        .replaceAll("{{id}}", c.id)
+        .replaceAll("{{image}}", c.image)
+        .replaceAll("{{name}}", c.name)
+        .replaceAll("{{description}}", c.description)
+        .replaceAll("{{type}}", c.typeName)
+        .replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
             switch (i) {
                 case 0:
                     return p + star.repeat(c);
@@ -62,16 +62,16 @@
                 case 2:
                     return p + starOutline.repeat(c);
             }
-        }, "")).
-        replaceAll("{{rating}}", c.rating);
+        }, ""))
+        .replaceAll("{{rating}}", c.rating);
 
     const updateSpotCards = () => {
         let filtered = aggSpots;
 
         const search = document.querySelector("div.search-bar>input").value;
         if (search) {
-            filtered = filtered.
-                filter((v) => RegExp(search, "gi").test(v.name) || RegExp(search, "gi").test(v.description));
+            filtered = filtered
+                .filter((v) => RegExp(search, "gi").test(v.name) || RegExp(search, "gi").test(v.description));
         }
 
         const types = []
@@ -79,8 +79,8 @@
             types.push(v.id);
         });
         if (types.length) {
-            filtered = filtered.
-                filter((v) => types.includes(v.type));
+            filtered = filtered
+                .filter((v) => types.includes(v.type));
         }
 
         const features = []
@@ -88,8 +88,8 @@
             types.push(v.id);
         });
         if (features) {
-            filtered = filtered.
-                filter((v) => features.filter(value => Object.keys(v.features).includes(value)).length);
+            filtered = filtered
+                .filter((v) => features.filter(value => Object.keys(v.features).includes(value)).length);
         }
 
         if (filtered.length === aggSpots.length) {
@@ -98,12 +98,12 @@
         document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");
     }
 
-    document.querySelector("div#filter-section").innerHTML = Object.entries(types).
-        map(([k, v]) => ({
+    document.querySelector("div#filter-section").innerHTML = Object.entries(types)
+        .map(([k, v]) => ({
             id: k,
             name: v.name,
-        })).
-        sort((i, j) => {
+        }))
+        .sort((i, j) => {
             if (i.name > j.name) {
                 return 1;
             } else if (j.name > i.name) {
@@ -111,10 +111,10 @@
             }
 
             return 0;
-        }).
-        reduce((p, c) => p + button.
-            replaceAll("{{id}}", c.id).
-            replaceAll("{{name}}", c.name), document.querySelector("div#filter-section").innerHTML);
+        })
+        .reduce((p, c) => p + button
+            .replaceAll("{{id}}", c.id)
+            .replaceAll("{{name}}", c.name), document.querySelector("div#filter-section").innerHTML);
 
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
         v.style = "display: inline-block; margin: auto 0; fill: #000;";

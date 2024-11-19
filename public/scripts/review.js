@@ -18,20 +18,20 @@
 
     document.querySelector("main>section>h1.title").innerText = spot.name;
 
-    document.querySelector("div#reviews-go-here").innerHTML = Object.entries(reviews).
-        map(([k, v]) => ({
+    document.querySelector("div#reviews-go-here").innerHTML = Object.entries(reviews)
+        .map(([k, v]) => ({
             id: k,
             userName: users[v.userId].displayName,
             rating: v.rating,
             comment: v.comment,
             createdAt: v.createdAt,
-        })).
-        sort((a, b) => b.createdAt - a.createdAt).
-        reduce((p, c) => p + reviewCard.
-            replaceAll("{{user}}", c.userName).
-            replaceAll("{{createdAt}}", c.createdAt.toDate().toLocaleString("en-CA")).
-            replaceAll("{{comment}}", c.comment).
-            replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
+        }))
+        .sort((a, b) => b.createdAt - a.createdAt)
+        .reduce((p, c) => p + reviewCard
+            .replaceAll("{{user}}", c.userName)
+            .replaceAll("{{createdAt}}", c.createdAt.toDate().toLocaleString("en-CA"))
+            .replaceAll("{{comment}}", c.comment)
+            .replaceAll("{{star}}", generatingRatingStar(c.rating).reduce((p, c, i) => {
                 switch (i) {
                     case 0:
                         return p + star.trim().repeat(c);

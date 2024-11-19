@@ -69,8 +69,8 @@ const fetchAuthUserByIds = async (ids) => {
 const fetchFirestoreTypes = async () => {
     try {
         const types = {};
-        (await firebase.firestore().collection("types").get()).
-            forEach((v) => {
+        (await firebase.firestore().collection("types").get())
+            .forEach((v) => {
                 types[v.id] = v.data();
             });
         return types;
@@ -82,8 +82,8 @@ const fetchFirestoreTypes = async () => {
 const fetchFirestoreFeatures = async () => {
     try {
         const features = {};
-        (await firebase.firestore().collection("features").get()).
-            forEach((v) => {
+        (await firebase.firestore().collection("features").get())
+            .forEach((v) => {
                 features[v.id] = v.data();
             });
         return features;
@@ -106,8 +106,8 @@ const fetchFirestoreSpots = async (options) => {
         firestoreQuery = features instanceof Array ?
             firestoreQuery.where("feature", "in", features) :
             firestoreQuery;
-        (await firestoreQuery.get()).
-            forEach((v) => {
+        (await firestoreQuery.get())
+            .forEach((v) => {
                 spots[v.id] = v.data();
             });
         return spots;
@@ -162,8 +162,8 @@ const fetchFirestoreReviews = async (options) => {
         firestoreQuery = spotIds instanceof Array ?
             firestoreQuery.where("spotId", "in", spotIds) :
             firestoreQuery;
-        (await firestoreQuery.get()).
-            forEach((v) => {
+        (await firestoreQuery.get())
+            .forEach((v) => {
                 reviews[v.id] = v.data();
             });
         return reviews;
