@@ -1,47 +1,33 @@
-document.getElementById('fileInput').addEventListener('change', function (event) {
-    var files = event.target.files;
-    var gallery = document.getElementById('gallery');
-    var uploadButton = document.getElementById("imageButton");
+document.querySelector("#fileInput").addEventListener("change", function (event) {
+    const gallery = document.querySelector("#gallery");
+    const uploadButton = document.querySelector("#imageButton");
 
-    // Clear any existing content
-    // gallery.innerHTML = '';
+    new Flickity(gallery).destroy();
 
-    // Loop through all selected files
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
+    gallery.replaceChildren(
+        ...[...event.target.files]
+            .filter((v) => v.type.match("image.*"))
+            .map((v) => {
+                const image = document.createElement("img");
+                image.src = URL.createObjectURL(v);
 
-        // Only process image files
-        if (!file.type.match('image.*')) {
-            continue;
-        }
+                image.style.display = "block";
+                image.style.maxHeight = "20em";
+                image.style.minHeight = "10em";
+                image.style.maxWidth = "50%";
+                image.style.marginRight = "1em";
 
-        var cell = document.createElement('div');
-        cell.className = 'gallery-cell';
-        gallery.appendChild(cell);
+                return image
+            }),
+    );
 
-        // var imgContainer = document.createElement('div');
-        // // imgContainer.style.marginBottom = '20px'; // Spacing between each image container
-        // imgContainer.className = 'gallery-cell';
-
-        // var img = document.createElement('img');
-        // img.id = 'img-' + i;
-        // img.src = URL.createObjectURL(file);
-        // img.style.height = '20em';
-        // img.style.width = '20em';
-        // img.style.display = 'block'; // Ensure the image is displayed in a block to put it on a new line
-        // img.style.marginBottom = '10px';
-
-        // // Append the image and file info to the container
-        // imgContainer.appendChild(img);
-
-        // // Append the container to the preview div
-        // preview.appendChild(imgContainer);
-    }
+    const flickity = new Flickity(gallery, {
+        initialIndex: 0,
+        draggable: true,
+    });
 
     uploadButton.innerHTML = "Upload Different"
-    uploadButton.style.padding = "0.5em"
 });
-
 
 document.querySelector("label#openMapButton.button").addEventListener("click", (e) => {
     const iframe = document.createElement("iframe");
