@@ -1,3 +1,8 @@
+main {
+    margin: 2em;
+    overflow: hidden;
+}
+
 .title {
     text-align: center;
     font-weight: bold;
@@ -20,7 +25,10 @@ div.mainImage>img {
 }
 
 .reviewStars {
+    background: #D3D0CB;
+    border: 2px solid #171d1cff;
     margin: 2em 3em 0;
+    padding: 0.5em 1em;
 }
 
 .createdAt {
@@ -31,8 +39,14 @@ div.mainImage>img {
 
 .description {
     text-align: left;
-    float: left;
-    margin: 1em 3em 0;
+    float: center;
+    text-align: left;
+    align-items: center;
+    font-size: larger;
+}
+
+.map {
+    max-height: 40em;
 }
 
 bar {
