@@ -1,7 +1,13 @@
+main {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
 div.title {
     text-align: center;
     font-size: 2em;
-    margin-bottom: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 div.addImageBox {
@@ -21,6 +27,10 @@ div.addImageBox {
     padding: 1em;
     border-radius: 1em;
     font-size: 1em;
+}
+
+.button:hover {
+    background-color: #5b914b;
 }
 
 #preview {
@@ -79,10 +89,19 @@ div.addImageBox {
     width: 90%;
     margin-bottom: 2em;
     color: white;
-    background-color: #22542c;
     font-size: 2em;
 }
 
 div.submit {
     text-align: center;
+}
+
+
+#submitButton{
+    background-color: #f0a92e;
+    margin-bottom: 1em;
+}
+
+#submitButton:hover {
+    background-color: #ffb432;
 }
