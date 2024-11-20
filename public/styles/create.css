@@ -75,9 +75,9 @@ div.addImageBox {
     cursor: pointer;
 }
 
-.optionDefault {
+/* .optionDefault {
     display: none;
-}
+} */
 
 .createLocation {
     background-color: #22542c;
@@ -97,7 +97,7 @@ div.submit {
 }
 
 
-#submitButton{
+#submitButton {
     background-color: #f0a92e;
     margin-bottom: 1em;
 }
