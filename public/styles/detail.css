@@ -1,12 +1,15 @@
 main {
-    margin: 2em;
+    margin: 1em;
     overflow: hidden;
 }
 
 .title {
     text-align: center;
     font-weight: bold;
-    margin: 1em 3em;
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 .mainImage {
@@ -14,6 +17,7 @@ main {
     height: 20em;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2em;
     background-color: gray;
     border-radius: 25px;
 }
@@ -26,26 +30,34 @@ div.mainImage>img {
 
 .reviewStars {
     background: #D3D0CB;
-    margin: 2em 3em 0;
+    margin: 2em 0.50em;
     padding: 0.5em 1em;
 }
 
 .createdAt {
-    text-align: left;
-    float: left;
-    margin: 1em 3em 0;
+    text-align: center;
+    margin: 1em 3em 0.5em;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .description {
-    text-align: left;
-    float: center;
-    text-align: left;
-    align-items: center;
+    color: #D3D0CB;
+    text-align: center;
+    margin-left: 3em;
+    margin-right: 3em;
     font-size: larger;
 }
 
 .map {
     max-height: 40em;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .description {
+        margin: 0;
+    }
 }
 
 bar {
