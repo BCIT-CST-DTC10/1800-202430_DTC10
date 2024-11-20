@@ -14,7 +14,7 @@ h1 {
 }
 
 article h3 {
-    padding-top: 5px;
+    padding-bottom: 0.50em;;
     color: #D3D0CB;
 }
 
@@ -28,8 +28,7 @@ article h3 {
     background: #D3D0CB;
     padding: 1em;
 
-    border: 3px solid #171d1cff;
-    border-radius: 1em;
+    border-radius: 0.5em;
 }
 
 #form-control {
