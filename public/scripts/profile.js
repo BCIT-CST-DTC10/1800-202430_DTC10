@@ -22,7 +22,7 @@
         .forEach((v, i) => {
             v.innerHTML = reviews[i].comment;
             if (v.innerHTML == "") {
-                v.innerHTML = "<span class='noReview'>[ no review text ]</span>";
+                v.innerHTML = "<span class='noReview'>[ no review text found ]</span>";
             }
         })
 })();
