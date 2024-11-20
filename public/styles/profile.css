@@ -123,3 +123,7 @@
         overflow-x: scroll;
     }
 }
+
+#logOutButton {
+    cursor: pointer;
+}

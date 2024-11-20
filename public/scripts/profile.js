@@ -33,4 +33,8 @@
                 </span>
             `;
         })
+
+    document.querySelector("div#logOutButton").addEventListener("click", () => {
+        firebase.auth().signOut();
+    });
 })();
