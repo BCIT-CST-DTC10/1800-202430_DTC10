@@ -7,7 +7,7 @@ span.button {
 header {
     /* background-color: #e4e4e4; */
     background: linear-gradient(rgba(33, 84, 44, 0.8), rgba(60, 60, 60, 0.95) 70%), url(/images/lofiRainBackground.jpg) no-repeat center center/cover;
-    color: #020102;
+    color: #D3D0CB;
     padding: 10em 0;
 
     display: flex;
@@ -41,6 +41,5 @@ header a {
 }
 
 .topDisplay a:hover {
-    background-color: #D3D0CB;
-    color: #020102;
+    background-color: #488eda;
 }
