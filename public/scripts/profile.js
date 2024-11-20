@@ -21,9 +21,11 @@
 
     document.querySelectorAll("main>div.reviewContainer>div.review.toBeReplaced")
         .forEach((v, i) => {
-            v.innerHTML = reviews[i].comment;
-            if (v.innerHTML == "") {
-                v.innerHTML = "<span class='noReview'>[ no review text found ]</span>";
-            }
+            v.innerHTML = `
+            <span class="reviewText">
+            <span class="reviewTitle">
+            ${reviews[i].title}</span> - " ${reviews[i].comment} " 
+            </span>
+            </span>`;
         })
 })();
