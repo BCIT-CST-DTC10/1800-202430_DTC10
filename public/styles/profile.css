@@ -90,3 +90,8 @@
     text-align: right;
     margin-left: 6em;
 }
+
+.noReview {
+    color: gray;
+    font-size: 0.9em;
+}
