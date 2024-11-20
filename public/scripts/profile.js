@@ -24,8 +24,11 @@
             v.innerHTML = `
             <span class="reviewText">
             <span class="reviewTitle">
-            ${reviews[i].title}</span> - " ${reviews[i].comment} " 
+            ${reviews[i].title} - </span>"${reviews[i].comment}" 
             </span>
+            </span>
+            <span class="reviewRating">
+            ${reviews[i].rating} Stars
             </span>`;
         })
 })();

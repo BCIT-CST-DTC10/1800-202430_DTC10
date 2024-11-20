@@ -95,6 +95,10 @@
     float: left;
 }
 
+.reviewRating {
+    float: right;
+}
+
 .reviewTitle {
     font-weight: bold;
     text-transform: uppercase;
@@ -104,4 +108,18 @@
 .noReview {
     color: gray;
     font-size: 0.9em;
+}
+
+.reviewRating {
+    margin-right: 1.5em;
+}
+
+@media screen and (max-width: 720px) {
+    .reviewTitle, .reviewRating {
+        display: none;
+    }
+
+    .reviewText {
+        overflow-x: scroll;
+    }
 }
