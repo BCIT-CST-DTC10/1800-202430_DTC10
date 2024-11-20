@@ -115,11 +115,17 @@
 }
 
 @media screen and (max-width: 720px) {
-    .reviewTitle, .reviewRating {
+
+    .reviewTitle,
+    .reviewRating {
         display: none;
     }
 
     .review {
         overflow-x: scroll;
     }
+}
+
+#logOutButton {
+    cursor: pointer;
 }
