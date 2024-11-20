@@ -21,30 +21,24 @@
 
     document.querySelectorAll("main>div.reviewContainer>div.review.toBeReplaced")
         .forEach((v, i) => {
-            console.log(`Title: ${reviews[i].title.length}`)
-            console.log(`Comment: ${reviews[i].comment.length}`)
-            if (reviews[i].title == "") {
-                reviews[i].title = "No title found"
-            }
-            else if (reviews[i].comment == "") {
-                reviews[i].comment = "No comment found"
-            }
-            if (reviews[i].title.length > 40) {
-                reviews[i].title = reviews[i].title.slice(0, 40)
-                console.log("title smaller")
-            }
-            if (reviews[i].comment.length > 100) {
-                reviews[i].comment = reviews[i].comment.slice(0, 100)
-                console.log("comment smaller")
+            const review = reviews[i];
+            if (!review) {
+                return;
             }
             v.innerHTML = `
-            <span class="reviewText">
-            <span class="reviewTitle">
-            ${reviews[i].title} - </span>"${reviews[i].comment}" 
-            </span>
-            </span>
-            <span class="reviewRating">
-            ${reviews[i].rating} Stars
-            </span>`;
-        })
+                <span class="reviewText">
+                    <span class="reviewTitle">
+                        ${(review.title ? review.title : "No title found").slice(0, 40)} -
+                    </span>
+                    "${(review.comment ? review.comment : "No comment found").slice(0, 100)}"
+                </span>
+                <span class="reviewRating">
+                    ${review.rating} Stars
+                </span>
+            `;
+        });
+
+    document.querySelector("div#logOutButton").addEventListener("click", () => {
+        firebase.auth().signOut();
+    });
 })();

@@ -10,7 +10,7 @@ div.title {
     margin-bottom: 0.5em;
 }
 
-div.addImageBox {
+div.formButton {
     text-align: center;
     margin-bottom: 2em;
 }
@@ -38,14 +38,8 @@ div.addImageBox {
     height: 20em;
 }
 
-/* #img-0 {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 1em;
-} */
 
 .tags {
-    /* background-color: rgba(238, 130, 238, 0.1); */
     margin-top: 2em;
     margin-bottom: 4em;
     margin-left: 1.5em;
@@ -75,9 +69,9 @@ div.addImageBox {
     cursor: pointer;
 }
 
-.optionDefault {
+/* .optionDefault {
     display: none;
-}
+} */
 
 .createLocation {
     background-color: #22542c;
@@ -96,8 +90,7 @@ div.submit {
     text-align: center;
 }
 
-
-#submitButton{
+#submitButton {
     background-color: #f0a92e;
     margin-bottom: 1em;
 }
