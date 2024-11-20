@@ -1,10 +1,13 @@
+
 <a href="/detail?id={{id}}"
-    style="color: black; text-decoration: none; margin: 1em 2em; padding: .25em .5em; border-style: solid; border-color: #aaa; border-radius: 1em; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; background-color: #D3D0CB;">
+    style="color: black; text-decoration: none; margin: 1em 2em; padding: .25em .5em; border-style: solid; border-color: #aaa; border-radius: 1em; 
+    display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; background-color: #D3D0CB;">
     <img src="{{image}}" alt="Spot image"
         style="display: inline-block; max-width: 8em; max-height: 8em; width: auto; height: auto; margin-left: auto 0; margin-right: 1em; border-radius: 0.5em; object-fit: contain;">
     <div style="display: inline-block; width: 90%; cursor: pointer; overflow: hidden;">
         <h1>{{name}}</h1>
-        <p>{{description}}</p>
+        <p style="position: relative; display: inline-block; word-wrap: break-word; overflow: hidden; max-height: 2.4em; line-height: 1.2em;">
+            {{description}}</p>
         <div
             style="margin: 0em 0em; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
             <p style="display: inline-block; margin: auto 0;">{{type}}</p>
