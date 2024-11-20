@@ -21,18 +21,22 @@
 
     document.querySelectorAll("main>div.reviewContainer>div.review.toBeReplaced")
         .forEach((v, i) => {
+            const review = reviews[i];
+            if (!review) {
+                return;
+            }
             v.innerHTML = `
                 <span class="reviewText">
                     <span class="reviewTitle">
-                        ${(reviews[i].title ? reviews[i].title : "No title found").slice(0, 40)} -
+                        ${(review.title ? review.title : "No title found").slice(0, 40)} -
                     </span>
-                    "${(reviews[i].comment ? reviews[i].comment : "No comment found").slice(0, 100)}"
+                    "${(review.comment ? review.comment : "No comment found").slice(0, 100)}"
                 </span>
                 <span class="reviewRating">
-                    ${reviews[i].rating} Stars
+                    ${review.rating} Stars
                 </span>
             `;
-        })
+        });
 
     document.querySelector("div#logOutButton").addEventListener("click", () => {
         firebase.auth().signOut();
