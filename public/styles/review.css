@@ -1,5 +1,6 @@
 main {
-    margin: 2em;
+    margin: auto;
+    max-width: 800px;
 }
 
 section,
@@ -14,7 +15,9 @@ h1 {
 }
 
 article h3 {
-    padding-bottom: 0.50em;;
+    padding-top: 1em;
+    padding-bottom: 0.50em;
+    font-size: larger;
     color: #D3D0CB;
 }
 
@@ -53,7 +56,11 @@ label.px-4 {
     color: #171d1cff;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
+
+    main{
+        margin: 2em;
+    }
 
     section,
     article {
