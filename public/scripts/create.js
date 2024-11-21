@@ -4,6 +4,37 @@
         fetchFirestoreFeatures(),
     ]);
 
+    document.querySelector("#fileInput").addEventListener("change", function (event) {
+        const gallery = document.querySelector("#gallery");
+        const uploadButton = document.querySelector("#imageButton");
+
+        new Flickity(gallery).destroy();
+
+        gallery.replaceChildren(
+            ...[...event.target.files]
+                .filter((v) => v.type.match("image.*"))
+                .map((v) => {
+                    const image = document.createElement("img");
+                    image.src = URL.createObjectURL(v);
+
+                    image.style.display = "block";
+                    image.style.maxHeight = "20em";
+                    image.style.minHeight = "10em";
+                    image.style.maxWidth = "50%";
+                    image.style.marginRight = "1em";
+
+                    return image
+                }),
+        );
+
+        new Flickity(gallery, {
+            initialIndex: 0,
+            draggable: true,
+        });
+
+        uploadButton.innerHTML = "Upload Different"
+    });
+
     document.querySelector("div.tags").replaceChildren(
         Object.entries(types).reduce((p, [k, v]) => {
             const option = document.createElement("option");
@@ -58,37 +89,6 @@
             })()),
         ),
     );
-
-    document.querySelector("#fileInput").addEventListener("change", function (event) {
-        const gallery = document.querySelector("#gallery");
-        const uploadButton = document.querySelector("#imageButton");
-
-        new Flickity(gallery).destroy();
-
-        gallery.replaceChildren(
-            ...[...event.target.files]
-                .filter((v) => v.type.match("image.*"))
-                .map((v) => {
-                    const image = document.createElement("img");
-                    image.src = URL.createObjectURL(v);
-
-                    image.style.display = "block";
-                    image.style.maxHeight = "20em";
-                    image.style.minHeight = "10em";
-                    image.style.maxWidth = "50%";
-                    image.style.marginRight = "1em";
-
-                    return image
-                }),
-        );
-
-        new Flickity(gallery, {
-            initialIndex: 0,
-            draggable: true,
-        });
-
-        uploadButton.innerHTML = "Upload Different"
-    });
 
     document.querySelector("label#mapPreviewButton.button").addEventListener("click", (e) => {
         const iframe = document.createElement("iframe");
