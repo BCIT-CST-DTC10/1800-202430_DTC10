@@ -33,11 +33,26 @@
     };
 
     document.querySelector("main>h1.title").innerText = aggSpot.name;
-    document.querySelector("main>div.toBeReplaced.mainImage").append(...aggSpot.images.map((v) => {
+
+    const gallery = document.querySelector("main>div.toBeReplaced.mainImage");
+    gallery.replaceChildren(...aggSpot.images.map((v) => {
         const image = document.createElement("img");
         image.src = v;
-        return image;
+
+        image.style.display = "block";
+        image.style.height = "20em";
+        image.style.width = "20em";
+        image.style.marginRight = "1em";
+        image.style.objectFit = "cover";
+        image.style.borderRadius = "25px";
+
+        return image
     }));
+    new Flickity(gallery, {
+        initialIndex: 0,
+        draggable: true,
+    });
+
     document.querySelector("main>div.toBeReplaced.createdAt").innerText = `Location added at ${aggSpot.createdAt.toLocaleString("en-CA")}`;
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
     const reviewLink = document.createElement("a");
