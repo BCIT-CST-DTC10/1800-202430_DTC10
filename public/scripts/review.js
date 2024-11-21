@@ -1,5 +1,5 @@
 (async () => {
-    const swal = require('sweetalert2')
+    // const swal = require('sweetalert2')
     const id = new URL(window.location).searchParams.get(idKey);
     if (!id) {
         window.location = "/404";
