@@ -144,6 +144,15 @@
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
         });
+
+        await Promise.all(
+            (await Promise.all(
+                (await Promise.all(
+                    new Flickity(document.querySelector("#gallery")).cells.map((v) => fetch(v.element.src)),
+                )).map((v) => v.blob()),
+            )).map((v) => firebase.storage().ref(`${result.id}/${crypto.randomUUID()}`).put(v)),
+        );
+
         window.location = `/detail?id=${result.id}`;
     });
 })();
