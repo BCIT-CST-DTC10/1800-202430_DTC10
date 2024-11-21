@@ -1,6 +1,5 @@
-import swal from 'sweetalert2'
-
 (async () => {
+    const swal = require('sweetalert2')
     const [types, features] = await Promise.all([
         fetchFirestoreTypes(),
         fetchFirestoreFeatures(),
