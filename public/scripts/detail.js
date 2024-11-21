@@ -11,6 +11,9 @@
         fetchFirestoreTypes(),
         fetchFirestoreSpotById(id),
     ]);
+    if (!spot) {
+        window.location = "/404";
+    }
 
     const [{ [id]: images }, reviews] = await Promise.all([
         fetchStorageFilesBySpotIds([id]),

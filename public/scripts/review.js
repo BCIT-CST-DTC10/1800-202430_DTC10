@@ -13,6 +13,9 @@
         fetchFirestoreReviews({ spotIds: [id] }),
         fetchFirebaseUser(),
     ]);
+    if (!spot) {
+        window.location = "/404";
+    }
 
     const users = await fetchAuthUserByIds(Object.values(reviews).map((v) => v.userId));
 
