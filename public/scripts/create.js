@@ -97,4 +97,53 @@
         iframe.src = `https://maps.google.com/maps?output=embed&q=${document.querySelector("input#titleInput").value.trim()}`;
         document.querySelector("div.toBeReplaced.map").replaceChildren(iframe);
     });
+
+    document.querySelector("label#submitButton.createLocation").addEventListener("click", async () => {
+        const name = document.querySelector("input.form-control#titleInput").value.trim();
+        const address = document.querySelector("input.form-control#addressInput").value.trim();
+        const description = document.querySelector("textarea.form-control#descriptionInput").value.trim();
+        const type = document.querySelector("select#type").value.trim();
+        const features = Object.fromEntries([...document.querySelectorAll("div.tags>select")].filter((v) => v.id !== "type").map((v) => {
+            return [v.id, /^(true|false)$/i.test(v.value)
+                ? /^true$/i.test(v.value)
+                    ? true
+                    : false
+                : v.value];
+        }));
+
+        if (!name) {
+            alert("Title can't be empty");
+            const element = document.querySelector("input.form-control#titleInput");
+            element.scrollIntoView();
+            element.focus();
+            return;
+        }
+        if (!address) {
+            alert("Address can't be empty");
+            const element = document.querySelector("input.form-control#addressInput");
+            element.scrollIntoView();
+            element.focus();
+            return;
+        }
+        if (!type) {
+            alert("Location Type can't be unselected");
+            const element = document.querySelector("select#type");
+            element.scrollIntoView();
+            element.focus();
+            return;
+        }
+
+        const result = await firebase.firestore().collection("spots").add({
+            name,
+            type,
+            features,
+            // schedule,
+            address,
+            // googleMapLink,
+            description,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+        window.location = `/detail?id=${result.id}`;
+    });
 })();
