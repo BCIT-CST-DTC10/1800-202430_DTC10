@@ -20,8 +20,9 @@
                     image.style.display = "block";
                     image.style.maxHeight = "20em";
                     image.style.minHeight = "10em";
-                    image.style.maxWidth = "50%";
+                    image.style.width = "50%";
                     image.style.marginRight = "1em";
+                    image.style.objectFit = "cover";
 
                     return image
                 }),
