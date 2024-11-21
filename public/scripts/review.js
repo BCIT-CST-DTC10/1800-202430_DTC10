@@ -1,3 +1,5 @@
+import swal from 'sweetalert2'
+
 (async () => {
     const id = new URL(window.location).searchParams.get(idKey);
     if (!id) {
