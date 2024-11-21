@@ -7,6 +7,6 @@
     const iframe = document.createElement("iframe");
     iframe.height = window.innerHeight - document.querySelector("nav").offsetHeight;
     iframe.width = window.innerWidth;
-    iframe.src = `https://maps.google.com/maps?output=embed&cid=${BigInt("0xbb9196ea9b81f38b")}`;
+    iframe.src = `https://maps.google.com/maps?output=embed&q=vancouver`;
     document.querySelector("main.toBeReplaced").appendChild(iframe);
 })();

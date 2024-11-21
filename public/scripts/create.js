@@ -94,7 +94,7 @@
         const iframe = document.createElement("iframe");
         iframe.height = window.innerWidth;
         iframe.width = window.innerWidth;
-        iframe.src = `https://maps.google.com/maps?output=embed&q=${document.querySelector("input#titleInput").value.trim()}`;
+        iframe.src = `https://maps.google.com/maps?output=embed&q=${document.querySelector("input.form-control#titleInput").value.trim()} ${document.querySelector("input.form-control#addressInput").value.trim()}`;
         document.querySelector("div.toBeReplaced.map").replaceChildren(iframe);
     });
 
@@ -139,7 +139,6 @@
             features,
             // schedule,
             address,
-            // googleMapLink,
             description,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             updatedAt: firebase.firestore.FieldValue.serverTimestamp(),

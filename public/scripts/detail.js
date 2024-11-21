@@ -25,7 +25,7 @@
         id,
         images: Object.values(images),
         name: spot.name,
-        cid: spot.googleMapsCid,
+        address: spot.address,
         createdAt: spot.createdAt.toDate(),
         description: spot.description,
         type: types[spot.type].name,
@@ -70,6 +70,6 @@
     const iframe = document.createElement("iframe");
     iframe.height = window.innerWidth;
     iframe.width = window.innerWidth;
-    iframe.src = `https://maps.google.com/maps?output=embed&hl=en&cid=${BigInt(aggSpot.cid)}`;
+    iframe.src = `https://maps.google.com/maps?output=embed&q=${aggSpot.name} ${aggSpot.address}`;
     document.querySelector("main>div.toBeReplaced.map").appendChild(iframe);
 })();
