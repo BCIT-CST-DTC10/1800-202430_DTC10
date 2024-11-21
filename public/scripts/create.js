@@ -153,7 +153,7 @@
                 )).map((v) => v.blob()),
             )).map((v) => firebase.storage().ref(`${result.id}/${crypto.randomUUID()}`).put(v)),
         );
-
+        alert("New location created")
         window.location = `/detail?id=${result.id}`;
     });
 })();
