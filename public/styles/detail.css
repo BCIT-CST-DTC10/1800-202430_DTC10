@@ -33,6 +33,7 @@ div.mainImage>img {
     margin: 2em 0.50em;
     padding: 0.5em 1em;
     cursor: pointer;
+    border-radius: 1em;
 }
 
 .createdAt {
