@@ -96,7 +96,5 @@
         iframe.width = window.innerWidth;
         iframe.src = `https://maps.google.com/maps?output=embed&q=${document.querySelector("input#titleInput").value.trim()}`;
         document.querySelector("div.toBeReplaced.map").replaceChildren(iframe);
-        e.target.style = "display: none;";
-        document.querySelector("label#loadPlaceButton.button").style = "";
     });
 })();
