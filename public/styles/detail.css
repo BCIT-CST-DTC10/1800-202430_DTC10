@@ -32,6 +32,7 @@ div.mainImage>img {
     background: #D3D0CB;
     margin: 2em 0.50em;
     padding: 0.5em 1em;
+    cursor: pointer;
 }
 
 .createdAt {
