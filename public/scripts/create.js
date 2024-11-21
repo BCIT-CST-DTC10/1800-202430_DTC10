@@ -31,6 +31,7 @@
         new Flickity(gallery, {
             initialIndex: 0,
             draggable: true,
+            wrapAround: true,
         });
 
         uploadButton.innerHTML = "Upload Different"
