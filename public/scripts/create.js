@@ -1,4 +1,64 @@
-(() => {
+(async () => {
+    const [types, features] = await Promise.all([
+        fetchFirestoreTypes(),
+        fetchFirestoreFeatures(),
+    ]);
+
+    document.querySelector("div.tags").replaceChildren(
+        Object.entries(types).reduce((p, [k, v]) => {
+            const option = document.createElement("option");
+            option.value = k;
+            option.innerText = v.name;
+            p.appendChild(option);
+            return p;
+        }, (() => {
+            const select = document.createElement("select");
+            select.id = "type";
+            select.classList.add("dropdowns");
+
+            const option = document.createElement("option");
+            option.selected = true;
+            option.disabled = true;
+            option.classList.add("optionDefault");
+            option.value = "";
+            option.innerText = "Location Type";
+            select.appendChild(option);
+
+            return select;
+        })()),
+        ...Object.entries(features).map(([k, v]) =>
+            v.values.reduce((p, c) => {
+                const option = document.createElement("option");
+                option.value = c;
+                if (typeof c === "boolean") {
+                    option.innerText = c ? "Yes" : "No";
+                } else {
+                    option.innerText = c.replace(
+                        /\w\S*/g,
+                        text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+                    );
+                }
+                p.appendChild(option);
+
+                return p;
+            }, (() => {
+                const select = document.createElement("select");
+                select.id = k;
+                select.classList.add("dropdowns");
+
+                const option = document.createElement("option");
+                option.selected = true;
+                option.disabled = true;
+                option.classList.add("optionDefault");
+                option.value = "";
+                option.innerText = v.question;
+                select.appendChild(option);
+
+                return select;
+            })()),
+        ),
+    );
+
     document.querySelector("#fileInput").addEventListener("change", function (event) {
         const gallery = document.querySelector("#gallery");
         const uploadButton = document.querySelector("#imageButton");
