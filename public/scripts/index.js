@@ -67,4 +67,10 @@
     document.querySelector("a#randomButton").addEventListener("click", () => {
         window.location = `/detail?${idKey}=${spotKeys[Math.floor(Math.random() * spotKeys.length)]}`;
     });
+
+    firebase.auth().onAuthStateChanged(async (user) => {
+        if (!user) {
+            document.querySelector("span.button:has(>a#createButton)").style.display = "none";
+        }
+    });
 })();
