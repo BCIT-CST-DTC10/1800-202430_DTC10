@@ -95,7 +95,14 @@
         if (filtered.length === aggSpots.length) {
             filtered = aggSpots.slice(0, 5);
         }
-        document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");
+        if (!filtered.length) {
+            document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = `
+            <div class="noLocationsFound">No Locations Found</div>
+            `
+        }
+        else {
+            document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");
+        }
     }
 
     document.querySelector("div#filter-section").innerHTML = Object.entries(types)
