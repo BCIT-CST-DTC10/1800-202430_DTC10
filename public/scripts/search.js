@@ -95,7 +95,7 @@
         if (filtered.length === aggSpots.length) {
             filtered = aggSpots.slice(0, 5);
         }
-        document.querySelector("div.toBeReplaced#top-spot-List").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");
+        document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");
     }
 
     document.querySelector("div#filter-section").innerHTML = Object.entries(types)
@@ -116,7 +116,7 @@
             .replaceAll("{{id}}", c.id)
             .replaceAll("{{name}}", c.name), document.querySelector("div#filter-section").innerHTML);
 
-    document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
+    document.querySelectorAll("div.toBeReplaced#top-spot-list svg").forEach((v) => {
         v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
 
