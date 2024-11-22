@@ -166,7 +166,7 @@
                 )).map((v) => v.blob()),
             )).map((v) => firebase.storage().ref(`${result.id}/${crypto.randomUUID()}`).put(v)),
         );
-        Swal.fire({
+        await Swal.fire({
             title: "Success",
             text: "New location created",
             icon: "success",
