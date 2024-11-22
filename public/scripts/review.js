@@ -1,5 +1,4 @@
 (async () => {
-    // const swal = require('sweetalert2')
     const id = new URL(window.location).searchParams.get(idKey);
     if (!id) {
         window.location = "/404";
@@ -76,7 +75,11 @@
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
         });
-        alert("New review created")
+        Swal.fire({
+            title: "Success",
+            text: "New review created",
+            icon: "success",
+        });
         window.location.reload();
     });
 

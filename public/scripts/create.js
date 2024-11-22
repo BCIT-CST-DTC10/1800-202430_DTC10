@@ -115,21 +115,33 @@
         }));
 
         if (!name) {
-            alert("Title can't be empty");
+            Swal.fire({
+                title: "Error",
+                text: "Title can't be empty",
+                icon: "error",
+            });
             const element = document.querySelector("input.form-control#titleInput");
             element.scrollIntoView();
             element.focus();
             return;
         }
         if (!address) {
-            alert("Address can't be empty");
+            Swal.fire({
+                title: "Error",
+                text: "Address can't be empty",
+                icon: "error",
+            });
             const element = document.querySelector("input.form-control#addressInput");
             element.scrollIntoView();
             element.focus();
             return;
         }
         if (!type) {
-            alert("Location Type can't be unselected");
+            Swal.fire({
+                title: "Error",
+                text: "Location Type can't be unselected",
+                icon: "error",
+            });
             const element = document.querySelector("select#type");
             element.scrollIntoView();
             element.focus();
@@ -154,7 +166,11 @@
                 )).map((v) => v.blob()),
             )).map((v) => firebase.storage().ref(`${result.id}/${crypto.randomUUID()}`).put(v)),
         );
-        alert("New location created")
+        Swal.fire({
+            title: "Success",
+            text: "New location created",
+            icon: "success",
+        });
         window.location = `/detail?id=${result.id}`;
     });
 })();
