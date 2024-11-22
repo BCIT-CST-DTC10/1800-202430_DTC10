@@ -25,7 +25,7 @@
                     image.style.marginRight = "1em";
                     image.style.objectFit = "cover";
 
-                    return image
+                    return image;
                 }),
         );
 
@@ -35,7 +35,7 @@
             wrapAround: true,
         });
 
-        uploadButton.innerHTML = "Upload Different"
+        uploadButton.innerHTML = "Upload Different";
     });
 
     document.querySelector("div.tags").replaceChildren(
@@ -69,7 +69,7 @@
                 } else {
                     option.innerText = c.replace(
                         /\w\S*/g,
-                        text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+                        text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase(),
                     );
                 }
                 p.appendChild(option);
@@ -152,7 +152,6 @@
             name,
             type,
             features,
-            // schedule,
             address,
             description,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),

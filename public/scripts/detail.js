@@ -46,7 +46,7 @@
         image.style.objectFit = "cover";
         image.style.borderRadius = "25px";
 
-        return image
+        return image;
     }));
     new Flickity(gallery, {
         initialIndex: 0,

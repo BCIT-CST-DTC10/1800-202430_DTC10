@@ -8,7 +8,7 @@
             rating: v.rating,
             comment: v.comment,
             createdAt: v.createdAt,
-            title: v.title
+            title: v.title,
         }))
         .sort((a, b) => b.createdAt - a.createdAt);
 

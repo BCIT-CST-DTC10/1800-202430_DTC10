@@ -15,7 +15,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 uiShown: () => {
                     document.getElementById('message').style.display = 'none';
                 },
-            }
+            },
         });
     }
 });

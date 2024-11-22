@@ -97,8 +97,8 @@
         }
         if (!filtered.length) {
             document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = `
-            <div class="noLocationsFound">No Locations Found</div>
-            `
+                <div class="noLocationsFound">No Locations Found</div>
+            `;
         }
         else {
             document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = filtered.reduce(callbackReduceAggSpotsToSpotCards, "");

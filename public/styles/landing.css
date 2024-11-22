@@ -1,11 +1,10 @@
 h1,
 a,
 span.button {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
-    /* background-color: #e4e4e4; */
     background: linear-gradient(rgba(33, 84, 44, 0.8), rgba(60, 60, 60, 0.95) 70%), url(/images/lofiRainBackground.jpg) no-repeat center center/cover;
     color: #D3D0CB;
     padding: 10em 0;

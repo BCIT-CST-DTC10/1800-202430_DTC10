@@ -1,6 +1,6 @@
 const idKey = "id";
 const redirectUriKey = "redirect_uri";
-const backend = "https://one800-202430-dtc10.onrender.com"
+const backend = "https://one800-202430-dtc10.onrender.com";
 
 const fetchComponent = async (fileName) => {
     try {
@@ -37,7 +37,7 @@ const fetchFirebaseUser = async () => {
         firebase.auth().onAuthStateChanged(async (user) => {
             if (user) {
                 firebase.firestore().collection("users").doc(
-                    user.uid
+                    user.uid,
                 ).get().then((v) => {
                     res(Object.assign(user, v.data()));
                 }).catch((err) => {
@@ -137,11 +137,11 @@ const fetchStorageFilesBySpotIds = async (spotIds) => {
                     }).catch((err) => {
                         reject(err);
                     });
-                })
-            ))
+                }),
+            )),
         ));
         return Object.fromEntries(spotIds.map((v, i) =>
-            [v, Object.fromEntries(storageFiles[i])]
+            [v, Object.fromEntries(storageFiles[i])],
         ));
     } catch (err) {
         console.error("fetchStorageFilesBySpotIds:", err);
@@ -176,7 +176,7 @@ const calculateRatingFromReviews = (reviews) => {
     const rating = {
         average: 0,
         count: Object.keys(reviews).length,
-        ratingCount: [0, 0, 0, 0, 0]
+        ratingCount: [0, 0, 0, 0, 0],
     };
 
     Object.values(reviews).forEach((v) => {
@@ -206,7 +206,7 @@ const loadRatingStar = async (rating) => {
             case 2:
                 return p + starOutline.repeat(c);
         }
-    }, "")
+    }, "");
 }
 
 const redirectToLogin = () => {
