@@ -98,7 +98,7 @@
         if (!filtered.length) {
             document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = `
                 <div class="noLocationsFound">
-                <span style="font-size: 1.5em;">Sorry!</span>
+                <span class="apology">Sorry!</span>
                 </br>
                 We didn't find any locations with that name.
                 </br>

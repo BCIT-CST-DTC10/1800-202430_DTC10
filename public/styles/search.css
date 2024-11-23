@@ -106,3 +106,7 @@ section a.button.activated {
 #createButton:hover {
     background-color: #488eda;
 }
+
+.apology {
+    font-size: 1.5em;
+}
