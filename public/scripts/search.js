@@ -104,6 +104,13 @@
                 </br>
                 Check if you have any typos, and try again.
                 </div>
+
+                <div class="addNewSpots">
+                If you want to add a spot, you can do so here:
+                </br>
+                </br>
+                <a href="/create" id="createButton"><img src="/icons/add.svg" alt="add" class="icon">Add</a>
+                </div>
             `;
         }
         else {

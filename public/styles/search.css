@@ -86,3 +86,24 @@ section a.button.activated {
     border-radius: 1em;
     padding: 0.5em;
 }
+
+.addNewSpots {
+    text-align: center;
+    color: white;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-top: 1em;
+    /* padding-bottom: 2em; */
+}
+
+#createButton {
+    background-color: #3b77b6;
+    color: #D3D0CB;
+    padding: 8px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+#createButton:hover {
+    background-color: #488eda;
+}
