@@ -97,7 +97,13 @@
         }
         if (!filtered.length) {
             document.querySelector("div.toBeReplaced#top-spot-list").innerHTML = `
-                <div class="noLocationsFound">No Locations Found</div>
+                <div class="noLocationsFound">
+                <span style="font-size: 1.5em;">Sorry!</span>
+                </br>
+                We didn't find any locations with that name.
+                </br>
+                Check if you have any typos, and try again.
+                </div>
             `;
         }
         else {

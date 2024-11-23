@@ -76,3 +76,13 @@ section a.button.activated {
     background-color: #3b77b6;
     color: #D3D0CB;
 }
+
+.noLocationsFound {
+    text-align: center;
+    color: black;
+    background-color: #d3d0cb;
+    margin-right: 2em;
+    margin-left: 2em;
+    border-radius: 1em;
+    padding: 0.5em;
+}
