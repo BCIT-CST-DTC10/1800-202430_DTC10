@@ -32,6 +32,13 @@ header a {
     font-weight: 600;
 }
 
+h2 {
+    font-size: x-large;
+    padding-left: 1em;
+    padding-bottom: 0.25em;
+    color: #f0a92e;
+}
+
 .topDisplay a {
     background-color: #3b77b6;
     color: #D3D0CB;
