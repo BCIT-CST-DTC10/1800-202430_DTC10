@@ -1,0 +1,33 @@
+main {
+    margin: 1.50em;
+}
+
+h1 {
+    color: #D3D0CB;
+    padding-top: 1em;
+    padding-bottom: 0.50em;
+}
+
+h1 span {
+    color: #f0a92e;
+}
+
+div.reviewContainer {
+    color: #3b77b6;
+    background-color: #D3D0CB;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+p.review-comment {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #020102;
+}
+
+
+.star-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
