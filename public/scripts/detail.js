@@ -29,6 +29,7 @@
         createdAt: spot.createdAt.toDate(),
         description: spot.description,
         type: types[spot.type].name,
+        features: spot.features,
         rating,
     };
 
@@ -83,6 +84,25 @@
     document.querySelectorAll("div.toBeReplaced#top-spot-List svg").forEach((v) => {
         v.style = "display: inline-block; margin: auto 0; fill: #000;";
     });
+
+    if (aggSpot.features) {
+        const featuresContainer = document.querySelector("main>div.toBeReplaced.features");
+        featuresContainer.innerHTML = "";
+
+        Object.entries(aggSpot.features).forEach(([featureKey, featureValue]) => {
+            const featureElement = document.createElement("div");
+            featureElement.classList.add("feature-item");
+
+            const featureLabel = document.createElement("strong");
+            featureLabel.innerText = featureKey
+            featureElement.appendChild(featureLabel);
+
+            const featureDescription = document.createElement("span");
+            featureDescription.innerText = featureValue ? featureValue.toString() : "Not available";
+            featureElement.appendChild(featureDescription);
+            featuresContainer.appendChild(featureElement);
+        });
+    }
 
     const iframe = document.createElement("iframe");
     iframe.height = window.innerWidth;
