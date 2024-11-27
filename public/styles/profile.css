@@ -7,6 +7,10 @@
     margin-left: 2em;
 }
 
+a {
+    text-decoration: none;
+}
+
 .image {
     width: 8.5em;
     height: 8.5em;
