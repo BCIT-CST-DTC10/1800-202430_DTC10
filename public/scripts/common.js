@@ -241,3 +241,7 @@ const redirectToLogin = () => {
         }
     });
 })();
+
+( async() => {
+    document.querySelector("footer.toBeReplaced").innerHTML = await fetchComponent("footer");
+})();
