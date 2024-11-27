@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Detail - GoStudy</title>
+    <title>GoStudy</title>
     <meta name="hidden-name" content="studious domain expansion" />
     <meta name="description"
         content="A web application to help students find and access study spots easily with user reviews and ratings from fellow students." />
@@ -17,10 +17,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-    <!-- Flickity -->
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
     <!-- Firebase -->
     <script src="https://gostudy.web.app/__/firebase/11.0.1/firebase-app-compat.js"></script>
     <!-- Firebase features -->
@@ -32,26 +28,24 @@
 
     <!-- Homemade JS -->
     <script defer src="/scripts/common.js"></script>
-    <script defer src="/scripts/detail.js"></script>
+    <script defer src="/scripts/index.js"></script>
     <script defer src="/scripts/allReview.js"></script>
     <!-- Homemade CSS -->
-    <link rel="stylesheet" href="/styles/review.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/allReview.css" />
     <link rel="stylesheet" href="/styles/common.css" />
 </head>
 
 <body>
     <nav class="toBeReplaced"></nav>
+    <header class="LandingScreen">
+        <h1>in construction...</h1>
+    </header>
     <main>
-        <div class="reviewContainer"></div>
-        <h3>All Reviews</h3>
-        <div class="review toBeReplaced"></div>
-        <div class="review toBeReplaced"></div>
-        <div class="review toBeReplaced"></div>
-        <h1>Reviews</h1>
-        </div>
-        <div class="toBeReplaced createdAt"></div>
-        <div class="toBeReplaced map"></div>
-
+        <h1>Recent reviews for <span class="username"></span>
+        </h1>
+        <div class="reviewContainer">
+</div>
     </main>
     <footer class="toBeReplaced"></footer>
 </body>
