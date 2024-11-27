@@ -42,8 +42,8 @@ h2 {
 .topDisplay a {
     background-color: #3b77b6;
     color: #D3D0CB;
-    padding: 10px;
-    border-radius: 15px;
+    padding: 1em;
+    border-radius: 1.5em;
 }
 
 .topDisplay a:hover {
