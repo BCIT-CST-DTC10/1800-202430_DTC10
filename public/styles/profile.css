@@ -7,10 +7,6 @@
     margin-left: 2em;
 }
 
-a {
-    text-decoration: none;
-}
-
 .image {
     width: 8.5em;
     height: 8.5em;
@@ -94,6 +90,10 @@ a {
     background-color: #5b914b;
 }
 
+#logOutButton:hover {
+    background-color: #f0a92e;
+}
+
 .icons {
     margin-left: 2em;
 }
@@ -138,6 +138,8 @@ a {
     }
 }
 
+#favoriteButton,
+#allReviewButton,
 #logOutButton {
     cursor: pointer;
 }
