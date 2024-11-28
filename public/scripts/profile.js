@@ -12,12 +12,8 @@
         }))
         .sort((a, b) => b.createdAt - a.createdAt);
 
-    const image = document.createElement("img");
-    image.src = user.photoURL ?? "";
-    document.querySelector("main>div.mainProfile>div.image").append(image);
 
-    document.querySelector("main>div.mainProfile>div.userDetails>div.username").innerHTML = user.displayName;
-    document.querySelector("main>div.mainProfile>div.userDetails>div.bio").innerHTML = user.description ?? "";
+    document.querySelector("main>div.mainProfile>h1>span.username").innerHTML = user.displayName;
 
     document.querySelectorAll("main>div.reviewContainer>div.review.toBeReplaced")
         .forEach((v, i) => {
