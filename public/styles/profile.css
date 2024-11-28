@@ -1,46 +1,29 @@
 .mainProfile {
-    color: black;
+    background-color: #D3D0CB;
+    color: #020102;
     display: flex;
     flex-direction: row;
-    align-content: center;
-    margin-top: 3em;
+    border-radius: 25px;
     margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
 }
 
-.image {
-    width: 8.5em;
-    height: 8.5em;
-    border-radius: 25px;
-    background-color: lightgray;
+.mainProfile h1 {
+    text-align: center;
+    margin-left: 1em;
+    margin-top: 0.50em;
+    margin-bottom: 0.50em;
+
 }
 
 .username {
-    background-color: lightgray;
-    border-radius: 25px;
-    height: 2.5em;
-    width: 15em;
-    line-height: 2.5em;
-    margin-left: 1em;
-    margin-right: 2em;
-    padding: 0 1em;
-}
-
-.bio {
-    background-color: lightgray;
-    border-radius: 25px;
-    height: 2.5em;
-    line-height: 2.5em;
-    width: 15em;
-    margin-left: 1em;
-    margin-right: 2em;
-    margin-top: 0.5em;
-    padding-left: 1em;
-    height: 5.5em;
+    color: #f0a92e;
 }
 
 .reviewContainer {
-    color: black;
-    background-color: lightgray;
+    color: #020102;
+    background-color: #D3D0CB;
     border-radius: 25px;
     height: 15em;
     margin-left: 2em;
@@ -73,8 +56,8 @@
 }
 
 .settings {
-    color: black;
-    background-color: lightgray;
+    color: #020102;
+    background-color: #D3D0CB;
     border-radius: 25px;
     height: 4em;
     margin-left: 2em;
