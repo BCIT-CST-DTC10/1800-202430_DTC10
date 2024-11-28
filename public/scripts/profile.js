@@ -41,4 +41,14 @@
     document.querySelector("div#logOutButton").addEventListener("click", () => {
         firebase.auth().signOut();
     });
+
+    const favoriteButton = document.getElementById('favoriteButton');
+    favoriteButton.addEventListener('click', () => {
+        window.location.href = '/favorite.html';
+    });
+
+    const allReviewButton = document.getElementById('allReviewButton');
+    allReviewButton.addEventListener('click', () => {
+        window.location.href = '/allReview.html';
+    });
 })();
