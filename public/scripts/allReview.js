@@ -1,17 +1,26 @@
 (async () => {
     const [user, spots] = await Promise.all([fetchFirebaseUser(), fetchFirestoreSpots()])
 
+    const invalidReviews = []
     const reviews = Object.entries(await fetchFirestoreReviews({ userIds: [user.uid] }))
-        .map(([k, v]) => ({
-            id: k,
-            spotId: v.spotId,
-            spotName: spots[v.spotId].name,
-            rating: v.rating,
-            comment: v.comment,
-            createdAt: v.createdAt,
-            title: v.title,
-        }))
+        .map(([k, v]) => {
+            try {
+                return {
+                    id: k,
+                    spotId: v.spotId,
+                    spotName: spots[v.spotId].name,
+                    rating: v.rating,
+                    comment: v.comment,
+                    createdAt: v.createdAt,
+                    title: v.title,
+                }
+            } catch {
+                invalidReviews.push(k)
+                return null
+            }
+        }).filter((v) => v)
         .sort((a, b) => b.createdAt - a.createdAt);
+    Promise.all(invalidReviews.map((v) => firebase.firestore().collection("reviews").doc(v).delete()));
 
     document.querySelector("span.username").innerHTML = user.displayName;
 
