@@ -39,6 +39,7 @@ div.mainImage>img {
 .reviewStars h1 {
     color: #f0a92e;
     font-size: x-large;
+    text-decoration: underline;
 }
 
 .createdAt {
