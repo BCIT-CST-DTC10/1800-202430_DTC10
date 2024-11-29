@@ -40,11 +40,11 @@
 
     const favoriteButton = document.getElementById('favoriteButton');
     favoriteButton.addEventListener('click', () => {
-        window.location.href = '/favorite.html';
+        window.location.href = '/favorite';
     });
 
     const allReviewButton = document.getElementById('allReviewButton');
     allReviewButton.addEventListener('click', () => {
-        window.location.href = '/allReview.html';
+        window.location.href = '/allReview';
     });
 })();
