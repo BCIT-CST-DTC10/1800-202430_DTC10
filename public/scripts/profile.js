@@ -34,8 +34,9 @@
             `;
         });
 
-    document.querySelector("div#logOutButton").addEventListener("click", () => {
-        firebase.auth().signOut();
+    document.querySelector("div#logOutButton").addEventListener("click", async () => {
+        await firebase.auth().signOut();
+        window.location.href = '/';
     });
 
     const favoriteButton = document.getElementById('favoriteButton');
