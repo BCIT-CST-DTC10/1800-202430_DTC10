@@ -96,7 +96,7 @@
                     showCancelButton: true,
                     focusCancel: true,
                 })).isConfirmed) {
-                    await firebase.firestore().collection("reviews").doc(e.target.attributes.id.value).delete();
+                    await firebase.firestore().collection("reviews").doc(e.target.id.value).delete();
                     await Sweetalert2.fire({
                         title: "Success",
                         text: "Review deleted",
