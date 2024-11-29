@@ -96,6 +96,12 @@
       }, {
         "source": "/profile",
         "destination": "/pages/profile.html"
+      }, {        
+        "source": "/allReview",
+        "destination": "/pages/allReview.html"
+      }, {        
+        "source": "/favorite",
+        "destination": "/pages/favorite.html"
       }, {
         "source": "/search",
         "destination": "/pages/search.html"
