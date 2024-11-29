@@ -127,4 +127,6 @@
             v.style.display = "none";
         });
     }
+
+    document.querySelector("main").style.display = "";
 })();

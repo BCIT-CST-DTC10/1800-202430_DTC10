@@ -69,8 +69,8 @@
     });
 
     firebase.auth().onAuthStateChanged(async (user) => {
-        if (!user) {
-            document.querySelector("span.button:has(>a#createButton)").style.display = "none";
+        if (user) {
+            document.querySelector("span.button:has(>a#createButton)").style.display = "";
         }
     });
 })();

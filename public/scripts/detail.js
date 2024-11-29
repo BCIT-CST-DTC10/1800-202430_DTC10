@@ -162,4 +162,6 @@
     iframe.width = window.innerWidth;
     iframe.src = `https://maps.google.com/maps?output=embed&q=${aggSpot.name} ${aggSpot.address}`;
     document.querySelector("main>div.toBeReplaced.map").appendChild(iframe);
+
+    document.querySelector("main").style.display = "";
 })();
