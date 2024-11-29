@@ -93,3 +93,12 @@ label.px-4 {
         margin: 0;
     }
 }
+
+
+#signInButtonActual {
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
