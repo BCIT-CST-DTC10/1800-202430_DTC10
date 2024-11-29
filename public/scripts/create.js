@@ -114,7 +114,7 @@
         }));
 
         if (!name) {
-            Swal.fire({
+            Sweetalert2.fire({
                 title: "Error",
                 text: "Title can't be empty",
                 icon: "error",
@@ -125,7 +125,7 @@
             return;
         }
         if (!address) {
-            Swal.fire({
+            Sweetalert2.fire({
                 title: "Error",
                 text: "Address can't be empty",
                 icon: "error",
@@ -136,7 +136,7 @@
             return;
         }
         if (!type) {
-            Swal.fire({
+            Sweetalert2.fire({
                 title: "Error",
                 text: "Location Type can't be unselected",
                 icon: "error",
@@ -164,7 +164,7 @@
                 )).map((v) => v.blob()),
             )).map((v) => firebase.storage().ref(`${result.id}/${crypto.randomUUID()}`).put(v)),
         );
-        await Swal.fire({
+        await Sweetalert2.fire({
             title: "Success",
             text: "New location created",
             icon: "success",
