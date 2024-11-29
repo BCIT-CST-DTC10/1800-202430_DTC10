@@ -235,13 +235,13 @@ const redirectToLogin = () => {
         } else {
             document.querySelector("nav.nav-bar-before>a.profile-button").style.display = "none";
 
-            if (/\b(profile|create)\b/.test(window.location.pathname)) {
+            if (/\b(profile|allReview|create)\b/.test(window.location.pathname)) {
                 redirectToLogin();
             }
         }
     });
 })();
 
-( async() => {
+(async () => {
     document.querySelector("footer.toBeReplaced").innerHTML = await fetchComponent("footer");
 })();
