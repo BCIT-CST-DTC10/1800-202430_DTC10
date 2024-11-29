@@ -1,4 +1,4 @@
-<div class="card" style="width: 100%; background-color: white; ">
+<div class="card" style="width: 100%; background-color: white; position: relative;">
     <div class="card-body">
         <h5 class="card-title" style="color: #171d1cff; font-weight: 500;">{{title}}</h5>
         <span style="font-size: large; color: #171d1cff;">{{user}}</span>
@@ -8,5 +8,9 @@
         <h5 class="card-title" style="font-weight: 200; font-size: smaller; font-style: italic; color: #3b77b6;">
             {{createdAt}}</h5>
         <p class="card-text" style="color: #171d1cff;">{{comment}}</p>
+        <div>
+            <img src="/icons/delete.svg" class="delete-button"
+                style="float: right; cursor: pointer; border: 2px solid #EA3323; border-radius: 5px; position: absolute; right: 10px; bottom: 10px;">
+        </div>
     </div>
 </div>
