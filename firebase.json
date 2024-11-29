@@ -76,13 +76,15 @@
         "source": "/pages/map.html",
         "destination": "/map",
         "type": 301
-      }, {
-        "source": "/pages/create",
-        "destination": "/create",
+      },
+      {
+        "source": "/pages/favorite",
+        "destination": "/favorite",
         "type": 301
-      }, {
-        "source": "/pages/create.html",
-        "destination": "/create",
+      },
+      {
+        "source": "/pages/allReview.html",
+        "destination": "/allReview",
         "type": 301
       }
     ],
