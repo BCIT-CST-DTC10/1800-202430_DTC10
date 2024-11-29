@@ -100,6 +100,19 @@
 
             const featureDescription = document.createElement("span");
             featureDescription.innerText = typeof v === "boolean" ? v ? "Yes" : "No" : v.charAt(0).toUpperCase() + v.slice(1);
+            switch (featureDescription.innerText) {
+                case "Yes":
+                case "Free":
+                    featureDescription.style.color = "green"
+                    break
+                case "No":
+                case "None":
+                    featureDescription.style.color = "red"
+                    break
+                case "Paid":
+                    featureDescription.style.color = "Yellow"
+                    break
+            }
             featureElement.appendChild(featureDescription);
             featuresContainer.appendChild(featureElement);
         });
