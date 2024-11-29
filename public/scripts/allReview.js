@@ -1,10 +1,10 @@
 (async () => {
-    const user = await fetchFirebaseUser();
+    const [user, spots] = await Promise.all([fetchFirebaseUser(), fetchFirestoreSpots()])
 
     const reviews = Object.entries(await fetchFirestoreReviews({ userIds: [user.uid] }))
         .map(([k, v]) => ({
             id: k,
-            spotId: v.spotId,
+            spotName: spots[v.spotId].name,
             rating: v.rating,
             comment: v.comment,
             createdAt: v.createdAt,
@@ -41,9 +41,10 @@
 
         reviewElement.innerHTML = `
             <div class="review-header">
-                <div class="review-rating">${generateRatingStars(review.rating)}</div>                        
+                <div class="review-rating">${review.spotName}</div>
+                <div class="review-rating">${generateRatingStars(review.rating)}</div>
                 <h3 class="review-title">${review.title ? review.title : "No title"}</h3>
-                <h5 class="review-comment">${review.createdAt}</h5>
+                <h5 class="review-comment">${review.createdAt.toDate().toLocaleString("en-CA")}</h5>
             </div>
             <div class="review-body">
                 <p class="review-comment">${review.comment ? review.comment : "No comment"}</p>
