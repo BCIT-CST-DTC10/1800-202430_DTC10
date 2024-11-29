@@ -4,7 +4,7 @@
     const reviews = Object.entries(await fetchFirestoreReviews({ userIds: [user.uid] }))
         .map(([k, v]) => ({
             id: k,
-            spotId: spots[v.spotId].id,
+            spotId: v.spotId,
             spotName: spots[v.spotId].name,
             rating: v.rating,
             comment: v.comment,
