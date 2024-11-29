@@ -21,6 +21,32 @@ article h3 {
     color: #D3D0CB;
 }
 
+#signInPrompt {
+    text-align: center;
+    margin-right: 2em;
+    margin-left: 2em;
+    padding: 0.5em;
+}
+
+#signInPrompt h3 {
+    color: #3b77b6;
+    font-size: x-large;
+    font-weight: bold;
+    padding-bottom: 0.50em;
+
+}
+
+#signInPrompt button {
+    background-color: #3b77b6;
+    color: #D3D0CB;
+    border-radius: 1.5em;
+    padding: none;
+}
+
+#signInPrompt button:hover {
+    background-color: #488eda;
+}
+
 #reviewTitle {
     padding: 10px;
     color: #171d1cff;
