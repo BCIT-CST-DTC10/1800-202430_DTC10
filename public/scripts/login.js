@@ -13,7 +13,7 @@ firebase.auth().onAuthStateChanged((user) => {
             ],
             callbacks: {
                 uiShown: () => {
-                    document.getElementById('message').style.display = 'none';
+                    document.querySelector('div#message').style.display = 'none';
                 },
             },
         });

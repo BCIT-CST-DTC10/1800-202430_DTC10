@@ -12,8 +12,22 @@
         }))
         .sort((a, b) => b.createdAt - a.createdAt);
 
-
     document.querySelector("main>div.mainProfile>h1>span.username").innerHTML = user.displayName;
+
+    document.querySelector("img#profileEditButton").addEventListener("click", async (e) => {
+        const { value: displayName } = await Sweetalert2.fire({
+            title: "Profile update",
+            input: "text",
+            inputLabel: "Username",
+            inputValue: user.displayName,
+            showCancelButton: true,
+            focusCancel: true,
+        });
+        await user.updateProfile({
+            displayName,
+        });
+        window.location = window.location;
+    });
 
     document.querySelectorAll("main>div.reviewContainer>a>div.review.toBeReplaced")
         .forEach((v, i) => {
@@ -35,18 +49,16 @@
             `;
         });
 
-    document.querySelector("div#logOutButton").addEventListener("click", async () => {
-        await firebase.auth().signOut();
-        window.location.href = '/';
-    });
-
-    const favoriteButton = document.getElementById('favoriteButton');
-    favoriteButton.addEventListener('click', () => {
+    document.querySelector('div#favoriteButton').addEventListener('click', () => {
         window.location.href = '/favorite';
     });
 
-    const allReviewButton = document.getElementById('allReviewButton');
-    allReviewButton.addEventListener('click', () => {
+    document.querySelector('div#allReviewButton').addEventListener('click', () => {
         window.location.href = '/allReview';
+    });
+
+    document.querySelector("div#logOutButton").addEventListener("click", async () => {
+        await firebase.auth().signOut();
+        window.location.href = '/';
     });
 })();
