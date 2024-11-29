@@ -59,10 +59,48 @@
             </div>
             <div class="review-body">
                 <p class="review-comment">${review.comment ? review.comment : "No comment"}</p>
+                <img src="/icons/delete.svg" class="delete-button"
+                style="float: right; cursor: pointer; border: 2px solid #EA3323; border-radius: 5px; position: absolute; right: 16px; bottom: 35px;"
+                id="{{id}}" userId="{{userId}}">
             </div>
         </a>
         `;
 
         reviewContainer.appendChild(reviewElement)
     });
+
+    document.querySelectorAll("img.delete-button").forEach((v) => {
+        v.addEventListener("click", async (e) => {
+            if (user.uid === e.target.attributes.userId.value) {
+                if ((await Sweetalert2.fire({
+                    title: "Delete review",
+                    text: "Are you sure you want to delete your review?",
+                    icon: "question",
+                    showCancelButton: true,
+                    focusCancel: true,
+                })).isConfirmed) {
+                    await firebase.firestore().collection("reviews").doc(e.target.attributes.id.value).delete();
+                    await Sweetalert2.fire({
+                        title: "Success",
+                        text: "Review deleted",
+                        icon: "success",
+                    });
+                    window.location.reload();
+                }
+            }
+        });
+    });
+
+    if (user) {
+        document.querySelectorAll("img.delete-button").forEach((v) => {
+            if (user.uid !== v.attributes.userId.value) {
+                v.style.display = "none";
+            }
+        });
+    } else {
+        document.querySelector("main>section>div").style.display = "none";
+        document.querySelectorAll("img.delete-button").forEach((v) => {
+            v.style.display = "none";
+        });
+    }
 })();
