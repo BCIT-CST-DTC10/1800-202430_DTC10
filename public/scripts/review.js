@@ -24,6 +24,7 @@
     document.querySelector("div#reviews-go-here").innerHTML = Object.entries(reviews)
         .map(([k, v]) => ({
             id: k,
+            userId: v.userId,
             userName: users[v.userId].displayName,
             title: v.title,
             rating: v.rating,
@@ -33,6 +34,7 @@
         .sort((a, b) => b.createdAt - a.createdAt)
         .reduce((p, c) => p + reviewCard
             .replaceAll("{{user}}", c.userName)
+            .replaceAll("{{userId}}", c.userId)
             .replaceAll("{{title}}", c.title)
             .replaceAll("{{createdAt}}", c.createdAt.toDate().toLocaleString("en-CA"))
             .replaceAll("{{comment}}", c.comment)
@@ -84,8 +86,18 @@
     });
 
     firebase.auth().onAuthStateChanged(async (user) => {
-        if (!user) {
+        if (user) {
+            console.log(user.uid);
+            document.querySelectorAll("img.delete-button").forEach((v) => {
+                if (user.uid !== v.attributes.userId.value) {
+                    v.style.display = "none";
+                }
+            })
+        } else {
             document.querySelector("main>section>div").style.display = "none";
+            document.querySelectorAll("img.delete-button").forEach((v) => {
+                v.style.display = "none";
+            })
         }
     });
 })();
