@@ -140,3 +140,8 @@
 #profileEditButton:hover {
     border: 3px solid #5f6368;
 }
+
+.reviewContainerTitle,
+a {
+    color: black;
+}
