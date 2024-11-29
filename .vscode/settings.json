@@ -25,8 +25,8 @@
             "/profile",
             "./public/pages/profile.html"
         ], [
-            "/favorite",
-            "./public/pages/favorite.html"
+            "/bookmark",
+            "./public/pages/bookmark.html"
         ], [
             "/allReview",
             "./public/pages/allReview.html"

@@ -234,7 +234,7 @@ const redirectToLogin = () => {
             }
         } else {
             document.querySelector("nav.nav-bar-before>a.profile-button").style.display = "none";
-            if (/\b(profile|allReview|create)\b/.test(window.location.pathname)) {
+            if (/\b(profile|bookmark|allReview|create)\b/.test(window.location.pathname)) {
                 redirectToLogin();
             }
         }
