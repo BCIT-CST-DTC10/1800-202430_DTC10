@@ -61,4 +61,6 @@
         await firebase.auth().signOut();
         window.location.href = '/';
     });
+
+    document.querySelector("main").style.display = "";
 })();

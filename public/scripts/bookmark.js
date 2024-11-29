@@ -51,4 +51,6 @@
                 }, ""))
                 .replaceAll("{{rating}}", c.rating), document.querySelector("div.toBeReplaced#favSpots").innerHTML);
     }
+
+    document.querySelector("main").style.display = "";
 })();
