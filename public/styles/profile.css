@@ -7,6 +7,7 @@
     margin-left: 2em;
     margin-right: 2em;
     margin-top: 2em;
+    align-items: center;
 }
 
 .mainProfile h1 {
@@ -130,4 +131,6 @@
 #profileEditButton {
     border: 2px solid #5f6368;
     border-radius: 10px;
+    width: 40px;
+    height: 40px;
 }
