@@ -12,20 +12,41 @@ h1 span {
     color: #f0a92e;
 }
 
+a.links {
+    text-decoration: none;
+}
+
 div.reviewContainer {
     color: black;
     background-color: #D3D0CB;
     padding: 1em;
     border-radius: 0.5em;
+    text-decoration: none;
 }
 
 p.review-comment {
     padding-bottom: 1em;
     border-bottom: 1px solid #020102;
+    color: black;
+}
+
+.review-rating {
+    color: #22542c;
+    font-weight: bold;
+}
+
+.review-title {
+    font-size: 1.2em;
 }
 
 .review-time {
     color: #3b77b6;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.review-body {
+    font-size: 1.1em;
 }
 
 .star-icon {

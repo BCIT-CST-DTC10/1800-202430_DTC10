@@ -41,7 +41,7 @@
         reviewElement.classList.add(`review`);
 
         reviewElement.innerHTML = `
-        <a href="/detail?id=${review.spotId}">
+        <a href="/detail?id=${review.spotId}" class="links">
             <div class="review-header">
                 <div class="review-rating">${review.spotName}</div>
                 <div class="review-rating">${generateRatingStars(review.rating)}</div>
