@@ -19,7 +19,12 @@
 
     const users = await fetchAuthUserByIds(Object.values(reviews).map((v) => v.userId));
 
-    document.querySelector("div#reviewPrompt>h1.title").innerText = spot.name;
+    document.querySelector("h1.title").innerText = spot.name;
+
+    document.querySelector("button.signIn-button").addEventListener("click", (e) => {
+        e.preventDefault();
+        redirectToLogin();
+    })
 
     document.querySelector("div#reviews-go-here").innerHTML = Object.entries(reviews)
         .map(([k, v]) => ({
