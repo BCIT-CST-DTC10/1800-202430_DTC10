@@ -89,3 +89,8 @@ percentage::after {
     right: -2rem;
     bottom: -0.25rem;
 }
+
+.features {
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+}
