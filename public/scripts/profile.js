@@ -49,8 +49,8 @@
             `;
         });
 
-    document.querySelector('div#favoriteButton').addEventListener('click', () => {
-        window.location.href = '/favorite';
+    document.querySelector('div#bookmarkButton').addEventListener('click', () => {
+        window.location.href = '/bookmark';
     });
 
     document.querySelector('div#allReviewButton').addEventListener('click', () => {
