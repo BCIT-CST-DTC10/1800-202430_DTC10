@@ -15,12 +15,13 @@
 
     document.querySelector("main>div.mainProfile>h1>span.username").innerHTML = user.displayName;
 
-    document.querySelectorAll("main>div.reviewContainer>div.review.toBeReplaced")
+    document.querySelectorAll("main>div.reviewContainer>a>div.review.toBeReplaced")
         .forEach((v, i) => {
             const review = reviews[i];
             if (!review) {
                 return;
             }
+            v.parentElement.href = `/detail?id=${review.spotId}`
             v.innerHTML = `
                 <span class="reviewText">
                     <span class="reviewTitle">
