@@ -155,5 +155,12 @@
         updateSpotCards();
     });
 
+    document.querySelector("input[name=search]").addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            updateSpotCards();
+        }
+    });
+
     updateSpotCards();
 })();
