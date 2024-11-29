@@ -113,6 +113,18 @@
                 : v.value];
         }));
 
+        if (!document.querySelector("#gallery").innerHTML) {
+            Sweetalert2.fire({
+                title: "Error",
+                text: "Image can't be empty",
+                icon: "error",
+            });
+            const element = document.querySelector("#gallery");
+            element.scrollIntoView();
+            element.focus();
+            return;
+        }
+
         if (!name) {
             Sweetalert2.fire({
                 title: "Error",
