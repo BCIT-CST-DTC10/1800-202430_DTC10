@@ -45,6 +45,23 @@
         "destination": "/profile",
         "type": 301
       }, {
+        "source": "/pages/favorite",
+        "destination": "/favorite",
+        "type": 301
+      }, {
+        "source": "/pages/favorite.html",
+        "destination": "/favorite",
+        "type": 301
+      }, {
+      }, {
+        "source": "/pages/allReview",
+        "destination": "/allReview",
+        "type": 301
+      }, {
+        "source": "/pages/allReview.html",
+        "destination": "/allReview",
+        "type": 301
+      }, {
         "source": "/pages/search",
         "destination": "/search",
         "type": 301
@@ -76,16 +93,6 @@
         "source": "/pages/map.html",
         "destination": "/map",
         "type": 301
-      },
-      {
-        "source": "/pages/favorite",
-        "destination": "/favorite",
-        "type": 301
-      },
-      {
-        "source": "/pages/allReview.html",
-        "destination": "/allReview",
-        "type": 301
       }
     ],
     "rewrites": [
@@ -98,12 +105,12 @@
       }, {
         "source": "/profile",
         "destination": "/pages/profile.html"
-      }, {        
-        "source": "/allReview",
-        "destination": "/pages/allReview.html"
-      }, {        
+      }, {
         "source": "/favorite",
         "destination": "/pages/favorite.html"
+      }, {
+        "source": "/allReview",
+        "destination": "/pages/allReview.html"
       }, {
         "source": "/search",
         "destination": "/pages/search.html"
