@@ -32,15 +32,15 @@ div.mainImage>img {
 h2 {
     font-size: larger;
     margin-top: 1.5em;
-    margin-left: 1em;
+    margin-left: 1.45em;
     font-weight: bold;
     text-decoration: underline;
     color: #f3f0ea;
 }
 
 .features {
-
     margin-left: 1.5em;
+    width: 9em;
 }
 
 .reviewStars {
