@@ -35,16 +35,6 @@ Here are some known bugs:
 - 🪳
 - 🦟
 
-</br>
-</br>
-</br>
-</br>
-
-<div align="center">
-    <sub>
-        hallo thanks for being interested in our project! :3
-    </sub>
-</div>
 
 ## 5. File tree
 
@@ -150,3 +140,15 @@ Here are some known bugs:
             review.css
             search.css
 ```
+
+
+</br>
+</br>
+</br>
+</br>
+
+<div align="center">
+    <sub>
+        hallo thanks for being interested in our project! :3
+    </sub>
+</div>
