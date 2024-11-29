@@ -96,8 +96,6 @@
 
             const featureLabel = document.createElement("strong");
             featureLabel.innerText = `${features[k].name}: `;
-            featureLabel.style.marginTop = "10px"
-            featureLabel.style.marginBottom = "10px"
             featureElement.appendChild(featureLabel);
 
             const featureDescription = document.createElement("span");
@@ -105,26 +103,53 @@
             switch (featureDescription.innerText) {
                 case "Yes":
                 case "Free":
-                    featureDescription.style.color = "#90ee90"
-                    featureDescription.style.backgroundColor = "#22542c"
-                    featureDescription.style.paddingTop = "0px"
-                    featureDescription.style.paddingBottom = "0px"
-                    featureDescription.style.paddingLeft = "6px"
-                    featureDescription.style.paddingRight = "6px"
-                    featureDescription.style.borderRadius = "5px"
+                    featureElement.style.color = "white"
+                    featureElement.style.backgroundColor = "#22542c" // #542222
+
+                    featureElement.style.paddingTop = "0px"
+                    featureElement.style.paddingBottom = "0px"
+                    featureElement.style.paddingLeft = "6px"
+                    featureElement.style.paddingRight = "6px"
+
+                    featureElement.style.marginTop = "5px"
+                    featureElement.style.marginBottom = "5px"
+
+                    featureElement.style.borderRadius = "5px"
+
+                    featureDescription.style.color = "#90ee90" // #ee9090
                     break
                 case "No":
                 case "None":
+                    featureElement.style.color = "white"
+                    featureElement.style.backgroundColor = "#542222"
+
+                    featureElement.style.paddingTop = "0px"
+                    featureElement.style.paddingBottom = "0px"
+                    featureElement.style.paddingLeft = "6px"
+                    featureElement.style.paddingRight = "6px"
+
+                    featureElement.style.marginTop = "5px"
+                    featureElement.style.marginBottom = "5px"
+
+                    featureElement.style.borderRadius = "5px"
+
                     featureDescription.style.color = "#ee9090"
-                    featureDescription.style.backgroundColor = "#542222"
-                    featureDescription.style.paddingTop = "0px"
-                    featureDescription.style.paddingBottom = "0px"
-                    featureDescription.style.paddingLeft = "6px"
-                    featureDescription.style.paddingRight = "6px"
-                    featureDescription.style.borderRadius = "5px"
                     break
                 case "Paid":
-                    featureDescription.style.color = "Yellow"
+                    featureElement.style.color = "white"
+                    featureElement.style.backgroundColor = "#545322"
+
+                    featureElement.style.paddingTop = "0px"
+                    featureElement.style.paddingBottom = "0px"
+                    featureElement.style.paddingLeft = "6px"
+                    featureElement.style.paddingRight = "6px"
+
+                    featureElement.style.marginTop = "5px"
+                    featureElement.style.marginBottom = "5px"
+
+                    featureElement.style.borderRadius = "5px"
+
+                    featureDescription.style.color = "#eee390"
                     break
             }
             featureElement.appendChild(featureDescription);
