@@ -50,6 +50,9 @@
             </div>
             <div class="review-body">
                 <p class="review-comment">${review.comment ? review.comment : "No comment"}</p>
+                <img src="/icons/delete.svg" class="delete-button"
+                style="float: right; cursor: pointer; border: 2px solid #EA3323; border-radius: 5px; position: absolute; right: 16px; bottom: 35px;"
+                id="{{id}}" userId="{{userId}}">
             </div>
         </a>
         `;
