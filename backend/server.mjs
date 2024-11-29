@@ -20,7 +20,7 @@ expressApp.use((req, res, next) => {
     const corsWhitelist = [
         'https://gostudy.web.app',
     ];
-    if (corsWhitelist.indexOf(origin) !== -1 || origin.startsWith('http://127.0.0.1')) {
+    if (corsWhitelist.indexOf(origin) !== -1 || origin.startsWith('http://127.0.0.1') || origin.startsWith('http://localhost')) {
         res.header('Access-Control-Allow-Origin', origin);
         next();
     } else {
