@@ -56,7 +56,7 @@
         wrapAround: true,
     });
 
-    document.querySelector("main>div.toBeReplaced.createdAt").innerText = `Location added at ${aggSpot.createdAt.toLocaleString("en-CA")}`;
+    document.querySelector("main>div.toBeReplaced.createdAt").innerText = `Location added on ${aggSpot.createdAt.toLocaleString("en-CA")}`;
     document.querySelector("main>div.toBeReplaced.description").innerText = aggSpot.description;
     const review = document.querySelector("main>div.toBeReplaced.reviewStars");
     review.innerHTML += generatingRatingStar(aggSpot.rating.average)
