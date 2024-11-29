@@ -95,7 +95,7 @@
             featureElement.classList.add("feature-item");
 
             const featureLabel = document.createElement("strong");
-            featureLabel.innerText = features[k].name;
+            featureLabel.innerText = `${features[k].name}: `;
             featureElement.appendChild(featureLabel);
 
             const featureDescription = document.createElement("span");
