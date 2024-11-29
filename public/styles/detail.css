@@ -1,6 +1,7 @@
 main {
     margin: 1em;
     overflow: hidden;
+    color: #D3D0CB;
 }
 
 .title {
@@ -28,6 +29,20 @@ div.mainImage>img {
     border-radius: 1em;
 }
 
+h2 {
+    font-size: larger;
+    margin-top: 1.5em;
+    margin-left: 1em;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #f3f0ea;
+}
+
+.features {
+
+    margin-left: 1.5em;
+}
+
 .reviewStars {
     background: #f3f0ea;
     margin: 2em 0.50em;
@@ -51,7 +66,7 @@ div.mainImage>img {
 
 .description {
     color: #D3D0CB;
-    text-align: center;
+    text-align: left;
     margin-left: 3em;
     margin-right: 3em;
     font-size: larger;
@@ -63,7 +78,17 @@ div.mainImage>img {
 
 @media only screen and (max-width: 600px) {
 
+    .title {
+        margin-bottom: em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
     .description {
+        margin: 0 0.5em;
+    }
+
+    .createdAt {
         margin: 0;
     }
 }
@@ -94,9 +119,4 @@ percentage::after {
     position: absolute;
     right: -2rem;
     bottom: -0.25rem;
-}
-
-.features {
-    margin-top: 1.5em;
-    margin-left: 1.5em;
 }
