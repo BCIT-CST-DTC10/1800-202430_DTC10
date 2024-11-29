@@ -50,19 +50,5 @@
                     }
                 }, ""))
                 .replaceAll("{{rating}}", c.rating), document.querySelector("div.toBeReplaced#favSpots").innerHTML);
-    } else {
-        const action = await Sweetalert2.fire({
-            icon: "warning",
-            title: "No bookmark found",
-            text: "You have no bookmark yet.",
-            showCancelButton: true,
-            confirmButtonText: "Go to search page",
-            cancelButtonText: "Go to home page",
-        });
-        if (action.isConfirmed) {
-            window.location = "/search";
-        } else if (action.isDismissed) {
-            window.location = "/";
-        }
     }
 })();
