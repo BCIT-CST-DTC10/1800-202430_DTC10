@@ -25,6 +25,12 @@
             "/profile",
             "./public/pages/profile.html"
         ], [
+            "/favorite",
+            "./public/pages/favorite.html"
+        ], [
+            "/allReview",
+            "./public/pages/allReview.html"
+        ], [
             "/search",
             "./public/pages/search.html"
         ], [
