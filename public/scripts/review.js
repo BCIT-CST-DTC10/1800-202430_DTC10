@@ -19,7 +19,7 @@
 
     const users = await fetchAuthUserByIds(Object.values(reviews).map((v) => v.userId));
 
-    document.querySelector("main>section>h1.title").innerText = spot.name;
+    document.querySelector("div#reviewPrompt>h1.title").innerText = spot.name;
 
     document.querySelector("div#reviews-go-here").innerHTML = Object.entries(reviews)
         .map(([k, v]) => ({
@@ -109,13 +109,15 @@
     });
 
     if (user) {
+        document.querySelector("div#signInPrompt").style.display = "none";
         document.querySelectorAll("img.delete-button").forEach((v) => {
             if (user.uid !== v.attributes.userId.value) {
                 v.style.display = "none";
             }
         });
     } else {
-        document.querySelector("main>section>div").style.display = "none";
+        document.querySelector("div#signInPrompt").style.display = "";
+        document.querySelector("div#reviewPrompt").style.display = "none";
         document.querySelectorAll("img.delete-button").forEach((v) => {
             v.style.display = "none";
         });
