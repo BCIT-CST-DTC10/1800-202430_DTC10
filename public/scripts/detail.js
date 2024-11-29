@@ -4,11 +4,12 @@
         window.location = "/404";
     }
 
-    const [star, starHalf, starOutline, types, spot] = await Promise.all([
+    const [star, starHalf, starOutline, types, features, spot] = await Promise.all([
         fetchIcon("star"),
         fetchIcon("starHalf"),
         fetchIcon("starOutline"),
         fetchFirestoreTypes(),
+        fetchFirestoreFeatures(),
         fetchFirestoreSpotById(id),
     ]);
     if (!spot) {
@@ -89,16 +90,16 @@
         const featuresContainer = document.querySelector("main>div.toBeReplaced.features");
         featuresContainer.innerHTML = "";
 
-        Object.entries(aggSpot.features).forEach(([featureKey, featureValue]) => {
+        Object.entries(aggSpot.features).forEach(([k, v]) => {
             const featureElement = document.createElement("div");
             featureElement.classList.add("feature-item");
 
             const featureLabel = document.createElement("strong");
-            featureLabel.innerText = featureKey
+            featureLabel.innerText = features[k].name;
             featureElement.appendChild(featureLabel);
 
             const featureDescription = document.createElement("span");
-            featureDescription.innerText = featureValue ? featureValue.toString() : "Not available";
+            featureDescription.innerText = typeof v === "boolean" ? v ? "Yes" : "No" : v.charAt(0).toUpperCase() + v.slice(1);
             featureElement.appendChild(featureDescription);
             featuresContainer.appendChild(featureElement);
         });
