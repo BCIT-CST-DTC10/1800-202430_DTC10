@@ -40,7 +40,7 @@
             a.innerHTML = reviewCard
                 .replaceAll("{{id}}", c.id)
                 .replaceAll("{{userId}}", c.userId)
-                .replaceAll("{{user}}", c.spotName)
+                .replaceAll(/>.*?\{\{user\}\}/ug, `>${c.spotName}`)
                 .replaceAll("{{title}}", c.title)
                 .replaceAll("{{createdAt}}", c.createdAt.toDate().toLocaleString("en-CA"))
                 .replaceAll("{{comment}}", c.comment)
