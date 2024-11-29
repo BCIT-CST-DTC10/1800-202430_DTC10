@@ -96,6 +96,8 @@
 
             const featureLabel = document.createElement("strong");
             featureLabel.innerText = `${features[k].name}: `;
+            featureLabel.style.marginTop = "10px"
+            featureLabel.style.marginBottom = "10px"
             featureElement.appendChild(featureLabel);
 
             const featureDescription = document.createElement("span");
@@ -103,11 +105,23 @@
             switch (featureDescription.innerText) {
                 case "Yes":
                 case "Free":
-                    featureDescription.style.color = "green"
+                    featureDescription.style.color = "#90ee90"
+                    featureDescription.style.backgroundColor = "#22542c"
+                    featureDescription.style.paddingTop = "0px"
+                    featureDescription.style.paddingBottom = "0px"
+                    featureDescription.style.paddingLeft = "6px"
+                    featureDescription.style.paddingRight = "6px"
+                    featureDescription.style.borderRadius = "5px"
                     break
                 case "No":
                 case "None":
-                    featureDescription.style.color = "red"
+                    featureDescription.style.color = "#ee9090"
+                    featureDescription.style.backgroundColor = "#542222"
+                    featureDescription.style.paddingTop = "0px"
+                    featureDescription.style.paddingBottom = "0px"
+                    featureDescription.style.paddingLeft = "6px"
+                    featureDescription.style.paddingRight = "6px"
+                    featureDescription.style.borderRadius = "5px"
                     break
                 case "Paid":
                     featureDescription.style.color = "Yellow"
