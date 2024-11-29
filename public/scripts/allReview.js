@@ -46,7 +46,7 @@
                 <div class="review-rating">${review.spotName}</div>
                 <div class="review-rating">${generateRatingStars(review.rating)}</div>
                 <h3 class="review-title">${review.title ? review.title : "No title"}</h3>
-                <h5 class="review-comment">${review.createdAt.toDate().toLocaleString("en-CA")}</h5>
+                <h5 class="review-time">${review.createdAt.toDate().toLocaleString("en-CA")}</h5>
             </div>
             <div class="review-body">
                 <p class="review-comment">${review.comment ? review.comment : "No comment"}</p>
