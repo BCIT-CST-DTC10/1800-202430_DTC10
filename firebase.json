@@ -45,12 +45,12 @@
         "destination": "/profile",
         "type": 301
       }, {
-        "source": "/pages/favorite",
-        "destination": "/favorite",
+        "source": "/pages/bookmark",
+        "destination": "/bookmark",
         "type": 301
       }, {
-        "source": "/pages/favorite.html",
-        "destination": "/favorite",
+        "source": "/pages/bookmark.html",
+        "destination": "/bookmark",
         "type": 301
       }, {
         "source": "/pages/allReview",
@@ -105,8 +105,8 @@
         "source": "/profile",
         "destination": "/pages/profile.html"
       }, {
-        "source": "/favorite",
-        "destination": "/pages/favorite.html"
+        "source": "/bookmark",
+        "destination": "/pages/bookmark.html"
       }, {
         "source": "/allReview",
         "destination": "/pages/allReview.html"
