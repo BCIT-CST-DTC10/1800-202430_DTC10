@@ -4,6 +4,7 @@
     const reviews = Object.entries(await fetchFirestoreReviews({ userIds: [user.uid] }))
         .map(([k, v]) => ({
             id: k,
+            spotId: spots[v.spotId].id,
             spotName: spots[v.spotId].name,
             rating: v.rating,
             comment: v.comment,
@@ -40,6 +41,7 @@
         reviewElement.classList.add(`review`);
 
         reviewElement.innerHTML = `
+        <a href="/detail?id=${review.spotId}">
             <div class="review-header">
                 <div class="review-rating">${review.spotName}</div>
                 <div class="review-rating">${generateRatingStars(review.rating)}</div>
@@ -49,6 +51,7 @@
             <div class="review-body">
                 <p class="review-comment">${review.comment ? review.comment : "No comment"}</p>
             </div>
+        </a>
         `;
 
         reviewContainer.appendChild(reviewElement)
