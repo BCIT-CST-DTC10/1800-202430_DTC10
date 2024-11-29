@@ -21,7 +21,7 @@
 
     document.querySelector("h1.title").innerText = spot.name;
 
-    document.querySelector("button.signIn-button").addEventListener("click", (e) => {
+    document.querySelector("button#signInButtonActual").addEventListener("click", (e) => {
         e.preventDefault();
         redirectToLogin();
     })
