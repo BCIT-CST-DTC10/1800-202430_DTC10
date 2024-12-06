@@ -188,6 +188,8 @@
 
     if (user) {
         updateBookmark();
+    } else {
+        document.querySelector("main>h1.title").innerText = aggSpot.name;
     }
 
     document.querySelector("main").style.display = "";
