@@ -7,8 +7,6 @@ Our team, DTC 10, is developing GoStudy, a web application to help students find
 
 ## 2. Names of Contributors
 
-List team members and/or short bio's here...
-
 - Chara - Hallo! I'm Chara! :3
 - Leo - Hi! I'm Leo! :)
 - Kiara - Hey! My name is Kiara <3
@@ -27,15 +25,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 
 Here are some known bugs:
 
-- No bugs found at the moment
-- 🐛
-- 🐜
-- 🪲
-- 🐞
-- 🦗
-- 🪳
-- 🦟
-
+- None at the moment
 
 ## 5. File tree
 
