@@ -100,7 +100,7 @@
                 <div class="noLocationsFound">
                 <span class="apology">Sorry!</span>
                 </br>
-                We didn't find any locations with that name.
+                We didn't find any locations.
                 </br>
                 Check if you have any typos, and try again.
                 </div>
