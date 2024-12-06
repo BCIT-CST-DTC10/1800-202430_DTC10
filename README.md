@@ -1,4 +1,4 @@
-# Project Title
+# GoStudy
 
 
 ## 1. Project Description
