@@ -50,10 +50,6 @@
                     }
                 }, ""))
                 .replaceAll("{{rating}}", c.rating), document.querySelector("div.toBeReplaced#favSpots").innerHTML);
-
-        document.querySelector("div#findSpots").style.display = "none";
-    } else {
-        document.querySelector("div#findSpots").style.display = "";
     }
 
     document.querySelector("main").style.display = "";
