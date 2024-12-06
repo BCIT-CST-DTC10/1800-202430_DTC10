@@ -9,9 +9,9 @@ Our team, DTC 10, is developing GoStudy, a web application to help students find
 
 List team members and/or short bio's here...
 
-- Hallo! I'm Chara! :3
-- Hi! I'm Leo! :)
-- Hey! My name is Kiara <3
+- Chara - Hallo! I'm Chara! :3
+- Leo - Hi! I'm Leo! :)
+- Kiara - Hey! My name is Kiara <3
 
 ## 3. Technologies and Resources Used
 
@@ -21,12 +21,13 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 - Bootstrap 5.0 (Frontend library)
 - Firebase 8.0 (BAAS - Backend as a Service)
 - Google Material Icons
-- ...
+- Render (Backend service)
 
 ## 4. Known Bugs and Limitations
 
 Here are some known bugs:
 
+- No bugs found at the moment
 - 🐛
 - 🐜
 - 🪲
@@ -149,6 +150,6 @@ Here are some known bugs:
 
 <div align="center">
     <sub>
-        hallo thanks for being interested in our project! :3
+        Thanks for being interested in our project!
     </sub>
 </div>
