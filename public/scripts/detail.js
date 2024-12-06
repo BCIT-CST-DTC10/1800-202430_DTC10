@@ -4,13 +4,16 @@
         window.location = "/404";
     }
 
-    const [star, starHalf, starOutline, types, features, spot] = await Promise.all([
+    const [star, starHalf, starOutline, bookmark, bookmarkOutline, types, features, spot, user] = await Promise.all([
         fetchIcon("star"),
         fetchIcon("starHalf"),
         fetchIcon("starOutline"),
+        fetchIcon("bookmark"),
+        fetchIcon("bookmarkOutline"),
         fetchFirestoreTypes(),
         fetchFirestoreFeatures(),
         fetchFirestoreSpotById(id),
+        fetchFirebaseUser(),
     ]);
     if (!spot) {
         window.location = "/404";
@@ -33,8 +36,6 @@
         features: spot.features,
         rating,
     };
-
-    document.querySelector("main>h1.title").innerText = aggSpot.name;
 
     const gallery = document.querySelector("main>div.toBeReplaced.mainImage");
     gallery.replaceChildren(...aggSpot.images.map((v) => {
@@ -162,6 +163,32 @@
     iframe.width = window.innerWidth;
     iframe.src = `https://maps.google.com/maps?output=embed&q=${aggSpot.name} ${aggSpot.address}`;
     document.querySelector("main>div.toBeReplaced.map").appendChild(iframe);
+
+    const updateBookmark = (isAdded) => {
+        const state = isAdded ?? (user.bookmarks && Object.hasOwn(user.bookmarks, id));
+        const title = document.querySelector("main>h1.title");
+        title.innerText = aggSpot.name;
+        title.innerHTML += state ? bookmark.trim() : bookmarkOutline.trim();
+        const svg = document.querySelector("main>h1.title svg");
+        svg.style = "display: inline-block; margin: auto 0; fill: #f0a92e; cursor: pointer;";
+        svg.addEventListener("click", state ? async () => {
+            await firebase.firestore().collection("users").doc(user.uid).update({
+                [`bookmarks.${id}`]: firebase.firestore.FieldValue.delete(),
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+            updateBookmark(false);
+        } : async () => {
+            await firebase.firestore().collection("users").doc(user.uid).update({
+                [`bookmarks.${id}`]: firebase.firestore.FieldValue.serverTimestamp(),
+                updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+            updateBookmark(true);
+        });
+    }
+
+    if (user) {
+        updateBookmark();
+    }
 
     document.querySelector("main").style.display = "";
 })();
